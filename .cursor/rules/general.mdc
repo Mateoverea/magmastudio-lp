@@ -1,0 +1,83 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Magma Studio - Development Rules
+
+## 📌 Project Description
+Magma Studio is a Mexican web design and development company based in Guadalajara, Jalisco.  focused on creating **modern and minimalist landing pages, ecommerce pages, apps and programs** with high performance and impactful aesthetics. We draw inspiration from lava, combining intense colors with a clean and functional design.
+
+Our goal is to deliver **highly optimized, responsive, and scalable websites**, ensuring the best experience on desktops, tablets, and mobile devices.
+
+All the content must be in spanish.
+
+## 🎨 Color Palette
+Magma Studio's visual identity is based on the energy and fluidity of lava. The main colors are:
+
+```yaml
+Primary Colors:
+  - Lava Red: "#7a290e"
+  - Volcanic Orange: "#d85a00"
+
+Secondary Colors:
+  - Deep Black: "#1A1A1A"
+  - Ash Gray: "#333333"
+  - Pure White: "#FFFFFF"
+```
+
+### 🔥 Aesthetics
+- **Minimalism:** Clean designs without unnecessary elements.
+- **Strong Contrast:** Dark backgrounds with warm colors to highlight key information.
+- **Modern Typography:** Preference for sleek sans-serif fonts like `Inter`, `Poppins`, or `Montserrat`.
+- **Subtle Animations:** Smooth micro-interactions to enhance UX without overloading.
+
+## 📱 Responsiveness
+The site must function perfectly on:
+
+```yaml
+Devices:
+  - Desktops: ">1440px"
+  - Tablets: "768px - 1024px"
+  - Mobile devices: "320px - 768px"
+```
+
+A **Mobile-First** approach must be implemented, ensuring fast and optimized loading on mobile devices before scaling to larger screens.
+
+## 🛠️ Development Rules
+### 🔹 Code
+```yaml
+Stack:
+  - Framework: "Next.js"
+  - Language: "JavaScript/TypeScript"
+  - Linting: "ESLint (Strict Rules)"
+  - Formatting: "Prettier"
+  - Styling: "Tailwind CSS"
+```
+
+### 🔹 Project Structure
+- Separate **components**, **pages**, **styles**, and **utilities** in an organized manner.
+- Use of **.tsx files** for components.
+- Keep files small and easy to understand.
+- Implement **Atomic Design** architecture for components.
+
+### 🔹 Performance & SEO
+```yaml
+Optimizations:
+  - Lazy Loading: "Enabled"
+  - SEO Optimization: "Metadata & Schema Markup"
+  - Rendering: "SSR / SSG depending on the case"
+  - Dependencies: "Minimized"
+```
+
+## 🚀 Deployment
+```yaml
+Deployment:
+  - Hosting: "Vercel"
+  - Integration: "GitHub Auto Deploy"
+  - Branch: "main"
+```
+
+---
+
