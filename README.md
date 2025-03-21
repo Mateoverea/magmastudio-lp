@@ -1,6 +1,6 @@
 # Magma Studio - Landing Page
 
-![Magma Studio Logo](/public/logo/logo_black.svg)
+![Magma Studio Logo](/public/lavabg.png)
 
 ## 🔥 Descripción del Proyecto
 
