@@ -1,8 +1,8 @@
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://studioix.agency";
-  const wwwBaseUrl = "https://www.studioix.agency";
+  const baseUrl = "https://magmastudio.pro";
+  const wwwBaseUrl = "https://www.magmastudio.pro";
   return {
     rules: {
       userAgent: "*",

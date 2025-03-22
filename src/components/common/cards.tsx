@@ -46,18 +46,18 @@ const Cards: React.FC<CardsProps> = () => {
     <div
       id="services"
       ref={container}
-      className="flex flex-col items-center bg-black pt-10"
+      className="flex flex-col items-center bg-black"
     >
       <Wrapper
-        className={`flex flex-col md:flex-row justify-between items-start w-full px-3 md:px-10 sticky pb-12 top-20 md:top-40 lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]`}
+        className={`flex flex-col justify-center w-full px-3 md:px-10 sticky pb-12 top-20 md:top-20 lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]`}
       >
-        <h2 className="text-white uppercase text-nowrap text-5xl md:text-7xl font-semibold font-cabinetGrotesk -mt-10">
-          Servicios
+        <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">
+            Servicios <br className=" hidden md:block" />
         </h2>
-        <p className="text-white/80 max-w-xl text-lg md:text-xl font-archivo hidden md:block max-w-[40ch] -mt-10">
-          Nos especializamos en convertir ideas en productos digitales de alto impacto. Desde
-          la estrategia hasta la ejecución, proporcionamos la experiencia que necesitas para construir,
-          lanzar y escalar con éxito.
+        <p className="font-archivo md:max-w-[60ch] text-lg md:text-xl text-white/80 text-center w-full mx-auto">
+          <span className="hidden md:inline text-center block">
+              Nos especializamos en convertir ideas en productos digitales de alto impacto. Encontramos la mejor manera de construir, lanzar y escalar con éxito. 
+          </span>
         </p>
       </Wrapper>
       {features.map((feature, i) => {

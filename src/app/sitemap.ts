@@ -9,8 +9,8 @@ const pages = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://studioix.agency";
-  const wwwBaseUrl = "https://www.studioix.agency";
+  const baseUrl = "https://magmastudio.pro";
+  const wwwBaseUrl = "https://www.magmastudio.pro";
 
   const staticPages = pages.map((page) => ({
     url: `${baseUrl}${page}`,

@@ -1,7 +1,6 @@
 "use client";
 
 import { MotionValue, motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 interface FeatureCardProps {
   textColor: string;
@@ -34,9 +33,9 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         }}
         className="card w-full overflow-y-clip"
       >
-        <div className={`body md:ml-12 lg:ml-20 text-${textColor}`}>
+        <div className={`body md:ml-12 -mt-5 lg:ml-10 text-${textColor}`}>
           <div className="flex flex-col items-start w-full md:w-[80%] lg:[70%] 2xl:w-[65%] 3xl:w-[50%] 4xl:w-[75%] justify-center md:-mt-[5rem] pl-5 pr-5 md:pl-20 md:pr-0 pt-10 md:pt-0">
-            <h2 className="text-4xl md:text-7xl uppercase tracking-tighter font-semibold font-cabinetGrotesk">
+            <h2 className="text-4xl md:text-6xl uppercase tracking-tighter font-semibold font-cabinetGrotesk">
               {title}
             </h2>
             <p
@@ -63,11 +62,16 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
             </div>*/}
           </div>
 
-          <div className="imageContainer mt-4 md:mt-8">
+          <div className="imageContainer mt-4 mb-2 md:mt-8">
             <motion.div className="inner">
-              <video className=" scale-150 md:scale-100" autoPlay loop muted>
+              {/*<video className=" scale-150 md:scale-100" autoPlay loop muted>
                 <source src={`/videos/${src}`} type="video/mp4" />
-              </video>
+              </video>*/}
+              <img
+                className="scale-100 md:scale-75"
+                src={`/lava/${src}`}
+                alt="Imagen animada"
+              />
             </motion.div>
           </div>
         </div>
