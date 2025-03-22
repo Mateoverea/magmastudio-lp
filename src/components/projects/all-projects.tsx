@@ -14,7 +14,7 @@ const AllProjects = () => {
 
   return (
     <section id="portfolio" className="w-full bg-[#1A1A1A] py-20 md:py-32">
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 md:mb-24">
           <motion.div
@@ -23,17 +23,17 @@ const AllProjects = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl tracking-tighter lg:text-7xl text-white text-center mt-6">
+            <h2 className="uppercase font-cabinetGrotesk font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tighter text-white text-center mt-6">
               Nuestros Proyectos
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl">
+            <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg md:text-xl mt-4">
               Transformamos ideas en experiencias digitales excepcionales
             </p>
           </motion.div>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
           {cards.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
@@ -60,7 +60,7 @@ const ProjectCard = ({ project, index }: { project: CardType; index: number }) =
     >
       <Link href="#" className="block">
         {/* Image Container */}
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+        <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-black/10">
           <Image
             src={project.images[0]}
             alt={project.title}
@@ -76,7 +76,7 @@ const ProjectCard = ({ project, index }: { project: CardType; index: number }) =
           {/* Overlay */}
           <div
             className={cn(
-              "absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500",
+              "absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-500",
               isHovered ? "opacity-100" : "opacity-0"
             )}
           />
@@ -84,28 +84,28 @@ const ProjectCard = ({ project, index }: { project: CardType; index: number }) =
           {/* Project Info Overlay */}
           <div
             className={cn(
-              "absolute inset-0 flex flex-col justify-end p-6 md:p-8 transition-all duration-500",
+              "absolute inset-0 flex flex-col justify-end p-5 sm:p-6 md:p-8 transition-all duration-500",
               isHovered ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
             )}
           >
-            <div className="flex items-center gap-3 mb-4">
-              <span className="bg-[#7a290e] text-white/90 text-sm px-3 py-1 rounded-full">
+            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <span className="bg-[#7a290e] text-white/90 text-xs sm:text-sm px-2.5 py-1 rounded-full">
                 {project.year}
               </span>
-              <span className="bg-white/10 backdrop-blur-sm text-white/90 text-sm px-3 py-1 rounded-full flex items-center gap-2">
-                <Code className="w-4 h-4" /> Desarrollo Web
+              <span className="bg-white/10 backdrop-blur-sm text-white/90 text-xs sm:text-sm px-2.5 py-1 rounded-full flex items-center gap-1.5">
+                <Code className="w-3.5 h-3.5" /> Desarrollo Web
               </span>
             </div>
             
-            <h3 className="text-white text-2xl md:text-3xl font-bold font-cabinetGrotesk mb-2">
+            <h3 className="text-white text-xl sm:text-2xl md:text-3xl font-bold font-cabinetGrotesk mb-2">
               {project.title}
             </h3>
             
-            <p className="text-white/80 text-base md:text-lg mb-4 line-clamp-2">
+            <p className="text-white/80 text-sm sm:text-base md:text-lg mb-4 line-clamp-2">
               {project.description}
             </p>
 
-            <div className="flex items-center text-white gap-2 text-sm font-medium">
+            <div className="flex items-center text-white gap-1.5 text-sm font-medium">
               Ver Proyecto <ArrowUpRight className="w-4 h-4" />
             </div>
           </div>

@@ -34,10 +34,7 @@ const Card = ({ card }: { card: CardType }) => {
       <div className="mt-4">
         <div className="flex flex-wrap gap-2">
           <div className="bg-[#1A1A1A] flex items-center text-white font-archivo text-lg border border-[#333333] rounded-full w-fit px-4 py-1">
-            <Code className="mr-2" /> MVP
-          </div>
-          <div className="bg-[#1A1A1A] flex items-center text-white font-archivo text-lg border border-[#333333] rounded-full w-fit px-4 py-1">
-            <Figma className="mr-2" /> Diseño
+            <Code className="mr-2" /> Desarrollo Web
           </div>
           <div className="bg-[#FF4500] flex items-center text-white font-archivo text-lg rounded-full w-fit px-4 py-1">
             {card.year}
@@ -64,19 +61,19 @@ type CardType = {
 
 const cards: CardType[] = [
   {
-    src: "/projects/astrae/1.png",
-    title: "Astrae",
-    year: "2024",
+    src: "/projects/adorantes/1.png",
+    title: "Adorantes",
+    year: "2025",
     description:
-      "Plantillas de react/next.js bellamente diseñadas para sitios web impresionantes y premium.",
+      "Adorantes es una landing page para una artista mexicana, escultora y ceramista.",
     id: 1,
   },
   {
-    src: "/projects/midas/3.png",
-    title: "Midas Fintech",
-    year: "2023",
+    src: "/projects/acredia/1.png",
+    title: "Acredia",
+    year: "2025",
     description:
-      "Midas es la mejor manera de crear tarjetas de débito virtuales basadas en dinero móvil. Una aplicación fintech todo en uno que resuelve todas tus necesidades de tarjetas.",
+      "Acredia es una landing page para una empresa de servicios financieros y brokers de créditos.",
     id: 2,
   },
   {
@@ -87,28 +84,5 @@ const cards: CardType[] = [
       "Predice, conéctate y gana con Stakenet. Comparte tus predicciones, compite con otros.",
     id: 3,
   },
-  {
-    src: "/projects/nova/3.png",
-    title: "Nova",
-    year: "2022",
-    description:
-      "Nova es tu compañero de IA personalizado para conversaciones instantáneas 24/7. Crea tu amigo de IA y chatea en cualquier momento y lugar.",
-    id: 4,
-  },
-  {
-    src: "/projects/hire1/1.png",
-    title: "Hire1.ai",
-    year: "2022",
-    description:
-      "Obtén el mejor 1% de desarrolladores de Google y Adobe, cuidadosamente evaluados tanto por IA como por personas.",
-    id: 5,
-  },
-  {
-    src: "/projects/fontsnatcher/1.png",
-    title: "Fontsnatcher",
-    year: "2020",
-    description:
-      "Fontsnatcher es una forma revolucionaria de descubrir y encontrar fuentes utilizadas en tus sitios web favoritos y en toda la web.",
-    id: 6,
-  },
+  
 ];
