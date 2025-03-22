@@ -15,7 +15,7 @@ export const features = [
       "Creamos experiencias de usuario intuitivas a través de wireframes y prototipos que combinan estética con funcionalidad.",
     descriptionMobile:
       "Creamos experiencias de usuario intuitivas a través de wireframes y prototipos que combinan estética con funcionalidad.",
-    src: "lava5.PNG",
+    src: "lava5.png",
     color: "#000000",
     text: "white",
   },
@@ -25,7 +25,7 @@ export const features = [
       "Construimos soluciones robustas y escalables utilizando experiencia full-stack para resultados de alto rendimiento.",
     descriptionMobile:
       "Construimos soluciones robustas y escalables utilizando experiencia full-stack para resultados de alto rendimiento.",
-    src: "lava6.PNG",
+    src: "lava6.png",
     color: "#000000",
     text: "white",
   },
@@ -35,7 +35,7 @@ export const features = [
       "Creamos tiendas online para que puedas vender tus productos y servicios a través de internet.",
     descriptionMobile:
       "Creamos tiendas online para que puedas vender tus productos y servicios a través de internet.",
-    src: "lava7.PNG",
+    src: "lava7.png",
     color: "#000000",
     text: "white",
   },
