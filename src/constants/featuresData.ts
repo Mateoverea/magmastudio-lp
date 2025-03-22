@@ -5,7 +5,7 @@ export const features = [
       "Creamos una landing page para que puedas presentar tu producto y obtener feedback de los usuarios.",
     descriptionMobile:
       "Creamos una landing page para que puedas presentar tu producto y obtener feedback de los usuarios.",
-    src: "lava4.PNG",
+    src: "lava4.png",
     color: "#000000",
     text: "white",
   },

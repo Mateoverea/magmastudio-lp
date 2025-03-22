@@ -2,6 +2,8 @@
 
 import { MotionValue, motion } from "framer-motion";
 import { useRef } from "react";
+import Image from 'next/image';
+
 interface FeatureCardProps {
   textColor: string;
   title: string;
@@ -67,10 +69,12 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
               {/*<video className=" scale-150 md:scale-100" autoPlay loop muted>
                 <source src={`/videos/${src}`} type="video/mp4" />
               </video>*/}
-              <img
+              <Image
                 className="scale-100 md:scale-75"
                 src={`/lava/${src}`}
                 alt="Imagen animada"
+                width={650}
+                height={300}
               />
             </motion.div>
           </div>
