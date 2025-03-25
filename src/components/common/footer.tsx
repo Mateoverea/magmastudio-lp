@@ -110,9 +110,9 @@ const Footer = () => {
                     className="flex flex-col items-start mt-8"
                   >
                     <h3 className="font-cabinetGrotesk uppercase text-white font-semibold text-5xl md:text-7xl tracking-tighter leading-[0.85]">
-                      Haz Despegar <br className="hidden md:block" /> Tu
+                      Haz Que <br className="hidden md:block" /> Tu Negocio
                       <br className="hidden md:block" /> 
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF4500] to-[#FF6A00]">MVP</span>
+                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF4500] to-[#FF6A00]">Despegue!</span>
                     </h3>
                   </motion.div>
 
@@ -122,7 +122,7 @@ const Footer = () => {
                     transition={{ duration: 0.5, delay: 0.1 }}
                     whileHover={{ scale: 1.05 }}
                     data-cal-namespace="discovery-call"
-                    data-cal-link="studio-ix-gonodg/discovery-call"
+                    data-cal-link="MagmaStudio/discovery-call"
                     data-cal-config='{"layout":"month_view","theme":"dark"}'
                     className="relative inline-flex w-fit h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group mt-6"
                   >

@@ -58,7 +58,7 @@ const ProjectCard = ({ project, index }: { project: CardType; index: number }) =
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <Link href="#" className="block">
+      <Link href={project.url} className="block">
         {/* Image Container */}
         <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-black/10">
           <Image
@@ -123,6 +123,7 @@ type CardType = {
   description: string;
   id: number;
   year: string;
+  url: string;
 };
 
 const cards: CardType[] = [
@@ -137,6 +138,7 @@ const cards: CardType[] = [
     description:
       "Adorantes es una landing page para una artista mexicana, escultora y ceramista.",
     id: 1,
+    url: "https://adrianadorantes.com",
   },
   {
     images: [
@@ -149,17 +151,6 @@ const cards: CardType[] = [
     description:
       "Acredia es una landing page para una empresa de servicios financieros y brokers de créditos.",
     id: 2,
-  },
-  {
-    images: [
-      "/projects/stakenet/1.png",
-      "/projects/stakenet/2.png",
-      "/projects/stakenet/3.png",
-    ],
-    title: "Stakenet",
-    year: "2023",
-    description:
-      "Predice, conéctate y gana con Stakenet. Comparte tus predicciones, compite con otros.",
-    id: 3,
+    url: "https://acredia.mx",
   },
 ];

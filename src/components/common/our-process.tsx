@@ -17,7 +17,7 @@ const OurProcess = () => {
       title: "Construcción e Iteración",
       step: "Paso 03",
       description:
-        "Comenzamos el desarrolloutilizando tecnologías modernas, enfocándonos en características esenciales mientras mantenemos flexibilidad para escalabilidad y mejoras futuras.",
+        "Comenzamos el desarrollo utilizando tecnologías modernas, enfocándonos en características esenciales mientras mantenemos flexibilidad para escalabilidad y mejoras futuras.",
     },
     {
       title: "Mantenimiento y Mejoras",

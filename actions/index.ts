@@ -100,20 +100,20 @@ export async function createProspect(
         <body>
           <div class="container">
             <div class="logo">
-              <img src="https://res.cloudinary.com/dlnsqeeos/image/upload/v1738942418/rgdt8nhv2xdpe9rkpmg1.png" alt="Studio IX Logo">
+              <img src="public/logo.png" alt="Magma Studio Logo">
             </div>
-            <h2 class="title">New Project Inquiry</h2>
+            <h2 class="title">Nuevo proyecto</h2>
             <div class="prospect-details">
-              <p class="label">Name</p>
+              <p class="label">Nombre</p>
               <p class="value">${prospect.name}</p>
               
-              <p class="label">Email</p>
+              <p class="label">Correo electrónico</p>
               <p class="value">${prospect.email}</p>
               
-              <p class="label">Project Type</p>
+              <p class="label">Tipo de proyecto</p>
               <p class="value">${prospect.projectType}</p>
               
-              <p class="label">Project Brief</p>
+              <p class="label">Descripción del proyecto</p>
               <p class="value">${prospect.projectBrief}</p>
             </div>
           </div>
@@ -122,18 +122,18 @@ export async function createProspect(
     `;
 
     const plainText = `
-    New Project Inquiry
+    Nuevo proyecto
     
-    Name: ${prospect.name}
-    Email: ${prospect.email}
-    Project Type: ${prospect.projectType}
-    Project Brief: ${prospect.projectBrief}
+    Nombre: ${prospect.name}
+    Correo electrónico: ${prospect.email}
+    Tipo de proyecto: ${prospect.projectType}
+    Descripción del proyecto: ${prospect.projectBrief}
     `;
 
     await gmailTransporter.sendMail({
-      from: '"Studio IX" <studioix.agency@gmail.com>',
+      from: '"Magma Studio" <magmastudio.mx@gmail.com>',
       to: "braimahabiola5@gmail.com, jojoamankwa@gmail.com",
-      subject: `New Project Inquiry from ${prospect.name}`,
+      subject: `Nuevo proyecto de ${prospect.name}`,
       text: plainText,
       html: emailHtml,
     });
@@ -145,7 +145,7 @@ export async function createProspect(
     }
 
     console.log(error);
-    return { success: false, error: "Something went wrong." };
+    return { success: false, error: "Algo salió mal." };
   }
 }
 
@@ -162,7 +162,7 @@ export async function createLead(values: z.infer<typeof leadFormSchema>) {
     if (existingLead) {
       return {
         success: false,
-        error: "Email already exists",
+        error: "El correo electrónico ya existe.",
       };
     }
 
@@ -225,19 +225,19 @@ export async function createLead(values: z.infer<typeof leadFormSchema>) {
   <body>
     <div class="container">
       <div class="logo">
-        <img src="https://res.cloudinary.com/dlnsqeeos/image/upload/v1738942418/rgdt8nhv2xdpe9rkpmg1.png" alt="Studio IX Logo">
+        <img src="public/logo.png" alt="Magma Studio Logo">
       </div>
       <div class="content">
-        <h1 style="color: #ffffff">Thank you for downloading our MVP Blueprint!</h1>
-        <p style="color: #ffffff" font-size: 16px;>Hi ${lead.firstName},</p>
-        <p style="color: #ffffff; font-size: 14px;">Thank you for your interest in our MVP Blueprint. This comprehensive guide will help you navigate through the process of building your first MVP.</p>
+        <h1 style="color: #ffffff">Gracias por descargar nuestro Folleto!</h1>
+        <p style="color: #ffffff" font-size: 16px;>Hola ${lead.firstName},</p>
+        <p style="color: #ffffff; font-size: 14px;">Gracias por tu interés en nuestro Folleto. Este guía completa te ayudará a navegar por el proceso de construir tu primer MVP.</p>
         <a href="https://res.cloudinary.com/dlnsqeeos/image/upload/v1738945596/PDF/The%20Ultimate%20Blueprint%20For%20MVP%20Success.pdf" class="button">
-          Download Your MVP Blueprint
+          Descarga tu Folleto
         </a>
-        <p style="margin-top: 30px; color: #ffffff; font-size: 14px;">If you have any questions or need assistance, feel free to reach out to us.</p>
+        <p style="margin-top: 30px; color: #ffffff; font-size: 14px;">Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos.</p>
       </div>
       <div class="footer">
-        © ${new Date().getFullYear()} Studio IX. All rights reserved.
+        © ${new Date().getFullYear()} Magma Studio. Todos los derechos reservados.
       </div>
     </div>
   </body>
@@ -245,23 +245,23 @@ export async function createLead(values: z.infer<typeof leadFormSchema>) {
 `;
 
     const plainText = `
-Thank you for downloading our MVP Blueprint!
+Gracias por descargar nuestro Folleto!
 
-Hi ${lead.firstName},
+Hola ${lead.firstName},
 
-Thank you for your interest in our MVP Blueprint. This comprehensive guide will help you navigate through the process of building your first MVP.
+Gracias por tu interés en nuestro Folleto. Este guía completa te ayudará a navegar por el proceso de construir tu primer MVP.
 
-Download your MVP Blueprint here: https://res.cloudinary.com/dlnsqeeos/image/upload/v1738945596/PDF/The%20Ultimate%20Blueprint%20For%20MVP%20Success.pdf
+Descarga tu Folleto aquí: https://res.cloudinary.com/dlnsqeeos/image/upload/v1738945596/PDF/The%20Ultimate%20Blueprint%20For%20MVP%20Success.pdf
 
-If you have any questions or need assistance, feel free to reach out to us.
+Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos.
 
-© ${new Date().getFullYear()} Studio IX. All rights reserved.
+© ${new Date().getFullYear()} Magma Studio. Derechos reservados.
 `;
 
     await gmailTransporter.sendMail({
-      from: '"Studio IX" <studioix.agency@gmail.com>',
+      from: '"Magma Studio" <magmastudio.mx@gmail.com>',
       to: lead.email,
-      subject: "Your MVP Blueprint is Ready! 🚀",
+      subject: "Tu proyecto está listo! 🚀",
       text: plainText,
       html: emailHtml,
     });
@@ -354,20 +354,20 @@ export async function createCtaProspect(values: z.infer<typeof ctaFormSchema>) {
         <body>
           <div class="container">
             <div class="logo">
-              <img src="https://res.cloudinary.com/dlnsqeeos/image/upload/v1738942418/rgdt8nhv2xdpe9rkpmg1.png" alt="Studio IX Logo">
+              <img src="public/logo.png" alt="Magma Studio Logo">
             </div>
-            <h2 class="title">New Project Inquiry</h2>
+            <h2 class="title">Nuevo proyecto</h2>
             <div class="prospect-details">
-              <p class="label">Name</p>
+              <p class="label">Nombre</p>
               <p class="value">${prospect.name}</p>
               
-              <p class="label">Email</p>
+              <p class="label">Correo electrónico</p>
               <p class="value">${prospect.email}</p>
               
-              <p class="label">Project Type</p>
+              <p class="label">Tipo de proyecto</p>
               <p class="value">${prospect.projectType}</p>
               
-              <p class="label">Project Brief</p>
+              <p class="label">Descripción del proyecto</p>
               <p class="value">${prospect.projectBrief}</p>
             </div>
           </div>
@@ -376,18 +376,18 @@ export async function createCtaProspect(values: z.infer<typeof ctaFormSchema>) {
     `;
 
     const plainText = `
-    New Project Inquiry
+    Nuevo proyecto
     
-    Name: ${prospect.name}
-    Email: ${prospect.email}
-    Project Type: ${prospect.projectType}
-    Project Brief: ${prospect.projectBrief}
+    Nombre: ${prospect.name}
+    Correo electrónico: ${prospect.email}
+    Tipo de proyecto: ${prospect.projectType}
+    Descripción del proyecto: ${prospect.projectBrief}
     `;
 
     await gmailTransporter.sendMail({
-      from: '"Studio IX" <studioix.agency@gmail.com>',
+      from: '"Magma Studio" <magmastudio.mx@gmail.com>',
       to: "braimahabiola5@gmail.com, jojoamankwa@gmail.com",
-      subject: `New Project Inquiry from ${prospect.name}`,
+      subject: `Nuevo proyecto de ${prospect.name}`,
       text: plainText,
       html: emailHtml,
     });
@@ -399,6 +399,6 @@ export async function createCtaProspect(values: z.infer<typeof ctaFormSchema>) {
     }
 
     console.log(error);
-    return { success: false, error: "Something went wrong." };
+    return { success: false, error: "Algo salió mal." };
   }
 }
