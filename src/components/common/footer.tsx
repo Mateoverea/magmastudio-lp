@@ -25,13 +25,13 @@ const Footer = () => {
 
   useEffect(() => {
     const updateTime = () => {
-      const accraTime = new Date().toLocaleTimeString("en-US", {
-        timeZone: "Africa/Accra",
+      const mexicoTime = new Date().toLocaleTimeString("en-US", {
+        timeZone: "America/Mexico_City",
         hour: "2-digit",
         minute: "2-digit",
         hour12: false,
       });
-      setTime(`${accraTime} GMT`);
+      setTime(`${mexicoTime} CDMX`);
     };
 
     updateTime();
@@ -110,9 +110,9 @@ const Footer = () => {
                     className="flex flex-col items-start mt-8"
                   >
                     <h3 className="font-cabinetGrotesk uppercase text-white font-semibold text-5xl md:text-7xl tracking-tighter leading-[0.85]">
-                      Haz Que <br className="hidden md:block" /> Tu Negocio
+                      Haz Que <br className="hidden md:block" /> Tu Negocio 
                       <br className="hidden md:block" /> 
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF4500] to-[#FF6A00]">Despegue!</span>
+                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF4500] to-[#FF6A00]"> Despegue!</span>
                     </h3>
                   </motion.div>
 

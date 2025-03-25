@@ -97,18 +97,18 @@ const Cta = () => {
   };
 
   return (
-    <section className="bg-[#7a290e] h-fit md:h-[78vh] w-full md:mt-40 px-3 md:px-0 overflow-hidden">
+    <section className="bg-[#7a290e] h-fit md:h-[82vh] w-full md:mt-40 px-3 md:px-0 overflow-hidden">
       <Wrapper className="w-full py-12 md:py-20 lg:py-24 h-full flex flex-col md:flex-row md:justify-between gap-12 md:gap-10 lg:gap-16 items-center md:px-0 group lg:px-[1rem] xl:px-[4rem] 2xl:px-[6rem] 3xl:px-[8rem] 4xl:px-[10rem] 5xl:px-[0rem] my-4">
-        <div className="w-full md:w-[45%] lg:w-[50%] flex flex-col items-start h-full justify-center">
+        <div className="w-full md:w-[40%] lg:w-[40%] flex flex-col items-start h-full justify-center">
           <Link className="h-full" href="/">
           </Link>
           <div className="h-full flex flex-col justify-center mt-8 md:mt-0">
-            <h3 className="font-cabinetGrotesk uppercase text-white font-semibold text-5xl md:text-6xl lg:text-7xl tracking-tighter leading-[0.85]">
+            <h3 className="font-cabinetGrotesk uppercase text-white font-semibold text-5xl md:text-5xl lg:text-7xl tracking-tighter leading-[0.85]">
               Obtén una estimación de tu proyecto
             </h3>
           </div>
         </div>
-        <div className="w-full md:w-[50%] lg:w-[45%] flex flex-col items-start h-full overflow-hidden">
+        <div className="w-full md:w-[60%] lg:w-[55%] flex flex-col items-start h-full overflow-hidden">
           <div className="w-full flex items-center justify-between mb-4">
             <h4 className="font-archivo uppercase text-white text-lg">
               Escríbenos
@@ -147,7 +147,7 @@ const Cta = () => {
           </div>
 
           <motion.div
-            className="relative inline-block cursor-pointer w-full overflow-hidden mb-2"
+            className="relative inline-block cursor-pointer w-full overflow-visible mb-2"
             onClick={() => {
               navigator.clipboard.writeText("contacto@magmastudio.mx");
               toast.success("Email copiado al portapapeles!");

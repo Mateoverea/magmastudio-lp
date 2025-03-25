@@ -25,39 +25,39 @@ const BouncyComponent: React.FC<BouncyComponentProps> = ({ disabled }) => {
       <div className="radio-group relative grid grid-cols-3 w-full">
         <input
           type="radio"
-          id="web-application"
+          id="landing-page"
           name="projectType"
-          value="web-application"
-          checked={selectedOption === "web-application"}
+          value="landing-page"
+          checked={selectedOption === "landing-page"}
           onChange={handleOptionChange}
           className="hidden"
         />
         <label
-          htmlFor="web-application"
+          htmlFor="landing-page"
           className={`${
-            selectedOption === "web-application" ? "text-white" : "text-black"
+            selectedOption === "landing-page" ? "text-white" : "text-black"
           } hidden z-10 font-archivo font-normal text-xl py-2 px-6`}
         >
-          Web <span className="md:hidden">App</span>{" "}
-          <span className="hidden md:block">Aplicación</span>
+          <span className="md:hidden">Landing Page</span>{" "}
+          <span className="hidden md:block">Landing Page</span>
         </label>
 
         <input
           type="radio"
-          id="mobile-app"
+          id="e-commerce"
           name="projectType"
-          value="mobile-app"
-          checked={selectedOption === "mobile-app"}
+          value="e-commerce"
+          checked={selectedOption === "e-commerce"}
           onChange={handleOptionChange}
           className="hidden"
         />
         <label
-          htmlFor="mobile-app"
+          htmlFor="e-commerce"
           className={`${
-            selectedOption === "mobile-app" ? "text-white" : "text-black"
+            selectedOption === "e-commerce" ? "text-white" : "text-black"
           } hidden z-10 font-archivo font-normal text-xl py-2 px-0`}
         >
-          App Móvil
+          E-commerce
         </label>
 
         <input

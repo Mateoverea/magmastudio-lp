@@ -1,6 +1,6 @@
 "use client";
 
-import { animate, useInView } from "framer-motion";
+import { animate, useInView, motion } from "framer-motion";
 import { TrendingUp } from "lucide-react";
 import { useEffect, useRef } from "react";
 
@@ -14,8 +14,8 @@ interface Props {
 
 const Stat = ({ num, decimals = 0, subheading }: Props) => {
   const ref = useRef<HTMLSpanElement | null>(null);
-
-  const isInView = useInView(ref);
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
   useEffect(() => {
     if (!isInView) return;
@@ -38,21 +38,49 @@ const Stat = ({ num, decimals = 0, subheading }: Props) => {
     </span>
   ));
 
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.7, 
+        ease: "easeOut" 
+      } 
+    }
+  };
+
   return (
-    <div className="flex w-fit md:w-72 md:flex-col items-center gap-4 md:gap-0 py-8 relative">
+    <motion.div 
+      ref={containerRef}
+      variants={variants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      className="flex flex-row md:w-72 md:flex-col items-center gap-4 md:gap-0 py-8 relative"
+    >
       <h4 className="mb-2 text-center text-white text-7xl lg:text-9xl font-cabinetGrotesk font-semibold">
         <span ref={ref}></span>
       </h4>
-      <TrendingUp size={32} className=" text-green-600 md:hidden -mt-12" />
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+        transition={{ delay: 0.5, duration: 0.4 }}
+      >
+        <TrendingUp size={32} className="text-green-600 md:hidden -mt-12" />
+      </motion.div>
 
-      <p className=" text-start md:text-center text-white text-lg md:text-xl opacity-80 font-archivo ml-4 md:ml-0">
+      <p className="text-start md:text-center text-white text-lg md:text-xl opacity-80 font-archivo ml-4 md:ml-0">
         {formattedSubheading}
       </p>
-      <TrendingUp
-        size={32}
-        className=" absolute right-12 text-green-600 hidden md:block"
-      />
-    </div>
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+        transition={{ delay: 0.5, duration: 0.4 }}
+        className="absolute right-12 hidden md:block"
+      >
+        <TrendingUp size={32} className="text-green-600" />
+      </motion.div>
+    </motion.div>
   );
 };
 

@@ -156,9 +156,9 @@ const SocialProof = () => {
         </div>
 
         <div className="flex flex-col md:flex-row items-start md:items-center justify-center w-fit md:w-full">
-          <Stat num={14} subheading="MVPs Completados" />
+          <Stat num={2} subheading="Proyectos Completados" />
 
-          <Stat num={19} subheading="Clientes Satisfechos" />
+          <Stat num={3} subheading="Clientes Satisfechos" />
 
           <Stat num={10} subheading="Startups Financiadas" />
         </div>
