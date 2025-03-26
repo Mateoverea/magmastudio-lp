@@ -94,7 +94,7 @@ export const Navigation = () => {
                   quality={100}
                   className=" object-contain"
                   fill
-                  src="/logo/icon.png"
+                  src="/logo/logo_white.svg"
                   alt="Logo de Magma Studio"
                 />
               </div>
