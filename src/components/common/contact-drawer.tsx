@@ -81,7 +81,13 @@ export function ContactDrawer() {
         if (result.error === "Email already exists") {
           toast.error("El email ya existe");
         } else {
-          toast.error("Algo salió mal");
+          console.error("Form submission error:", result.error);
+          if (typeof result.error === 'object') {
+            const errorMessage = JSON.stringify(result.error);
+            toast.error(`Error de validación: ${errorMessage}`);
+          } else {
+            toast.error(`Error: ${result.error || "Algo salió mal"}`);
+          }
         }
       }
     });

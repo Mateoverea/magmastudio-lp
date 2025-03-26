@@ -131,8 +131,8 @@ export async function createProspect(
     `;
 
     await gmailTransporter.sendMail({
-      from: '"Magma Studio" <magmastudio.mx@gmail.com>',
-      to: "braimahabiola5@gmail.com, jojoamankwa@gmail.com",
+      from: '"Magma Studio" <magmastudioweb@gmail.com>',
+      to: "mateoverea@gmail.com",
       subject: `Nuevo proyecto de ${prospect.name}`,
       text: plainText,
       html: emailHtml,
@@ -259,7 +259,7 @@ Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos.
 `;
 
     await gmailTransporter.sendMail({
-      from: '"Magma Studio" <magmastudio.mx@gmail.com>',
+      from: '"Magma Studio" <magmastudioweb@gmail.com>',
       to: lead.email,
       subject: "Tu proyecto está listo! 🚀",
       text: plainText,
@@ -385,8 +385,8 @@ export async function createCtaProspect(values: z.infer<typeof ctaFormSchema>) {
     `;
 
     await gmailTransporter.sendMail({
-      from: '"Magma Studio" <magmastudio.mx@gmail.com>',
-      to: "braimahabiola5@gmail.com, jojoamankwa@gmail.com",
+      from: '"Magma Studio" <magmastudioweb@gmail.com>',
+      to: "mateoverea@gmail.com",
       subject: `Nuevo proyecto de ${prospect.name}`,
       text: plainText,
       html: emailHtml,

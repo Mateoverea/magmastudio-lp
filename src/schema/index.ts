@@ -3,50 +3,50 @@ import { z } from "zod";
 export const prospectFormSchema = z.object({
   name: z
     .string()
-    .min(2, { message: "Name must be at least 2 characters." })
+    .min(2, { message: "Debe tener al menos 2 palabras" })
     .regex(/^[a-zA-Z]+(?: [a-zA-Z]+)+$/, {
-      message: "Please enter your full name",
+      message: "Ingrese su nombre completo",
     }),
   email: z.string().email({
-    message: "Please enter a valid email address.",
+    message: "Ingrese una dirección válida",
   }),
   projectType: z.string().min(1, {
-    message: "Project type is required.",
+    message: "Tipo de proyecto es requerido",
   }),
   projectBrief: z
     .string()
     .min(10, {
-      message: "Project brief must be at least 10 characters.",
+      message: "Debe tener al menos 10 palabras",
     })
     .max(200, {
-      message: "Project brief must not be longer than 200 characters.",
+      message: "No debe ser más largo de 200 palabras",
     }),
 });
 export const ctaFormSchema = z.object({
   name: z
     .string()
-    .min(2, { message: "Name must be at least 2 characters." })
+    .min(2, { message: "Debe tener al menos 2 palabras" })
     .regex(/^[a-zA-Z]+(?: [a-zA-Z]+)+$/, {
-      message: "Please enter your full name",
+      message: "Ingrese su nombre completo",
     }),
   email: z.string().email({
-    message: "Please enter a valid email address.",
+    message: "Ingrese una dirección válida",
   }),
   projectBrief: z
     .string()
     .min(10, {
-      message: "Project brief must be at least 10 characters.",
+      message: "Debe tener al menos 10 palabras",
     })
     .max(200, {
-      message: "Project brief must not be longer than 200 characters.",
+      message: "No debe ser más largo de 200 palabras",
     }),
 });
 
 export const leadFormSchema = z.object({
   firstName: z.string().min(2, {
-    message: "First name must be at least 2 characters.",
+    message: "Debe tener al menos 2 palabras",
   }),
   email: z.string().email({
-    message: "Please enter a valid email address.",
+    message: "Ingrese una dirección válida",
   }),
 });

@@ -25,7 +25,7 @@ const ChatwootWidget = forwardRef((props, ref) => {
     window.chatwootSettings = {
       hideMessageBubble: false,
       position: "right", // This can be left or right
-      locale: "en", // Language to be set
+      locale: "es", // Language to be set
       type: "standard", // [standard, expanded_bubble]
     };
 
