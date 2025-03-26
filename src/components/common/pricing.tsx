@@ -1,23 +1,11 @@
 "use client";
 
-import { getCalApi } from "@calcom/embed-react";
 import { Check } from "lucide-react";
-import { useEffect } from "react";
 import { Button } from "../ui/button";
 import { BorderBeam } from "../ui/border-beam";
+import Link from "next/link";
 
 const Pricing = () => {
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({ namespace: "discovery-call" });
-      cal("ui", {
-        theme: "dark",
-        styles: { branding: { brandColor: "#FF4500" } },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
-    })();
-  }, []);
   return (
     <section id="pricing" className="w-full px-3">
       <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center mt-6">
@@ -83,17 +71,17 @@ const Pricing = () => {
             </p>
           </div>
           <div
-            data-cal-namespace="discovery-call"
-            data-cal-link="studio-ix-gonodg/discovery-call"
-            data-cal-config='{"layout":"month_view","theme":"dark"}'
             className="w-full mt-6 relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group"
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#FF4500_100%)]" />
-            <span
+            <Link
+              href="https://wa.me/523336767331?text=Hola,%20me%20interesa%20el%20paquete%20Landing%20Express"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white bg-transparent inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full px-2.5 md:px-6 py-1 text-base font-archivo font-medium backdrop-blur-sm"
             >
-              Agendar una Llamada
-            </span>
+              Solicitar información
+            </Link>
           </div>
         </div>
 
@@ -152,17 +140,17 @@ const Pricing = () => {
             </p>
           </div>
           <div
-            data-cal-namespace="discovery-call"
-            data-cal-link="studio-ix-gonodg/discovery-call"
-            data-cal-config='{"layout":"month_view","theme":"dark"}'
             className="w-full mt-6 relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group"
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#FF4500_100%)]" />
-            <span
+            <Link
+              href="https://wa.me/523336767331?text=Hola,%20me%20interesa%20el%20paquete%20Landing%20Pro"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white bg-transparent inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full px-2.5 md:px-6 py-1 text-base font-archivo font-medium backdrop-blur-sm"
             >
-              Agendar una Llamada
-            </span>
+              Solicitar información
+            </Link>
           </div>
         </div>
 
@@ -188,7 +176,7 @@ const Pricing = () => {
               <div className="flex items-center gap-2">
                 <Check className="text-[#FF4500]" />
                 <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Hasta 5 productos cargados
+                  Listo para cargar productos
                 </p>
               </div>
               <div className="flex items-center gap-2">
@@ -212,7 +200,7 @@ const Pricing = () => {
               <div className="flex items-center gap-2">
                 <Check className="text-[#FF4500]" />
                 <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  CMS básico para editar productos
+                  Shopify integrado para gestión de inventario
                 </p>
               </div>
             </div>
@@ -224,17 +212,17 @@ const Pricing = () => {
             </p>
           </div>
           <div
-            data-cal-namespace="discovery-call"
-            data-cal-link="studio-ix-gonodg/discovery-call"
-            data-cal-config='{"layout":"month_view","theme":"dark"}'
             className="w-full mt-6 relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group"
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#FF4500_100%)]" />
-            <span
+            <Link
+              href="https://wa.me/523336767331?text=Hola,%20me%20interesa%20el%20paquete%20Tienda%20Express"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white bg-transparent inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full px-2.5 md:px-6 py-1 text-base font-archivo font-medium backdrop-blur-sm"
             >
-              Agendar una Llamada
-            </span>
+              Solicitar información
+            </Link>
           </div>
         </div>
 
@@ -289,14 +277,16 @@ const Pricing = () => {
               → Cotización final después de una llamada de diagnóstico.
             </p>
           </div>
-          <Button
-            data-cal-namespace="discovery-call"
-            data-cal-link="studio-ix-gonodg/discovery-call"
-            data-cal-config='{"layout":"month_view","theme":"dark"}'
+          <Link
+            href="https://wa.me/523336767331?text=Hola,%20me%20interesa%20el%20paquete%20Web%20a%20Medida"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full z-10 mt-6"
           >
-            Agendar una Llamada
-          </Button>
+            <Button className="w-full">
+              Solicitar información
+            </Button>
+          </Link>
 
           <div className="absolute h-60 aspect-square rounded-full bg-[#FF4500] blur-3xl opacity-50 bottom-0 right-0 z-[1]" />
           <BorderBeam colorFrom="#FF6A00" colorTo="#FF4500" />

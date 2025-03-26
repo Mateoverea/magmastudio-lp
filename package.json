@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@agentdeskai/browser-tools-mcp": "^1.2.1",
-    "@calcom/embed-react": "^1.5.2",
     "@hookform/resolvers": "^3.3.4",
     "@prisma/client": "^6.3.1",
     "@radix-ui/react-accordion": "^1.1.2",
@@ -43,7 +42,6 @@
     "nodemailer": "^6.10.0",
     "prisma": "^6.3.1",
     "react": "^18.3.1",
-    "react-calendly": "^4.3.0",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.2",
     "react-hook-form": "^7.51.3",

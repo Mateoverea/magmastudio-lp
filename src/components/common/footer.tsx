@@ -1,7 +1,6 @@
 "use client";
 
 import { navItems } from "@/constants/data";
-import { getCalApi } from "@calcom/embed-react";
 import { Instagram } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,18 +37,6 @@ const Footer = () => {
     const timer = setInterval(updateTime, 1000);
 
     return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({ namespace: "discovery-call" });
-      cal("ui", {
-        theme: "dark",
-        styles: { branding: { brandColor: "#FF4500" } },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
-    })();
   }, []);
 
   const sectionRef = useRef(null);
@@ -117,15 +104,17 @@ const Footer = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
                     whileHover={{ scale: 1.05 }}
-                    data-cal-namespace="discovery-call"
-                    data-cal-link="MagmaStudio/discovery-call"
-                    data-cal-config='{"layout":"month_view","theme":"dark"}'
                     className="relative inline-flex w-fit h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group mt-6"
                   >
                     <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#FF4500_100%)]" />
-                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#333333] px-3 md:px-6 py-1 text-base font-archivo font-medium text-white backdrop-blur-3xl">
-                      Agenda Una Llamada Ahora
-                    </span>
+                    <Link 
+                      href="https://wa.me/523336767331?text=Hola,%20me%20interesa%20obtener%20más%20información%20sobre%20sus%20servicios"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#333333] px-3 md:px-6 py-1 text-base font-archivo font-medium text-white backdrop-blur-3xl"
+                    >
+                      Contáctanos por WhatsApp
+                    </Link>
                   </motion.div>
                 </div>
               </div>

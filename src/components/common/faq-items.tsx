@@ -63,13 +63,12 @@ export function FaqItems() {
       </AccordionItem>
       <AccordionItem value="item-6">
         <AccordionTrigger>
-          ¿Cuándo comienza el cronograma de seis semanas?
+          ¿Cuándo comienza el tiempo de entrega?
         </AccordionTrigger>
         <AccordionContent>
-          El cronograma comienza después del inicio del proyecto y la recepción de todos
-          los materiales requeridos. Esto incluye contratos firmados, pago inicial y
-          activos del proyecto. Proporcionaremos un calendario detallado durante el
-          inicio para asegurar expectativas y plazos claros.
+          El tiempo de entrega comienza después del inicio del proyecto y la recepción de todos
+          los materiales requeridos. Esto incluye pago inicial y
+          activos del proyecto.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-7">
