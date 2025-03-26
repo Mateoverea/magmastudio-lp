@@ -29,7 +29,7 @@ const Pricing = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto mt-12 max-w-[70rem]">
         {/* Landing Express */}
-        <div className="flex flex-col justify-between items-start p-6 w-full h-auto md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#1A1A1A] border border-[#333333] rounded-3xl">
+        <div className="flex flex-col justify-between items-start p-6 w-full h-auto md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#1A1A1A]/80 backdrop-blur-sm border border-[#333333] rounded-3xl">
           <div>
             <h4 className="font-archivo text-xl md:text-2xl w-full text-white uppercase">
               Landing Express
@@ -90,7 +90,7 @@ const Pricing = () => {
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#FF4500_100%)]" />
             <span
-              className="text-white bg-[#1A1A1A] inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full px-2.5 md:px-6 py-1 text-base font-archivo font-medium backdrop-blur-3xl"
+              className="text-white bg-transparent inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full px-2.5 md:px-6 py-1 text-base font-archivo font-medium backdrop-blur-sm"
             >
               Agendar una Llamada
             </span>
@@ -98,7 +98,7 @@ const Pricing = () => {
         </div>
 
         {/* Landing Pro */}
-        <div className="flex flex-col justify-between items-start p-6 w-full h-auto md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#1A1A1A] border border-[#333333] rounded-3xl">
+        <div className="flex flex-col justify-between items-start p-6 w-full h-auto md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#1A1A1A]/80 backdrop-blur-sm border border-[#333333] rounded-3xl">
           <div>
             <h4 className="font-archivo text-xl md:text-2xl w-full text-white uppercase">
               Landing Pro
@@ -159,7 +159,7 @@ const Pricing = () => {
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#FF4500_100%)]" />
             <span
-              className="text-white bg-[#1A1A1A] inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full px-2.5 md:px-6 py-1 text-base font-archivo font-medium backdrop-blur-3xl"
+              className="text-white bg-transparent inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full px-2.5 md:px-6 py-1 text-base font-archivo font-medium backdrop-blur-sm"
             >
               Agendar una Llamada
             </span>
@@ -167,7 +167,7 @@ const Pricing = () => {
         </div>
 
         {/* Tienda Express */}
-        <div className="flex flex-col justify-between items-start p-6 w-full h-auto md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#1A1A1A] border border-[#333333] rounded-3xl">
+        <div className="flex flex-col justify-between items-start p-6 w-full h-auto md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#1A1A1A]/80 backdrop-blur-sm border border-[#333333] rounded-3xl">
           <div>
             <h4 className="font-archivo text-xl md:text-2xl w-full text-white uppercase">
               Tienda Express
@@ -231,7 +231,7 @@ const Pricing = () => {
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#FF4500_100%)]" />
             <span
-              className="text-white bg-[#1A1A1A] inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full px-2.5 md:px-6 py-1 text-base font-archivo font-medium backdrop-blur-3xl"
+              className="text-white bg-transparent inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full px-2.5 md:px-6 py-1 text-base font-archivo font-medium backdrop-blur-sm"
             >
               Agendar una Llamada
             </span>
@@ -239,7 +239,7 @@ const Pricing = () => {
         </div>
 
         {/* Web a Medida */}
-        <div className="flex flex-col justify-between items-start p-6 w-full h-auto md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#1A1A1A] border border-[#333333] rounded-3xl relative overflow-clip">
+        <div className="flex flex-col justify-between items-start p-6 w-full h-auto md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#1A1A1A]/80 backdrop-blur-sm border border-[#333333] rounded-3xl relative overflow-clip">
           <div className="z-10">
             <h4 className="font-archivo text-xl md:text-2xl w-full text-[#FF4500] uppercase">
               Web a Medida

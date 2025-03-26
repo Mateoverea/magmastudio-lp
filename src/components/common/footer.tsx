@@ -79,11 +79,7 @@ const Footer = () => {
         ease: "linear",
         duration: 120,
       }}
-      style={{
-        backgroundImage: 'url("/images/stars.png")',
-        backgroundPositionY,
-      }}
-      className="w-full h-fit md:h-screen relative md:max-h-screen overflow-hidden px-3 md:px-0"
+      className="custom-gradient-bg w-full h-fit md:h-screen relative md:max-h-screen overflow-hidden px-3 md:px-0"
     >
       <div className="flex flex-col items-center w-full md:h-screen md:justify-between pt-8 md:pt-12 pb-8 md:pb-10">
         <Wrapper className="w-full flex flex-col lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
@@ -127,7 +123,7 @@ const Footer = () => {
                     className="relative inline-flex w-fit h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group mt-6"
                   >
                     <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#FF4500_100%)]" />
-                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#1A1A1A] px-3 md:px-6 py-1 text-base font-archivo font-medium text-white backdrop-blur-3xl">
+                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#333333] px-3 md:px-6 py-1 text-base font-archivo font-medium text-white backdrop-blur-3xl">
                       Agenda Una Llamada Ahora
                     </span>
                   </motion.div>
@@ -222,7 +218,7 @@ const Footer = () => {
                         >
                           <Button 
                             size="icon"
-                            className="bg-[#1A1A1A] hover:bg-[#333333] transition-colors duration-300"
+                            className="bg-[#333333] hover:bg-white transition-colors duration-300"
                           >
                             <FaDribbble className="scale-125 text-[#FF4500]" />
                           </Button>
@@ -234,7 +230,7 @@ const Footer = () => {
                         >
                           <Button 
                             size="icon" 
-                            className="bg-[#1A1A1A] hover:bg-[#333333] transition-colors duration-300"
+                            className="bg-[#333333] hover:bg-white transition-colors duration-300"
                           >
                             <Instagram className="scale-100 text-[#FF4500]" />
                           </Button>
@@ -246,7 +242,7 @@ const Footer = () => {
                         >
                           <Button 
                             size="icon"
-                            className="bg-[#1A1A1A] hover:bg-[#333333] transition-colors duration-300"
+                            className="bg-[#333333] hover:bg-white transition-colors duration-300"
                           >
                             <FaGithub className="scale-125 text-[#FF4500]" />
                           </Button>
@@ -258,7 +254,7 @@ const Footer = () => {
                         >
                           <Button 
                             size="icon"
-                            className="bg-[#1A1A1A] hover:bg-[#333333] transition-colors duration-300"
+                            className="bg-[#333333] hover:bg-white transition-colors duration-300"
                           >
                             <FaXTwitter className="scale-125 text-[#FF4500]" />
                           </Button>
@@ -308,7 +304,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 z-[-1] -mt-80 rotate-180 w-full [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#FF4500_100%)]"></div>
     </motion.section>
   );
 };

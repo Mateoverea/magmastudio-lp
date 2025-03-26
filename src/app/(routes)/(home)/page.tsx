@@ -46,27 +46,27 @@ export default function Home() {
       </AnimatePresence>
       <BackToTop />
       <StickyCursor />
-      <ChatwootWidget />
+      {/* <ChatwootWidget /> */}
       <Hero />
       {/* <Video /> */}
-      <div className="md:h-[8rem]" />
+      
+      {/* Start of custom gradient background section */}
+      <div className="custom-gradient-bg">
         <SocialProof />
-      <div className="h-[3rem] md:h-[4rem] bg-black" />
         <Cards />
-      <div className=" h-[6rem]" />
         <OurProcess />
-      <div className=" hidden md:block">
-        <AllProjects />
-      </div>
-      <div className="  md:hidden">
-        <AllProjectsMobile />
-      </div>
-      <div className=" h-[6rem]" />
+        <div className="hidden md:block">
+          <AllProjects />
+        </div>
+        <div className="md:hidden">
+          <AllProjectsMobile />
+        </div>
         <Pricing />
-      <div className=" h-[6rem]" />
-        {/* <Testimonials /> */}
         <FAQs />
         <Cta />
+      </div>
+      {/* End of custom gradient background section */}
+      
     </div>
   );
 }

@@ -30,7 +30,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
     <div ref={container} className="cardContainer">
       <motion.div
         style={{
-          backgroundColor: `${color}`,
+          backgroundColor: '#333333',
           top: `0px`,
         }}
         className="card w-full overflow-y-clip"

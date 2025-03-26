@@ -12,7 +12,7 @@ const SocialProof = () => {
   const [hovered2, setHovered2] = useState(false);
   const [hovered3, setHovered3] = useState(false);
   return (
-    <section className=" pt-12 pb-12 md:pt-0 md:pb-12">
+    <section className="pt-0 pb-12 md:pt-0 md:pb-12">
       <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-12 py-20">
         <div className="flex flex-col gap-2">
           <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">
@@ -34,7 +34,7 @@ const SocialProof = () => {
           <div
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className=" relative rounded-3xl overflow-clip group text-white w-full h-fit p-8 flex flex-col items-start hover:bg-transparent bg-[#090909] border border-[#272727]"
+            className=" relative rounded-3xl overflow-clip group text-white w-full h-fit p-8 flex flex-col items-start hover:bg-[#333333]/70 bg-[#333333]/70 backdrop-blur-sm border border-[#272727]"
           >
             <AnimatePresence>
               {hovered && (
@@ -48,7 +48,7 @@ const SocialProof = () => {
                     animationSpeed={5}
                     containerClassName="bg-transparent"
                     colors={[
-                      [153, 153, 153], // Gris claro (#999999)
+                      [122, 41, 14], // Volcanico (#7a290e)
                       [255, 165, 0], // Naranja (#FFA500)
                     ]}
                     opacities={[0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.4, 0.4, 0.4, 1]}
@@ -66,12 +66,12 @@ const SocialProof = () => {
             <p className="z-10 font-archivo font-normal text-lg text-white/70 group-hover:text-white/100">
               Entregamos tu primer prototipo en poco tiempo, para que puedas visualizar tu producto.
             </p>
-            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
+            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-transparent dark:bg-black/10" />
           </div>
           <div
             onMouseEnter={() => setHovered2(true)}
             onMouseLeave={() => setHovered2(false)}
-            className=" relative rounded-3xl overflow-clip group text-white w-full h-fit p-8 flex flex-col items-start hover:bg-transparent bg-[#090909] border border-[#272727]"
+            className=" relative rounded-3xl overflow-clip group text-white w-full h-fit p-8 flex flex-col items-start hover:bg-[#333333]/70 bg-[#333333]/70 backdrop-blur-sm border border-[#272727]"
           >
             <AnimatePresence>
               {hovered2 && (
@@ -85,7 +85,7 @@ const SocialProof = () => {
                     animationSpeed={5}
                     containerClassName="bg-transparent"
                     colors={[
-                      [153, 153, 153], // Gris claro (#999999)
+                      [122, 41, 14], // Volcanico (#7a290e)
                       [255, 165, 0], // Naranja (#FFA500)
                     ]}
                     opacities={[0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.4, 0.4, 0.4, 1]}
@@ -108,7 +108,7 @@ const SocialProof = () => {
           <div
             onMouseEnter={() => setHovered3(true)}
             onMouseLeave={() => setHovered3(false)}
-            className=" relative rounded-3xl overflow-clip group text-white w-full h-fit p-8 flex flex-col items-start hover:bg-transparent bg-[#090909] border border-[#272727]"
+            className=" relative rounded-3xl overflow-clip group text-white w-full h-fit p-8 flex flex-col items-start hover:bg-[#333333]/70 bg-[#333333]/70 backdrop-blur-sm border border-[#272727]"
           >
             <AnimatePresence>
               {hovered3 && (
@@ -122,7 +122,7 @@ const SocialProof = () => {
                     animationSpeed={5}
                     containerClassName="bg-transparent"
                     colors={[
-                      [153, 153, 153], // Gris claro (#999999)
+                      [122, 41, 14], // Volcanico (#7a290e)
                       [255, 165, 0], // Naranja (#FFA500)
                     ]}
                     opacities={[0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.4, 0.4, 0.4, 1]}
@@ -144,7 +144,7 @@ const SocialProof = () => {
           </div>
         </div>
       </Wrapper>
-      <div className=" h-12 md:h-[5rem]" />
+      <div className="h-6 md:h-[2rem]" />
       <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-20">
         <div className="flex flex-col gap-2">
           <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">
@@ -160,7 +160,7 @@ const SocialProof = () => {
 
           <Stat num={3} subheading="Clientes Satisfechos" />
 
-          <Stat num={10} subheading="Startups Financiadas" />
+          <Stat num={0} subheading="Tiendas Creadas" />
         </div>
       </Wrapper>
     </section>

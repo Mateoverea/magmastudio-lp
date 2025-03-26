@@ -13,7 +13,7 @@ const AllProjects = () => {
   const isInView = useInView(containerRef, { once: false, amount: 0.2 });
 
   return (
-    <section id="portfolio" className="w-full bg-[#1A1A1A] py-20 md:py-32">
+    <section id="portfolio" className="w-full py-20 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-16 md:mb-24">
@@ -23,10 +23,10 @@ const AllProjects = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="uppercase font-cabinetGrotesk font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tighter text-white text-center mt-6">
-              Nuestros Proyectos
+            <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center mt-6">
+            Nuestros Proyectos
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg md:text-xl mt-4">
+            <p className="font-archivo max-w-[52ch] mx-auto text-lg md:text-xl text-white/80 text-center w-full mt-2">
               Transformamos ideas en experiencias digitales excepcionales
             </p>
           </motion.div>
@@ -60,7 +60,7 @@ const ProjectCard = ({ project, index }: { project: CardType; index: number }) =
     >
       <Link href={project.url} className="block">
         {/* Image Container */}
-        <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-black/10">
+        <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
           <Image
             src={project.images[0]}
             alt={project.title}

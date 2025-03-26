@@ -43,7 +43,7 @@ const Hero = () => {
       <div className="h-screen relative w-full">
         <Image
           fill
-          src="/lava/lavabg.png"
+          src="/lava/bg3.webp"
           quality={100}
           className=" object-cover"
           alt="Hero bg"

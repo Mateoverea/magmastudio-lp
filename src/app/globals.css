@@ -236,6 +236,14 @@
 
 /* End Back To Top */
 
+/* Custom Gradient Background */
+.custom-gradient-bg {
+  background: url("/noise.png"), radial-gradient(circle, rgb(153 141 160) 0%, rgb(99 115 145) 100%);
+  background-size: 150px, 100% 100vh;
+  background-attachment: fixed;
+}
+/* End Custom Gradient Background */
+
 /* Feature Cards */
 .cardContainer {
   width: 100vw;
@@ -605,3 +613,11 @@
     transition-timing-function: unset;
   }
 }
+
+/* Custom Gradient Background */
+.custom-gradient-bg {
+  background: url("/noise.png"), linear-gradient(180deg, rgba(154,154,154,1) 0%, rgba(201,200,200,1) 100%);
+  background-size: 150px, 100% 100vh;
+  background-attachment: fixed;
+}
+/* End Custom Gradient Background */

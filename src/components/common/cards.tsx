@@ -46,7 +46,7 @@ const Cards: React.FC<CardsProps> = () => {
     <div
       id="services"
       ref={container}
-      className="flex flex-col items-center bg-black"
+      className="flex flex-col items-center"
     >
       <Wrapper
         className={`flex flex-col justify-center w-full px-3 md:px-10 sticky pb-12 top-20 md:top-20 lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]`}

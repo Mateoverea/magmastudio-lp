@@ -33,7 +33,7 @@ const Card = ({ card }: { card: CardType }) => {
       </div>
       <div className="mt-4">
         <div className="flex flex-wrap gap-2">
-          <div className="bg-[#1A1A1A] flex items-center text-white font-archivo text-lg border border-[#333333] rounded-full w-fit px-4 py-1">
+          <div className="bg-[#1A1A1A]/80 backdrop-blur-sm flex items-center text-white font-archivo text-lg border border-[#333333] rounded-full w-fit px-4 py-1">
             <Code className="mr-2" /> Desarrollo Web
           </div>
           <div className="bg-[#FF4500] flex items-center text-white font-archivo text-lg rounded-full w-fit px-4 py-1">
