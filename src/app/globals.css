@@ -616,7 +616,7 @@
 
 /* Custom Gradient Background */
 .custom-gradient-bg {
-  background: url("/noise.png"), linear-gradient(180deg, rgba(154,154,154,1) 0%, rgba(201,200,200,1) 100%);
+  background: url("/noise.png"), rgb(154,154,154);
   background-size: 150px, 100% 100vh;
   background-attachment: fixed;
 }
