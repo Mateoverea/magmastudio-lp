@@ -156,17 +156,17 @@ const Footer = () => {
                     </h3>
                     <div className="flex flex-col items-start gap-2 mt-4">
                       <AnimatedLink
-                        link="/legals/terms"
+                        link=""
                         text="Términos y Condiciones"
                         className="text-sm md:text-base"
                       />
                       <AnimatedLink
-                        link="/legals/privacy-policy"
+                        link=""
                         text="Política de Privacidad"
                         className="text-sm md:text-base"
                       />
                       <AnimatedLink
-                        link="/legals/cookie-policy"
+                        link=""
                         text="Política de Cookies"
                         className="text-sm md:text-base"
                       />
@@ -185,12 +185,12 @@ const Footer = () => {
                     </h3>
                     <div className="flex flex-col items-start gap-2 mt-4">
                       <AnimatedLink
-                        link="https://res.cloudinary.com/magmastudio/image/upload/v1738951199/PDF/Magma_Studio_Company_Deck.pdf"
+                        link=""
                         text="Presentación Corporativa"
                         className="text-sm md:text-base"
                       />
                       <AnimatedLink
-                        link="https://res.cloudinary.com/magmastudio/image/upload/v1738945596/PDF/Guia_MVP_Magma_Studio.pdf"
+                        link=""
                         text="Guía MVP Gratuita"
                         className="text-sm md:text-base"
                       />
@@ -203,7 +203,7 @@ const Footer = () => {
                         <Link
                           rel="noopener noreferrer"
                           target="_blank"
-                          href="https://dribbble.com/magmastudiomx"
+                          href=""
                         >
                           <Button 
                             size="icon"
@@ -215,7 +215,7 @@ const Footer = () => {
                         <Link
                           rel="noopener noreferrer"
                           target="_blank"
-                          href="https://instagram.com/magmastudiomx"
+                          href=""
                         >
                           <Button 
                             size="icon" 
@@ -227,7 +227,7 @@ const Footer = () => {
                         <Link
                           rel="noopener noreferrer"
                           target="_blank"
-                          href="https://github.com/MagmaStudioMX"
+                          href=""
                         >
                           <Button 
                             size="icon"
@@ -239,7 +239,7 @@ const Footer = () => {
                         <Link
                           rel="noopener noreferrer"
                           target="_blank"
-                          href="https://twitter.com/magmastudiomx"
+                          href=""
                         >
                           <Button 
                             size="icon"

@@ -16,12 +16,12 @@ const SocialProof = () => {
       <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-12 py-20">
         <div className="flex flex-col gap-2">
           <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">
-            Construye Rápido <br className=" hidden md:block" />
+            <br className=" hidden md:block" />
             Impulsa tu Negocio Digital
           </h2>
           <p className="font-archivo md:max-w-[60ch] text-lg md:text-xl text-white/80 text-center w-full mx-auto">
             <span className="hidden md:inline text-center block">
-              La presencia digital es crucial para las startups. Te ayudamos a construir productos que
+              La presencia digital es crucial para las empresas. Te ayudamos a construir productos que
               te posicionan de la mejor forma para crecer.
             </span>
             <span className="md:hidden text-center block">

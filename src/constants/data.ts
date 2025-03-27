@@ -27,12 +27,12 @@ export const portfolio = [
 
 export const navItems = [
   {
-    title: "Cómo Funciona",
-    href: "/#how-it-works",
-  },
-  {
     title: "Servicios",
     href: "/#services",
+  },
+  {
+    title: "Cómo Funciona",
+    href: "/#how-it-works",
   },
   {
     title: "Portafolio",
@@ -50,16 +50,16 @@ export const navItems = [
 
 export const navItemsMobile = [
   {
-    title: "Portafolio",
-    href: "/#portfolio-mobile",
+    title: "Servicios",
+    href: "/#services",
   },
   {
-    title: "Cómo Funciona",
+    title: "Proceso",
     href: "/#how-it-works",
   },
   {
-    title: "Servicios",
-    href: "/#services",
+    title: "Portafolio",
+    href: "/#portfolio",
   },
   {
     title: "Precios",
