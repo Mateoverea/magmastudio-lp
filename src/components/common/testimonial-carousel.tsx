@@ -26,7 +26,7 @@ const TestimonialCarousel = () => {
     <>
       <AnimatePresence mode="wait">
         <div className="flex flex-col h-fit w-full items-end">
-          <div className=" w-full h-full flex flex-col md:flex-row items-start gap-8 md:gap-20 justify-between mt-12">
+          <div className="w-full h-full flex flex-col md:flex-row items-start gap-8 md:gap-20 justify-between mt-12">
             <motion.div
               key={currentIndex}
               initial={{ opacity: 0, x: 100 }}
@@ -34,13 +34,18 @@ const TestimonialCarousel = () => {
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
               className="relative w-full md:w-[55%] h-[28rem] md:h-[40rem]"
+              style={{ aspectRatio: '3/4' }}
             >
               <Image
-                fill
-                quality={100}
                 src={testimonial.image}
+                quality={90}
                 className="object-cover object-top rounded-xl grayscale hover:grayscale-0 transition-all ease-in-out duration-500"
                 alt={testimonial.name}
+                width={800}
+                height={1067}
+                sizes="(max-width: 768px) 100vw, 55vw"
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
               />
             </motion.div>
 
@@ -62,8 +67,13 @@ const TestimonialCarousel = () => {
               </div>
 
               <div className="flex flex-col items-start gap-4">
-                <div className=" w-12 md:w-16 h-auto relative aspect-square">
-                  <Image fill src="/images/quotes.svg" alt="Quote" />
+                <div className="w-12 md:w-16 h-auto relative aspect-square">
+                  <Image 
+                    src="/images/quotes.svg" 
+                    alt="Quote" 
+                    width={64}
+                    height={64}
+                  />
                 </div>
                 <motion.h2
                   key={`text-${currentIndex}`}
@@ -71,7 +81,7 @@ const TestimonialCarousel = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -80 }}
                   transition={{ duration: 0.5 }}
-                  className="uppercase w-full font-cabinetGrotesk tracking-tighter font-medium text-white text-4xl md:text-6xl text-start "
+                  className="uppercase w-full font-cabinetGrotesk tracking-tighter font-medium text-white text-4xl md:text-6xl text-start"
                 >
                   {testimonial.review}
                 </motion.h2>
@@ -84,13 +94,13 @@ const TestimonialCarousel = () => {
         <div className="flex items-center gap-2">
           <div
             onClick={prevTestimonial}
-            className=" h-14 aspect-square rounded-full bg-[#1E1E1E] hover:bg-primary cursor-pointer text-white flex items-center justify-center"
+            className="h-14 aspect-square rounded-full bg-[#1E1E1E] hover:bg-primary cursor-pointer text-white flex items-center justify-center"
           >
             <ChevronLeft />
           </div>
           <div
             onClick={nextTestimonial}
-            className=" h-14 aspect-square rounded-full bg-[#1E1E1E] hover:bg-primary cursor-pointer text-white flex items-center justify-center"
+            className="h-14 aspect-square rounded-full bg-[#1E1E1E] hover:bg-primary cursor-pointer text-white flex items-center justify-center"
           >
             <ChevronRight />
           </div>

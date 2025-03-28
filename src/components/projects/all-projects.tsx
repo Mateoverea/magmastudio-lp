@@ -58,18 +58,22 @@ const ProjectCard = ({ project, index }: { project: CardType; index: number }) =
       onMouseLeave={() => setIsHovered(false)}
     >
       <Link href={project.url} className="block">
-        {/* Image Container */}
-        <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+        {/* Image Container - Adjusted aspect ratio for better display on all devices */}
+        <div className="relative aspect-[16/9] sm:aspect-[16/10] overflow-hidden rounded-2xl">
           <Image
             src={project.images[0]}
             alt={project.title}
-            fill
+            width={1200}
+            height={675}
+            sizes="(max-width: 640px) 95vw, (max-width: 768px) 90vw, (max-width: 1024px) 45vw, 600px"
             className={cn(
-              "object-cover transition-all duration-700",
+              "object-cover object-center transition-all duration-700 w-full h-full",
               isHovered ? "scale-105 blur-[2px]" : "scale-100"
             )}
             quality={90}
             priority={index <= 1}
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
           />
           
           {/* Overlay */}

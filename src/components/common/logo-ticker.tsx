@@ -9,21 +9,21 @@ const LogoTicker = () => {
   return (
     <section>
       <Wrapper className="w-full flex flex-col items-start lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
-        <h2 className=" text-white font-archivo w-full text-center md:text-start  text-base md:text-lg uppercase opacity-80 md:opacity-100">
+        <h2 className="text-white font-archivo w-full text-center md:text-start text-base md:text-lg uppercase opacity-80 md:opacity-100">
           Tu espacio para innovar
         </h2>
 
         <div className="flex items-center mt-4">
           <div className="flex flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
             <Marquee direction="right" autoFill>
-              <div className=" hidden md:block">
-                <motion.div className=" flex flex-none">
+              <div className="hidden md:block">
+                <motion.div className="flex flex-none">
                   {companyLogo.map((logo, idx) => (
                     <Image
                       width={220}
-                      height={10}
-                      quality={100}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      height={80}
+                      quality={90}
+                      sizes="(max-width: 768px) 100vw, 220px"
                       src={`/companies/${logo}`}
                       alt="Company logo"
                       className={`object-contain filter brightness-0 invert ${
@@ -46,13 +46,14 @@ const LogoTicker = () => {
                   ))}
                 </motion.div>
               </div>
-              <div className="  md:hidden">
-                <motion.div className=" flex flex-none">
+              <div className="md:hidden">
+                <motion.div className="flex flex-none">
                   {companyLogo.map((logo, idx) => (
                     <Image
                       width={180}
-                      height={10}
-                      quality={100}
+                      height={60}
+                      quality={90}
+                      sizes="180px"
                       src={`/companies/${logo}`}
                       alt="Company logo"
                       className={`object-contain filter brightness-0 invert ${

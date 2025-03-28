@@ -81,29 +81,33 @@ export const Navigation = () => {
           className={cn(
             "flex fixed top-0 2xl:top-0 w-full z-[2147483000]",
             scrolled
-              ? " bg-[#1A1A1A]/90 backdrop-blur-md"
+              ? "bg-[#1A1A1A]/90 backdrop-blur-md"
               : "bg-[#1A1A1A]/90 backdrop-blur-md",
             "py-3 md:py-2.5"
           )}
         >
           <Wrapper className="w-full flex flex-row justify-between items-center md:px-0 lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
-            <Link href="/">
-              <div className=" relative w-[42px] h-[42px] hover:scale-110 ease-in-out transition-all duration-200  md:hidden">
+            <Link href="/" className="flex items-center">
+              <div className="flex items-center justify-center w-[52px] h-[52px] hover:scale-110 ease-in-out transition-all duration-200 md:hidden">
                 <Image
+                  width={100}
+                  height={42}
                   quality={100}
-                  className=" object-contain"
-                  fill
+                  className="object-contain"
                   src="/logo/logo_white.svg"
                   alt="Logo de Magma Studio"
+                  priority
                 />
               </div>
-              <div className=" relative w-[152px] h-[42px] hover:scale-110 ease-in-out transition-all duration-200 hidden md:block">
+              <div className="flex items-center justify-center w-[180px] h-[50px] hover:scale-110 ease-in-out transition-all duration-200 hidden md:block mb-6">
                 <Image
+                  width={160}
+                  height={40}
                   quality={100}
-                  className=" object-contain"
-                  fill
+                  className="object-contain"
                   src="/logo/logo_white.svg"
                   alt="Logo de Magma Studio"
+                  priority
                 />
               </div>
             </Link>
@@ -127,7 +131,7 @@ export const Navigation = () => {
             <aside className="flex items-center gap-4">
               <ContactDrawer />
 
-              <div className=" md:hidden">
+              <div className="md:hidden">
                 <div>
                   <motion.button
                     initial="hide"

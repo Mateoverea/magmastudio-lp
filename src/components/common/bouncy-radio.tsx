@@ -7,7 +7,7 @@ interface BouncyComponentProps {
 
 const BouncyComponent: React.FC<BouncyComponentProps> = ({ disabled }) => {
   const { setValue, watch } = useFormContext();
-  const selectedOption = watch("projectType") || "web-application";
+  const selectedOption = watch("projectType") || "projectType";
 
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue("projectType", event.target.value, {
@@ -38,8 +38,8 @@ const BouncyComponent: React.FC<BouncyComponentProps> = ({ disabled }) => {
             selectedOption === "landing-page" ? "text-white" : "text-black"
           } hidden z-10 font-archivo font-normal text-xl py-2 px-6`}
         >
-          <span className="md:hidden">Landing Page</span>{" "}
-          <span className="hidden md:block">Landing Page</span>
+          <span className="md:hidden">Landing</span>{" "}
+          <span className="hidden md:block">Landing</span>
         </label>
 
         <input
@@ -57,7 +57,7 @@ const BouncyComponent: React.FC<BouncyComponentProps> = ({ disabled }) => {
             selectedOption === "e-commerce" ? "text-white" : "text-black"
           } hidden z-10 font-archivo font-normal text-xl py-2 px-0`}
         >
-          E-commerce
+          Ecommerce
         </label>
 
         <input

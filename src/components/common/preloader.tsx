@@ -57,11 +57,13 @@ const Preloader = () => {
           <Wrapper className="flex flex-col h-dvh justify-center items-center">
             <div></div>
             <div className="w-full flex flex-col items-center z-[50]">
-              <div className="relative w-[152px] h-[42px] scale-125">
+              <div className="relative w-[180px] h-[50px] scale-[1.1] sm:scale-[1.25] md:scale-[1.5]">
                 <Image
+                  width={180}
+                  height={50}
                   quality={100}
-                  className=" object-contain"
-                  fill
+                  className="object-contain"
+                  priority
                   src="/logo/logo_white.svg"
                   alt="MAGMA STUDIO"
                 />

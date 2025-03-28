@@ -93,6 +93,34 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        {/* Add preconnect for important domains to improve TTFB */}
+        <link rel="preconnect" href="https://cdn.sanity.io" />
+        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+        
+        {/* Add preload for critical assets */}
+        <link 
+          rel="preload" 
+          href="/logo/logo_white.svg" 
+          as="image" 
+          type="image/svg+xml" 
+        />
+        
+        {/* Avoid layout shift by preloading key fonts */}
+        <link
+          rel="preload"
+          href="/assets/fonts/archivo.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/assets/fonts/cabinet-grotesk.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

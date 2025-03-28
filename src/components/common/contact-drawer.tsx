@@ -106,18 +106,16 @@ export function ContactDrawer() {
       </DrawerTrigger>
       <DrawerContent>
         <div className="h-fit md:h-[75dvh] py-5 md:py-6 w-full flex flex-col md:flex-row justify-between items-start md:items-center px-3 md:px-20">
-          <div className="md:w-[45%] flex flex-col items-start w-full">
+          <div className="md:w-[45%] flex flex-col items-start w-full lg:mt-10">
             <div className="hidden md:block text-start">
-              <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-7xl text-[#1A1A1A] text-start md:mt-0">
-                Nos
+              <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-6xl text-[#1A1A1A] text-start md:mt-0">
+                Nos Alegra
               </h2>
-              <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-7xl text-[#1A1A1A] text-start md:-mt-3">
-                Alegra
-              </h2>
-              <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-7xl text-[#1A1A1A] text-start md:-mt-3">
+              
+              <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-6xl text-[#1A1A1A] text-start md:-mt-3">
                  Que Hayas Elegido
               </h2>
-              <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-7xl text-[#7a290e] text-start md:-mt-3">
+              <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-6xl text-[#7a290e] text-start md:-mt-3">
                 Magma Studio®
               </h2>
             </div>

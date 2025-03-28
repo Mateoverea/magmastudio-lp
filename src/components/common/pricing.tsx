@@ -166,7 +166,7 @@ const Pricing = () => {
             <div className="flex flex-col gap-2 mt-4">
               {[
                 "Sitio completamente personalizado",
-                "Hasta 5 secciones clave",
+                "Hasta 8 secciones clave",
                 "Animaciones e interacciones avanzadas",
                 "Optimización SEO y performance",
                 "Responsive y adaptable a todos los dispositivos",
