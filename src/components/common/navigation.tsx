@@ -115,7 +115,7 @@ export const Navigation = () => {
                     <Link 
                       key={index} 
                       href={item.href}
-                      className="text-white hover:scale-110 transition-transform duration-200 ease-in-out opacity-70 hover:opacity-100 uppercase text-sm tracking-wider"
+                      className="text-white hover:scale-110 transition-transform duration-200 ease-in-out opacity-70 hover:opacity-100 uppercase text-lg tracking-wider font-cabinetGrotesk font-semibold"
                     >
                       {item.title}
                     </Link>

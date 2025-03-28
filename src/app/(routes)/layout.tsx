@@ -3,6 +3,7 @@ import "../globals.css";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import Footer from "@/components/common/footer";
 import { Navigation } from "@/components/common/navigation";
@@ -17,9 +18,9 @@ export const metadata: Metadata = {
   keywords: [
     "Agencia de desarrollo Web",
     "Constructor de MVP para startups",
-    "Desarrollo rápido de MVP",
-    "Desarrollo de MVP",
-    "Producto mínimo viable",
+    "Desarrollo de landing pages",
+    "Desarrollo de tiendas online",
+    "Desarrollo de sistemas web",
     "Agencia para startups tecnológicas",
     "Prototipado rápido",
     "Estrategia de producto",
@@ -30,27 +31,58 @@ export const metadata: Metadata = {
     "Desarrollo de aplicaciones web",
     "Desarrollo de aplicaciones móviles",
     "Desarrollo full-stack",
+    "Diseño web Guadalajara",
+    "Desarrollo web México",
+    "Agencia digital Jalisco",
+    "Diseño de sitios web",
+    "Optimización SEO"
   ],
-  title: "Magma Studio — Desarrollo Web",
+  title: "Magma Studio — Desarrollo Web Profesional en Guadalajara",
   description:
-    "Somos una agencia de desarrollo web que transforma ideas en productos escalables y listos para el mercado.",
+    "Somos una agencia de desarrollo web en Guadalajara que transforma ideas en productos digitales escalables. Especialistas en landing pages, e-commerce y desarrollo de software.",
   openGraph: {
-    title: "Magma Studio — Desarrollo Web",
+    title: "Magma Studio — Desarrollo Web Profesional en Guadalajara",
     siteName: "Magma Studio",
     description:
-      "Somos una agencia de desarrollo web que transforma ideas en productos escalables y listos para el mercado.",
-    images: ["/images/thumbnail.png"],
+      "Somos una agencia de desarrollo web en Guadalajara que transforma ideas en productos digitales escalables. Especialistas en landing pages, e-commerce y desarrollo de software.",
+    images: [
+      {
+        url: "/images/thumbnail.png",
+        width: 1200,
+        height: 630,
+        alt: "Magma Studio - Agencia de Desarrollo Web"
+      }
+    ],
     url: `${baseUrl}`,
+    locale: "es_MX",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Magma Studio — Desarrollo Web",
+    title: "Magma Studio — Desarrollo Web Profesional en Guadalajara",
     description:
-      "Somos una agencia de desarrollo web que transforma ideas en productos escalables y listos para el mercado.",
+      "Somos una agencia de desarrollo web en Guadalajara que transforma ideas en productos digitales escalables. Especialistas en landing pages, e-commerce y desarrollo de software.",
     images: ["/images/thumbnail.png"],
     creator: "@magmastudiomx",
   },
   icons: "/favicon.ico",
+  alternates: {
+    canonical: baseUrl,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-site-verification',
+  },
 };
 
 export default function RootLayout({
@@ -60,6 +92,41 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Magma Studio",
+              url: baseUrl,
+              logo: `${baseUrl}/images/logo.png`,
+              description: "Agencia de desarrollo web en Guadalajara especializada en landing pages, e-commerce y desarrollo de software.",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Guadalajara, Jalisco",
+                addressLocality: "Guadalajara",
+                addressRegion: "Jalisco",
+                postalCode: "44100",
+                addressCountry: "MX"
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+52-33-XXXX-XXXX",
+                contactType: "customer service",
+                areaServed: "MX",
+                availableLanguage: ["Spanish", "English"]
+              },
+              sameAs: [
+                "https://twitter.com/magmastudiomx",
+                "https://linkedin.com/company/magma-studio",
+                "https://instagram.com/magmastudio"
+              ]
+            })
+          }}
+        />
+      </head>
       <body
         className={cn(
           "antialiased bg-[#1A1A1A] select-none",
@@ -81,10 +148,10 @@ export default function RootLayout({
           }}
         />
         <Analytics />
+        <SpeedInsights />
         <Navigation />
         <div className="min-h-screen w-full">{children}</div>
         <Footer />
-        {/* <Popup /> */}
       </body>
     </html>
   );

@@ -1,11 +1,46 @@
 import { MetadataRoute } from "next";
 
 const pages = [
-  "",
-  "/blog",
-  "/legals/terms",
-  "/legals/privacy-policy",
-  "/legals/cookie-policy",
+  {
+    path: "",
+    priority: 1.0,
+    changeFrequency: "weekly" as const,
+  },
+  {
+    path: "/blog",
+    priority: 0.9,
+    changeFrequency: "daily" as const,
+  },
+  {
+    path: "/projects",
+    priority: 0.8,
+    changeFrequency: "weekly" as const,
+  },
+  {
+    path: "/services",
+    priority: 0.8,
+    changeFrequency: "monthly" as const,
+  },
+  {
+    path: "/contact",
+    priority: 0.7,
+    changeFrequency: "monthly" as const,
+  },
+  {
+    path: "/legals/terms",
+    priority: 0.3,
+    changeFrequency: "yearly" as const,
+  },
+  {
+    path: "/legals/privacy-policy",
+    priority: 0.3,
+    changeFrequency: "yearly" as const,
+  },
+  {
+    path: "/legals/cookie-policy",
+    priority: 0.3,
+    changeFrequency: "yearly" as const,
+  },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -13,17 +48,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const wwwBaseUrl = "https://www.magmastudio.pro";
 
   const staticPages = pages.map((page) => ({
-    url: `${baseUrl}${page}`,
+    url: `${baseUrl}${page.path}`,
     lastModified: new Date().toISOString().split("T")[0],
-    changeFrequency: "yearly" as const,
-    priority: 0.8,
+    changeFrequency: page.changeFrequency,
+    priority: page.priority,
   }));
 
   const staticPagesWWW = pages.map((page) => ({
-    url: `${wwwBaseUrl}${page}`,
+    url: `${wwwBaseUrl}${page.path}`,
     lastModified: new Date().toISOString().split("T")[0],
-    changeFrequency: "yearly" as const,
-    priority: 0.8,
+    changeFrequency: page.changeFrequency,
+    priority: page.priority,
   }));
 
   // Unir las URL normales y las www

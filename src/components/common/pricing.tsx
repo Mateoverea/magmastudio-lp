@@ -155,7 +155,7 @@ const Pricing = () => {
         <div className="flex flex-col justify-between items-start p-6 w-full h-auto md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#1A1A1A]/80 backdrop-blur-sm border border-[#333333] rounded-3xl relative overflow-clip">
           <div className="z-10">
             <h4 className="font-archivo text-xl md:text-2xl w-full text-[#FF4500] uppercase">
-              Web a Medida
+              Web a la Medida
             </h4>
             <p className="font-archivo text-lg md:text-xl w-full text-white/70 mt-2">
               Para empresas o startups que necesitan una solución digital robusta, escalable y totalmente personalizada.
@@ -178,7 +178,7 @@ const Pricing = () => {
               ))}
             </div>
             <p className="font-archivo text-base text-white mt-4">
-              <span className="font-semibold">Extras opcionales:</span> Ecommerce, integraciones API, contenido multi-idioma, migraciones.
+              <span className="font-semibold">Extras opcionales:</span> Ecommerce, integraciones API, contenido multi-idioma, migraciones, inteligencia artificial integrada.
             </p>
             <p className="font-archivo text-base md:text-lg text-white mt-2 italic">
               → Pensado para proyectos con visión grande y necesidades específicas.

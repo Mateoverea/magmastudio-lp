@@ -20,7 +20,7 @@ export const features = [
     text: "white",
   },
   {
-    title: "03. Software a la Medida",
+    title: "03. Software",
     description:
       "Desarrollamos plataformas y sistemas web adaptados a tu operación. Escalables, eficientes y listos para crecer contigo.",
     descriptionMobile:
