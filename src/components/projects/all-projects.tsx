@@ -1,8 +1,7 @@
 "use client";
 
-import { slideUp2 } from "@/anim/anim";
 import { cn } from "@/lib/utils";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useInView} from "framer-motion";
 import { ArrowUpRight, Code } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

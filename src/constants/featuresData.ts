@@ -2,29 +2,29 @@ export const features = [
   {
     title: "01. Landing Page",
     description:
-      "Creamos una landing page para que puedas presentar tu producto y obtener feedback de los usuarios.",
+      "Diseñamos páginas rápidas y modernas enfocadas en conversión. Perfectas para validar una idea o lanzar un producto.",
     descriptionMobile:
-      "Creamos una landing page para que puedas presentar tu producto y obtener feedback de los usuarios.",
+      "Diseñamos páginas rápidas y modernas enfocadas en conversión. Perfectas para validar una idea o lanzar un producto.",
     src: "lava4.png",
     color: "#000000",
     text: "white",
   },
   {
-    title: "02. Diseño UX",
+    title: "02. MVP Rápido",
     description:
-      "Creamos experiencias de usuario intuitivas a través de wireframes y prototipos que combinan estética con funcionalidad.",
+      "Creamos un prototipo funcional para que valides tu idea con usuarios reales sin perder tiempo ni dinero.",
     descriptionMobile:
-      "Creamos experiencias de usuario intuitivas a través de wireframes y prototipos que combinan estética con funcionalidad.",
+      "Creamos un prototipo funcional para que valides tu idea con usuarios reales sin perder tiempo ni dinero.",
     src: "lava5.png",
     color: "#000000",
     text: "white",
   },
   {
-    title: "03. FULL-STACK",
+    title: "03. Software a la Medida",
     description:
-      "Construimos soluciones robustas y escalables utilizando experiencia full-stack para resultados de alto rendimiento.",
+      "Desarrollamos plataformas y sistemas web adaptados a tu operación. Escalables, eficientes y listos para crecer contigo.",
     descriptionMobile:
-      "Construimos soluciones robustas y escalables utilizando experiencia full-stack para resultados de alto rendimiento.",
+      "Desarrollamos plataformas y sistemas web adaptados a tu operación. Escalables, eficientes y listos para crecer contigo.",
     src: "lava6.png",
     color: "#000000",
     text: "white",
@@ -32,9 +32,9 @@ export const features = [
   {
     title: "04. E-commerce",
     description:
-      "Creamos tiendas online para que puedas vender tus productos y servicios a través de internet.",
+      "Creamos tiendas online personalizadas, con pagos integrados y una experiencia de usuario optimizada para vender más.",
     descriptionMobile:
-      "Creamos tiendas online para que puedas vender tus productos y servicios a través de internet.",
+      "Creamos tiendas online personalizadas, con pagos integrados y una experiencia de usuario optimizada para vender más.",
     src: "lava7.png",
     color: "#000000",
     text: "white",

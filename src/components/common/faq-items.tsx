@@ -16,69 +16,59 @@ export function FaqItems() {
           ¿Cómo es su proceso de desarrollo?
         </AccordionTrigger>
         <AccordionContent>
-          Nuestro proceso de desarrollo ágil está estructurado en fases claras:
-          descubrimiento, diseño, desarrollo e implementación. Mantenemos
-          comunicación diaria a través de Slack, actualizaciones semanales de progreso
-          y sesiones regulares de demostración para asegurar la alineación con tu visión.
+          Dividimos el proyecto en etapas: descubrimiento, diseño, desarrollo y entrega. 
+          Durante todo el proceso tendrás comunicación constante con nosotros por Slack, 
+          avances semanales y demos en vivo. Queremos que estés al tanto y 100% alineado.
         </AccordionContent>
       </AccordionItem>
+
       <AccordionItem value="item-2">
         <AccordionTrigger>¿Con qué tecnologías trabajan?</AccordionTrigger>
         <AccordionContent>
-          Nos especializamos en tecnologías web modernas que incluyen React, Next.js,
-          TypeScript y Node.js. Nuestro stack tecnológico está cuidadosamente
-          seleccionado para proporcionar soluciones escalables y de alto rendimiento
-          que cumplan con los estándares actuales de la industria y preparen su
-          aplicación para el futuro.
+          Usamos tecnologías modernas como React, Next.js, TypeScript y Node.js. 
+          Esto nos permite crear productos rápidos, escalables y listos para el futuro.
         </AccordionContent>
       </AccordionItem>
+
       <AccordionItem value="item-3">
-        <AccordionTrigger>
-          ¿Qué necesitan para comenzar un proyecto?
-        </AccordionTrigger>
+        <AccordionTrigger>¿Qué necesitan para empezar un proyecto?</AccordionTrigger>
         <AccordionContent>
-          Para comenzar, necesitamos tu brief del proyecto, guías de marca (si están
-          disponibles) y requisitos de contenido. Durante nuestra consulta inicial,
-          discutiremos tus objetivos, cronograma y presupuesto para asegurar que
-          podamos entregar la mejor solución posible para tus necesidades.
+          Solo necesitamos tu idea, un brief (si lo tienes) y cualquier material que ya tengas. 
+          En una llamada inicial definimos metas, tiempos y presupuesto para asegurarnos 
+          de que vamos por el camino correcto desde el día uno.
         </AccordionContent>
       </AccordionItem>
+
       <AccordionItem value="item-4">
-        <AccordionTrigger>¿Ofrecen soporte post-lanzamiento?</AccordionTrigger>
+        <AccordionTrigger>¿Ofrecen soporte después del lanzamiento?</AccordionTrigger>
         <AccordionContent>
-          Sí, ofrecemos paquetes completos de soporte post-lanzamiento. Esto incluye
-          corrección de errores, monitoreo de rendimiento, actualizaciones de seguridad
-          y optimizaciones continuas. Estamos comprometidos a asegurar el éxito a largo
-          plazo de tu producto más allá del lanzamiento inicial.
+          Sí. Podemos ayudarte con mantenimiento, correcciones, mejoras, actualizaciones o monitoreo. 
+          Estamos aquí para que tu proyecto siga creciendo después de salir al aire.
         </AccordionContent>
       </AccordionItem>
+
       <AccordionItem value="item-5">
         <AccordionTrigger>¿Hay costos ocultos?</AccordionTrigger>
         <AccordionContent>
-          No, nuestros precios son completamente transparentes. La cotización del
-          proyecto incluye todos los costos de desarrollo, pruebas e implementación.
-          Cualquier requisito adicional o servicios de terceros serán discutidos y
-          aprobados por ti antes de su implementación.
+          No. Todo está claro desde el inicio. Si algo extra se requiere (como herramientas de terceros), 
+          siempre lo hablamos antes de avanzar.
         </AccordionContent>
       </AccordionItem>
+
       <AccordionItem value="item-6">
-        <AccordionTrigger>
-          ¿Cuándo comienza el tiempo de entrega?
-        </AccordionTrigger>
+        <AccordionTrigger>¿Cuándo empieza a correr el tiempo de entrega?</AccordionTrigger>
         <AccordionContent>
-          El tiempo de entrega comienza después del inicio del proyecto y la recepción de todos
-          los materiales requeridos. Esto incluye pago inicial y
-          activos del proyecto.
+          Comienza una vez que tenemos todo: anticipo, materiales y objetivos claros. 
+          Desde ahí, corremos contigo.
         </AccordionContent>
       </AccordionItem>
+
       <AccordionItem value="item-7">
         <AccordionTrigger>¿Cómo empiezo?</AccordionTrigger>
         <AccordionContent>
-          Agenda una consulta a través de nuestro sitio web o formulario de contacto.
-          Programaremos una llamada de descubrimiento para discutir las necesidades de
-          tu proyecto. Si somos una buena opción, te proporcionaremos una propuesta
-          y típicamente podemos comenzar dentro de 1-2 semanas después de completar
-          el proceso de incorporación.
+          Escríbenos por WhatsApp o llena el formulario del sitio. 
+          Agendamos una llamada para conocernos y si todo hace match, arrancamos normalmente 
+          en 1 o 2 semanas después de tu aprobación.
         </AccordionContent>
       </AccordionItem>
     </Accordion>

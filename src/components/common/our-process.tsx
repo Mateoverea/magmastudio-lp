@@ -14,10 +14,10 @@ const OurProcess = () => {
         "Creamos interfaces de usuario intuitivas y prototipos interactivos para validar la funcionalidad principal de tu proyecto antes de comenzar el desarrollo completo.",
     },
     {
-      title: "Construcción e Iteración",
+      title: "Construcción y Desarrollo",
       step: "Paso 03",
       description:
-        "Comenzamos el desarrollo utilizando tecnologías modernas, enfocándonos en características esenciales mientras mantenemos flexibilidad para escalabilidad y mejoras futuras.",
+        "Comenzamos el proyecto utilizando tecnologías modernas, enfocándonos en características esenciales mientras mantenemos flexibilidad para escalabilidad y mejoras futuras.",
     },
     {
       title: "Mantenimiento y Mejoras",

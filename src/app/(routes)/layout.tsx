@@ -9,8 +9,8 @@ import { Navigation } from "@/components/common/navigation";
 import { archivo, cabinetGrotesk } from "@/lib/customFonts";
 import { Toaster } from "react-hot-toast";
 
-const baseUrl = "https://magmastudio.mx";
-const wwwBaseUrl = "https://www.magmastudio.mx";
+const baseUrl = "https://magmastudio.pro";
+const wwwBaseUrl = "https://www.magmastudio.pro";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${baseUrl}`) || new URL(`${wwwBaseUrl}`),

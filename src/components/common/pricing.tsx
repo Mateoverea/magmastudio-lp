@@ -23,56 +23,31 @@ const Pricing = () => {
               Landing Express
             </h4>
             <p className="font-archivo text-lg md:text-xl w-full text-white/70 mt-2">
-              Ideal para validación de ideas, eventos, productos o servicios.
+              Ideal para validar una idea o presentar tu producto de forma profesional y rápida.
             </p>
             <p className="font-archivo text-xl md:text-2xl font-semibold text-[#FF4500] my-4">
               Desde $300 USD
             </p>
             <div className="flex flex-col gap-2 mt-4">
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  1 sección tipo one-pager
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Diseño personalizado
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Desarrollo en Next.js o Vite
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Hosting y dominio por 1 año
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Formulario de contacto integrado
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Entrega en 5 días
-                </p>
-              </div>
+              {[
+                "1 sección tipo one-pager",
+                "Diseño personalizado",
+                "Desarrollo en Next.js o Vite",
+                "Hosting y dominio por 1 año",
+                "Formulario de contacto integrado",
+                "Entrega en 5 días",
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <Check className="text-[#FF4500]" />
+                  <p className="font-archivo text-base md:text-lg w-full text-white/70">{item}</p>
+                </div>
+              ))}
             </div>
             <p className="font-archivo text-base md:text-lg text-white mt-4 italic">
-              → Perfecto para empezar con presencia profesional.
+              → Perfecto para lanzamientos exprés o presencia inicial de marca.
             </p>
           </div>
-          <div
-            className="w-full mt-6 relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group"
-          >
+          <div className="w-full mt-6 relative inline-flex h-12 overflow-hidden rounded-full p-[3px] group">
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#FF4500_100%)]" />
             <Link
               href="https://wa.me/523336767331?text=Hola,%20me%20interesa%20el%20paquete%20Landing%20Express"
@@ -92,56 +67,31 @@ const Pricing = () => {
               Landing Pro
             </h4>
             <p className="font-archivo text-lg md:text-xl w-full text-white/70 mt-2">
-              Para marcas que necesitan contar su historia con claridad y estilo.
+              Para marcas que necesitan contar su historia y construir confianza con sus clientes.
             </p>
             <p className="font-archivo text-xl md:text-2xl font-semibold text-[#FF4500] my-4">
               Desde $600 USD
             </p>
             <div className="flex flex-col gap-2 mt-4">
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  3–5 secciones: Hero, servicios, beneficios, contacto, etc.
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Animaciones suaves
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Optimización SEO básica
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Responsive en todos los dispositivos
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Integración con Google Analytics / Meta Pixel
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Entrega en 7 a 10 días
-                </p>
-              </div>
+              {[
+                "3–5 secciones: Hero, servicios, beneficios, contacto, etc.",
+                "Animaciones suaves",
+                "Optimización SEO básica",
+                "Responsive en todos los dispositivos",
+                "Integración con Google Analytics / Meta Pixel",
+                "Entrega en 7 a 10 días",
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <Check className="text-[#FF4500]" />
+                  <p className="font-archivo text-base md:text-lg w-full text-white/70">{item}</p>
+                </div>
+              ))}
             </div>
             <p className="font-archivo text-base md:text-lg text-white mt-4 italic">
-              → Ideal para emprendedores, agencias y negocios digitales.
+              → Ideal para negocios digitales, startups o proyectos con visión a largo plazo.
             </p>
           </div>
-          <div
-            className="w-full mt-6 relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group"
-          >
+          <div className="w-full mt-6 relative inline-flex h-12 overflow-hidden rounded-full p-[3px] group">
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#FF4500_100%)]" />
             <Link
               href="https://wa.me/523336767331?text=Hola,%20me%20interesa%20el%20paquete%20Landing%20Pro"
@@ -161,59 +111,34 @@ const Pricing = () => {
               Tienda Express
             </h4>
             <p className="font-archivo text-lg md:text-xl w-full text-white/70 mt-2">
-              Tu tienda online lista para vender de forma rápida y elegante.
+              Tu tienda online, conectada a pasarelas de pago y lista para vender.
             </p>
             <p className="font-archivo text-xl md:text-2xl font-semibold text-[#FF4500] my-4">
               Desde $850 USD
             </p>
             <div className="flex flex-col gap-2 mt-4">
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Diseño personalizado y responsive
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Listo para cargar productos
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Carrito y checkout funcional
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Pasarela de pago (Stripe o PayPal)
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Página de contacto y agradecimiento
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-[#FF4500]" />
-                <p className="font-archivo text-base md:text-lg w-full text-white/70">
-                  Shopify integrado para gestión de inventario
-                </p>
-              </div>
+              {[
+                "Diseño personalizado y responsive",
+                "Listo para cargar productos",
+                "Carrito y checkout funcional",
+                "Pasarela de pago (Stripe o PayPal)",
+                "Página de contacto y agradecimiento",
+                "Shopify integrado para gestión de inventario",
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <Check className="text-[#FF4500]" />
+                  <p className="font-archivo text-base md:text-lg w-full text-white/70">{item}</p>
+                </div>
+              ))}
             </div>
             <p className="font-archivo text-base text-white/70 mt-4">
-              <span className="font-semibold">Extras opcionales:</span> más productos, variantes, emails automáticos, integración con inventario.
+              <span className="font-semibold">Extras opcionales:</span> variantes de producto, correos automatizados, integraciones con inventario.
             </p>
             <p className="font-archivo text-base md:text-lg text-white mt-2 italic">
-              → Ideal para vender un servicio, producto físico o digital sin complicaciones.
+              → Ideal para vender productos físicos o digitales desde el primer día.
             </p>
           </div>
-          <div
-            className="w-full mt-6 relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group"
-          >
+          <div className="w-full mt-6 relative inline-flex h-12 overflow-hidden rounded-full p-[3px] group">
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#FF4500_100%)]" />
             <Link
               href="https://wa.me/523336767331?text=Hola,%20me%20interesa%20el%20paquete%20Tienda%20Express"
@@ -233,48 +158,30 @@ const Pricing = () => {
               Web a Medida
             </h4>
             <p className="font-archivo text-lg md:text-xl w-full text-white/70 mt-2">
-              Para empresas o proyectos que necesitan algo único y escalable.
+              Para empresas o startups que necesitan una solución digital robusta, escalable y totalmente personalizada.
             </p>
             <p className="font-archivo text-xl md:text-2xl font-semibold text-white my-4">
               Desde $1,200 USD
             </p>
             <div className="flex flex-col gap-2 mt-4">
-              <div className="flex items-center gap-2">
-                <Check className="text-white" />
-                <p className="font-archivo text-base md:text-lg w-full text-white">
-                  Sitio completamente personalizado
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-white" />
-                <p className="font-archivo text-base md:text-lg w-full text-white">
-                  Hasta 5 secciones clave
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-white" />
-                <p className="font-archivo text-base md:text-lg w-full text-white">
-                  Animaciones e interacciones avanzadas
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-white" />
-                <p className="font-archivo text-base md:text-lg w-full text-white">
-                  Optimización SEO y performance
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="text-white" />
-                <p className="font-archivo text-base md:text-lg w-full text-white">
-                  Responsive y adaptable a todos los dispositivos
-                </p>
-              </div>
+              {[
+                "Sitio completamente personalizado",
+                "Hasta 5 secciones clave",
+                "Animaciones e interacciones avanzadas",
+                "Optimización SEO y performance",
+                "Responsive y adaptable a todos los dispositivos",
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <Check className="text-white" />
+                  <p className="font-archivo text-base md:text-lg w-full text-white">{item}</p>
+                </div>
+              ))}
             </div>
             <p className="font-archivo text-base text-white mt-4">
               <span className="font-semibold">Extras opcionales:</span> Ecommerce, integraciones API, contenido multi-idioma, migraciones.
             </p>
             <p className="font-archivo text-base md:text-lg text-white mt-2 italic">
-              → Cotización final después de una llamada de diagnóstico.
+              → Pensado para proyectos con visión grande y necesidades específicas.
             </p>
           </div>
           <Link
@@ -283,11 +190,8 @@ const Pricing = () => {
             rel="noopener noreferrer"
             className="w-full z-10 mt-6"
           >
-            <Button className="w-full">
-              Solicitar información
-            </Button>
+            <Button className="w-full">Solicitar información</Button>
           </Link>
-
           <div className="absolute h-60 aspect-square rounded-full bg-[#FF4500] blur-3xl opacity-50 bottom-0 right-0 z-[1]" />
           <BorderBeam colorFrom="#FF6A00" colorTo="#FF4500" />
         </div>

@@ -13,7 +13,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Wrapper from "../wrapper/wrapper";
 import { ContactDrawer } from "./contact-drawer";
-import EncryptText from "./encrypt-text";
 import SideMenu from "./menu";
 
 export const Navigation = () => {
@@ -110,11 +109,15 @@ export const Navigation = () => {
             </Link>
 
             <div className="absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%] hidden md:block">
-              <div className=" inline-flex items-center gap-8">
+              <div className="inline-flex items-center gap-8">
                 {navItems.map((item, index) => {
                   return (
-                    <Link key={index} href={item.href}>
-                      <EncryptText targetText={item.title} />
+                    <Link 
+                      key={index} 
+                      href={item.href}
+                      className="text-white hover:scale-110 transition-transform duration-200 ease-in-out opacity-70 hover:opacity-100 uppercase text-sm tracking-wider"
+                    >
+                      {item.title}
                     </Link>
                   );
                 })}
