@@ -105,22 +105,6 @@ export default function RootLayout({
           type="image/svg+xml" 
         />
         
-        {/* Avoid layout shift by preloading key fonts */}
-        <link
-          rel="preload"
-          href="/assets/fonts/archivo.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/assets/fonts/cabinet-grotesk.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
-        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

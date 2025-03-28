@@ -25,13 +25,13 @@ export function middleware(request: NextRequest) {
   );
 
   // Generate link headers for preload of critical assets
-  const preloadFonts = '</assets/fonts/archivo.ttf>; rel=preload; as=font; crossorigin; </assets/fonts/cabinet-grotesk.ttf>; rel=preload; as=font; crossorigin;';
+  const preloadFonts = '';
   
   // Get existing Link header or empty string
   const existingLinkHeader = response.headers.get('Link') || '';
   
   // Combine existing and new Link headers
-  response.headers.set('Link', existingLinkHeader ? `${existingLinkHeader}, ${preloadFonts}` : preloadFonts);
+  response.headers.set('Link', existingLinkHeader || '');
 
   return response;
 }
