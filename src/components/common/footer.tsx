@@ -75,18 +75,6 @@ const Footer = () => {
               <div className="w-full md:w-[80%]">
                 <div className="w-full flex flex-col">
                   <motion.div 
-                    whileHover={{ scale: 1.1 }}
-                    className="relative w-[152px] h-[42px] transition-all duration-300 ease-out"
-                  >
-                    <Image
-                      quality={100}
-                      className="object-contain"
-                      fill
-                      src="/logo/logo_white.svg"
-                      alt="Logo de Magma Studio"
-                    />
-                  </motion.div>
-                  <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}

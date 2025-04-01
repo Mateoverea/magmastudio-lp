@@ -99,7 +99,7 @@ export const Navigation = () => {
                   priority
                 />
               </div>
-              <div className="flex items-center justify-center w-[180px] h-[60px] hover:scale-110 ease-in-out transition-all duration-200 hidden md:block mb-2">
+              <div className="flex items-center justify-center w-[180px] h-[50px] hover:scale-110 ease-in-out transition-all duration-200 hidden md:block -mt-4">
                 <Image
                   width={136}
                   height={40}
