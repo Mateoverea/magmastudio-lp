@@ -621,3 +621,54 @@
   background-attachment: fixed;
 }
 /* End Custom Gradient Background */
+
+/* Lava Hover Effect */
+@keyframes lava {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-lava {
+  animation: lava 3s ease-in-out infinite;
+}
+
+@keyframes lavaPulseHover {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.lava-hover {
+  position: relative;
+  display: inline-block;
+  color: white;
+  cursor: default;
+}
+
+.lava-hover::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  background: linear-gradient(90deg, #ffae00, #ff6500, #ffae00);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: lavaPulseHover 3s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.lava-hover:hover::before {
+  opacity: 1;
+}
+/* End Lava Hover Effect */

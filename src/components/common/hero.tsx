@@ -1,104 +1,112 @@
 "use client";
-
 import Image from "next/image";
-import gsap from "gsap";
-import { useRef, useLayoutEffect } from "react";
-import { ScrollTrigger } from "gsap/all";
+import Marquee from "react-fast-marquee";
+import StarSvg from "./star";
+
+import { motion, useScroll } from "framer-motion";
+import { useRef } from "react";
+import Link from "next/link";
 
 const Hero = () => {
-  const firstText = useRef(null);
-  const secondText = useRef(null);
-  const slider = useRef(null);
-  const direction = useRef(-1);
-  let xPercent = 0;
-
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to(slider.current, {
-      scrollTrigger: {
-        trigger: document.documentElement,
-        scrub: 0.25,
-        start: 0,
-        end: window.innerHeight,
-        onUpdate: (e) => (direction.current = e.direction * -1),
-      },
-      x: "-500px",
-    });
-    requestAnimationFrame(animate);
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
   });
 
-  const animate = () => {
-    if (xPercent < -100) {
-      xPercent = 0;
-    } else if (xPercent > 0) {
-      xPercent = -100;
-    }
-    gsap.set(firstText.current, { xPercent: xPercent });
-    gsap.set(secondText.current, { xPercent: xPercent });
-    requestAnimationFrame(animate);
-    xPercent += 0.1 * direction.current;
-  };
   return (
-    <div className="relative overflow-hidden">
-      <div className="h-screen relative w-full">
-        <Image
-          fill
-          src="/lava/lavabg12.jpeg"
-          quality={100}
-          className="object-cover"
-          alt="Hero bg"
-        />
-        <div
-          data-scroll
-          data-scroll-speed={0.1}
-          className=" absolute top-[33%] left-[15%] text-primary-foreground text-3xl font-medium opacity-70"
-        >
-          <svg
-            className=" mb-10 scale-[2.2]"
-            width="9"
-            height="9"
-            viewBox="0 0 9 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 8.5C8.27614 8.5 8.5 8.27614 8.5 8L8.5 3.5C8.5 3.22386 8.27614 3 8 3C7.72386 3 7.5 3.22386 7.5 3.5V7.5H3.5C3.22386 7.5 3 7.72386 3 8C3 8.27614 3.22386 8.5 3.5 8.5L8 8.5ZM0.646447 1.35355L7.64645 8.35355L8.35355 7.64645L1.35355 0.646447L0.646447 1.35355Z"
-              fill="#D5CEC7"
-            />
-          </svg>
-          <p>Desarrollo</p>
-          <p>y diseño web</p>
-        </div>
-        <div className="absolute  top-[calc(100vh-350px)]">
-          <div ref={slider} className="relative whitespace-nowrap">
-            <p
-              ref={firstText}
-              className="relative m-0 text-primary-foreground text-[230px] font-medium pr-[50px] opacity-70"
-            >
-              MAGMA STUDIO —
-            </p>
-            <p
-              ref={secondText}
-              className="absolute left-full top-0 m-0 text-primary-foreground text-[230px] font-medium pr-[50px] opacity-70"
-            >
-              MAGMA STUDIO —
-            </p>
+    <motion.section
+      ref={sectionRef}
+      style={{
+        backgroundImage: 'url("/lava/lavabg82.jpeg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+      className="w-full h-fit min-h-screen md:h-screen relative"
+    >
+      {/* Overlay para legibilidad */}
+      <div className="absolute inset-0 z-[0] bg-black/50" />
+
+      <div className="flex flex-col gap-10 md:gap-0 justify-between h-fit min-h-[90vh] pb-10 items-center w-full px-3 md:px-0 md:pt-32 relative z-[1]">
+        <div className="w-full flex flex-col items-center">
+          <div className="flex flex-col items-center md:items-start mt-[7rem] md:mt-8 md:gap-1">
+            {/* Etiqueta superior */}
+            <div className="inline-flex items-center justify-center w-full gap-2 md:gap-4 py-4">
+              <div className="h-3 md:h-3.5 animate-pulse aspect-square rounded-full bg-[#d85a00]" />
+              <h4 className="text-white text-base md:text-xl font-archivo text-center md:text-left">
+                <span className="opacity-80">Estudio digital</span> – Tu producto online
+              </h4>
+            </div>
+
+            {/* Mobile title */}
+            <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-extrabold text-5xl sm:text-5xl text-white text-center justify-center leading-[1.2] md:hidden">
+              Creamos <span className="text-[#ff6500]">experiencias digitales</span><br />
+              que hacen que tu<br />
+              <span className="underline decoration-[#ff6500]/60">marca destaque</span>
+            </h2>
+
+            {/* Desktop title */}
+            <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-bold text-5xl lg:text-8xl text-white text-left hidden md:block">
+              Desarrollo web a la
+            </h2>
+
+            <div className="flex items-center gap-10 hidden md:flex">
+              <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-extrabold text-5xl lg:text-8xl text-white text-left relative">
+                <span className="lava-hover" data-text="medida">medida</span>
+              </h2>
+              <p className="font-archivo text-base md:text-xl text-white/80 text-left max-w-[56ch] uppercase">
+                Creamos sitios web, landing pages y software personalizado con diseño sólido, velocidad y experiencia de usuario. Convertimos ideas en productos digitales funcionales y atractivos.
+              </p>
+            </div>
+          </div>
+
+          {/* Marquee */}
+          <div className="w-full flex items-center justify-center px-3 md:px-0">
+            <div className="w-fit md:max-w-4xl overflow-hidden md:px-0 rounded-full bg-[#7a290e] py-3 md:py-4 mt-3 border border-white/20 shadow-lg shadow-black/40">
+              <Marquee speed={40} className="w-fit">
+                <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl md:text-6xl lg:text-7xl text-white tracking-tighter drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]">
+                  Web con intención
+                </h2>
+                <div className="mx-4 md:mx-10">
+                  <StarSvg />
+                </div>
+                <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl md:text-6xl lg:text-7xl text-white tracking-tighter drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]">
+                  Resultado con impacto
+                </h2>
+                <div className="mx-4 md:mx-10">
+                  <StarSvg />
+                </div>
+              </Marquee>
+            </div>
           </div>
         </div>
 
-        {/* <div className=" absolute left-0 top-[33%]">
-          <div className=" bg-[#2B2B2B] rounded-r-full flex gap-6 pl-[4.8rem] items-center pr-4 py-4">
-            <p className=" text-2xl text-primary-foreground leading-tight">
-              Ubicados en <br /> Guadalajara
-            </p>
-            <div className=" aspect-square rounded-full bg-primary h-16 flex items-center justify-center">
-              <Globe size={32} />
+        {/* Scroll icon */}
+        <div className="flex flex-col-reverse h-full justify-between md:flex-col w-full items-center">
+          <Link href="/">
+            <div className="flex items-center gap-4 z-[214748300] mt-5">
+              <div className="h-11 w-7 rounded-full border-[2px] border-white flex items-start justify-center">
+                <motion.div
+                  animate={{
+                    y: [0, 10, 0],
+                    opacity: [1, 0.3, 1],
+                  }}
+                  transition={{
+                    duration: 3,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                  }}
+                  className="w-[2.5px] h-4 mb-4 bg-white rounded-full"
+                />
+              </div>
             </div>
-          </div>
-        </div> */}
+          </Link>
+        </div>
       </div>
-    </div>
+    </motion.section>
   );
 };
 
 export default Hero;
+
