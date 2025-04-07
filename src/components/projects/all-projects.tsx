@@ -71,7 +71,6 @@ const ProjectCard = ({ project, index }: { project: CardType; index: number }) =
               isHovered ? "scale-105 blur-[2px]" : "scale-100"
             )}
             quality={90}
-            priority={index <= 1}
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
           />
@@ -133,21 +132,17 @@ const cards: CardType[] = [
   {
     images: [
       "/projects/adorantes/1.png",
-      "/projects/adorantes/2.png",
-      "/projects/adorantes/3.png",
     ],
     title: "Adorantes",
     year: "2025",
     description:
       "Adorantes es una landing page para una artista mexicana, escultora y ceramista.",
     id: 1,
-    url: "https://adorantes-web.vercel.app/",
+    url: "https://adrianadorantes.com",
   },
   {
     images: [
       "/projects/acredia/1.png",
-      "/projects/acredia/2.png",
-      "/projects/acredia/3.png",
     ],
     title: "Acredia",
     year: "2025",

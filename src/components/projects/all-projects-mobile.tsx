@@ -74,7 +74,7 @@ const cards: CardType[] = [
     description:
       "Adorantes es una landing page para una artista mexicana, escultora y ceramista.",
     id: 1,
-    url: "https://adorantes-web.vercel.app/",
+    url: "https://adrianadorantes.com",
   },
   {
     src: "/projects/acredia/1.png",

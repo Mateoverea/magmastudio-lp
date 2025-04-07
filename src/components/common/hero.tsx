@@ -18,7 +18,7 @@ const Hero = () => {
     <motion.section
       ref={sectionRef}
       style={{
-        backgroundImage: 'url("/lava/lavabg82.jpeg")',
+        backgroundImage: 'url("/lava/lavabg82.webp")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -31,14 +31,6 @@ const Hero = () => {
       <div className="flex flex-col gap-10 md:gap-0 justify-between h-fit min-h-[90vh] pb-10 items-center w-full px-3 md:px-0 md:pt-32 relative z-[1]">
         <div className="w-full flex flex-col items-center">
           <div className="flex flex-col items-center md:items-start mt-[7rem] md:mt-8 md:gap-1">
-            {/* Etiqueta superior */}
-            <div className="inline-flex items-center justify-center w-full gap-2 md:gap-4 py-4">
-              <div className="h-3 md:h-3.5 animate-pulse aspect-square rounded-full bg-[#d85a00]" />
-              <h4 className="text-white text-base md:text-xl font-archivo text-center md:text-left">
-                <span className="opacity-80">Estudio digital</span> – Tu producto online
-              </h4>
-            </div>
-
             {/* Mobile title */}
             <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-extrabold text-5xl sm:text-5xl text-white text-center justify-center leading-[1.2] md:hidden">
               Creamos <span className="text-[#ff6500]">experiencias digitales</span><br />
@@ -55,8 +47,8 @@ const Hero = () => {
               <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-extrabold text-5xl lg:text-8xl text-white text-left relative">
                 <span className="lava-hover" data-text="medida">medida</span>
               </h2>
-              <p className="font-archivo text-base md:text-xl text-white/80 text-left max-w-[56ch] uppercase">
-                Creamos sitios web, landing pages y software personalizado con diseño sólido, velocidad y experiencia de usuario. Convertimos ideas en productos digitales funcionales y atractivos.
+              <p className="font-archivo text-base md:text-3xl text-white/80 text-left max-w-[40ch] uppercase">
+                Sitios web, Landing pages, Software Personalizado y Tiendas E-commerce.
               </p>
             </div>
           </div>
@@ -85,7 +77,7 @@ const Hero = () => {
         {/* Scroll icon */}
         <div className="flex flex-col-reverse h-full justify-between md:flex-col w-full items-center">
           <Link href="/">
-            <div className="flex items-center gap-4 z-[214748300] mt-5">
+            <div className="flex items-center gap-4 z-[214748300] mt-20">
               <div className="h-11 w-7 rounded-full border-[2px] border-white flex items-start justify-center">
                 <motion.div
                   animate={{
