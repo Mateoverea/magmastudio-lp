@@ -46,12 +46,10 @@ export default function Home() {
       </AnimatePresence>
       <BackToTop />
       <StickyCursor />
-      {/* <ChatwootWidget /> */}
-      <Hero />
-      {/* <Video /> */}
       
       {/* Start of custom gradient background section */}
       <div className="custom-gradient-bg">
+        <Hero />
         <SocialProof />
         <Cards />
         <OurProcess />

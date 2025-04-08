@@ -93,10 +93,6 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        {/* Add preconnect for important domains to improve TTFB */}
-        <link rel="preconnect" href="https://cdn.sanity.io" />
-        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
-        
         {/* Add preload for critical assets */}
         <link 
           rel="preload" 
