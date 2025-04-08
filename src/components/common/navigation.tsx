@@ -88,7 +88,7 @@ export const Navigation = () => {
         >
           <Wrapper className="w-full flex flex-row justify-between items-center md:px-0 lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
             <Link href="/" className="flex items-center">
-              <div className="flex items-center justify-center w-[52px] h-[52px] hover:scale-110 ease-in-out transition-all duration-200 md:hidden">
+              <div className="flex items-center justify-center w-[52px] h-[52px] hover:scale-110 ease-in-out transition-all duration-200 lg:hidden">
                 <Image
                   width={100}
                   height={42}
@@ -99,7 +99,7 @@ export const Navigation = () => {
                   priority
                 />
               </div>
-              <div className="flex items-center justify-center w-[180px] h-[50px] hover:scale-110 ease-in-out transition-all duration-200 hidden md:block -mt-4">
+              <div className="flex items-center justify-center w-[180px] h-[50px] hover:scale-110 ease-in-out transition-all duration-200 hidden lg:block -mt-4">
                 <Image
                   width={136}
                   height={40}
@@ -113,13 +113,13 @@ export const Navigation = () => {
             </Link>
 
             <div className="absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%] hidden md:block">
-              <div className="inline-flex items-center gap-8">
+              <div className="inline-flex items-center gap-6 md:gap-8">
                 {navItems.map((item, index) => {
                   return (
                     <Link 
                       key={index} 
                       href={item.href}
-                      className="text-white hover:scale-110 transition-transform duration-200 ease-in-out opacity-70 hover:opacity-100 uppercase text-lg tracking-wider font-cabinetGrotesk font-semibold"
+                      className="text-white hover:scale-110 transition-transform duration-200 ease-in-out opacity-70 hover:opacity-100 uppercase lg:text-lg tracking-wider font-cabinetGrotesk font-semibold"
                     >
                       {item.title}
                     </Link>

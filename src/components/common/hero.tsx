@@ -21,18 +21,18 @@ const Hero = () => {
       className="w-full h-fit min-h-screen md:h-screen relative"
     >
       {/* Layout container - flex on desktop */}
-      <div className="flex flex-col md:flex-row w-full h-full relative">
-        {/* Lava canvas - full background on mobile, left side on desktop */}
-        <div className="absolute inset-0 md:relative md:w-1/2 md:h-full md:mt-10 mt-20 z-[20] md:overflow-visible">
+      <div className="flex flex-col lg:flex-row w-full h-full relative">
+        {/* Lava canvas - full background on mobile/tablet, left side only on large desktop */}
+        <div className="absolute inset-0 lg:relative lg:w-1/2 lg:h-full lg:mt-12 mt-10 z-[20] lg:overflow-visible">
           <LavaScene />
         </div>
 
         {/* Content container - right side on desktop */}
-        <div className="flex flex-col gap-10 md:gap-0 justify-between h-fit min-h-[90vh] pb-10 items-center w-full md:w-3/5 px-3 md:px-4 lg:px-6 md:pt-16 lg:pt-32 md:-ml-16 lg:-ml-40 relative">
+        <div className="flex flex-col gap-10 lg:gap-0 justify-between h-fit min-h-[90vh] pb-10 items-center w-full lg:w-3/5 px-3 md:px-4 lg:px-6 md:pt-16 lg:pt-32 lg:-ml-40 relative">
           <div className="w-full flex flex-col items-center">
             <div className="flex flex-col items-center md:items-start mt-[7rem] md:mt-2 lg:mt-4 md:gap-1 z-[30]">
-              {/* Mobile title */}
-              <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-extrabold text-5xl sm:text-4xl text-white text-center justify-center leading-[1.2] md:hidden mt-40 mb-20">
+              {/* Mobile title - visible on mobile and tablet */}
+              <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-extrabold text-5xl sm:text-4xl text-white text-center justify-center leading-[1.2] lg:hidden mt-40 mb-20">
                 Desarrollo <span className="text-white">Web</span><br />
                 a la Medida<br />
                 <span className="block underline decoration-gray-500/60 text-[#333333]/90 text-4xl">Landings</span>
@@ -40,12 +40,12 @@ const Hero = () => {
                 <span className="block underline decoration-gray-500/60 text-[#333333]/90 text-4xl">E-commerce</span>
               </h2>
 
-              {/* Desktop title */}
-              <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-bold text-4xl md:text-5xl lg:text-8xl text-white text-left hidden md:block">
+              {/* Desktop title - only visible on large screens */}
+              <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-bold text-4xl md:text-5xl lg:text-8xl text-white text-left hidden lg:block">
                 Desarrollo web a la
               </h2>
 
-              <div className="flex items-start gap-4 md:gap-6 lg:gap-10 hidden md:flex flex-col md:flex-row">
+              <div className="flex items-start gap-4 md:gap-6 lg:gap-10 hidden lg:flex flex-col md:flex-row">
                 <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-extrabold text-4xl md:text-5xl lg:text-8xl text-white text-left relative">
                   <span className="lava-hover" data-text="medida">medida</span>
                 </h2>
@@ -61,7 +61,7 @@ const Hero = () => {
                   position: 'relative', 
                   zIndex: 10 
                 }}>
-              <div className="w-fit max-w-[90vw] md:max-w-[90%] lg:max-w-4xl overflow-hidden md:px-0 rounded-full bg-[#7a290e] py-2 md:py-3 lg:py-4 mt-0 border border-white/20 shadow-lg shadow-black/40 sm:z-10 md:z-auto">
+              <div className="w-fit max-w-[90vw] md:max-w-[90%] lg:max-w-4xl overflow-hidden md:px-0 rounded-full bg-[#7a290e] py-2 md:py-3 lg:py-4 mt-0 border border-white/20 shadow-lg shadow-black/40 sm:z-10 lg:z-auto">
                 <Marquee speed={40} className="w-fit">
                   <h2 className="uppercase font-cabinetGrotesk font-bold text-4xl sm:text-4xl md:text-5xl lg:text-7xl text-white tracking-tighter drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]">
                     Web con intención
@@ -81,29 +81,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* Scroll icon - moved to be centered on the page */}
-      {/* <div className="absolute bottom-5 left-0 right-0 mx-auto flex justify-center items-center z-[30]">
-        <Link href="/">
-          <div className="flex items-center gap-4">
-            <div className="h-9 w-6 rounded-full border-[2px] border-white flex items-start justify-center">
-              <motion.div
-                animate={{
-                  y: [0, 6, 0],
-                  opacity: [1, 0.3, 1],
-                }}
-                transition={{
-                  duration: 3,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                }}
-                className="w-[3px] h-2 mb-2 bg-white rounded-full"
-              />
-            </div>
-          </div>
-        </Link>
-      </div>
-
       {/* Mobile-specific styles */}
       <style jsx global>{`
         @media (max-width: 768px) {
