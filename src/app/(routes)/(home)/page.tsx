@@ -2,7 +2,6 @@
 
 import BackToTop from "@/components/common/back-to-top";
 import Cards from "@/components/common/cards";
-import ChatwootWidget from "@/components/common/chatwoot-widget";
 import Cta from "@/components/common/cta";
 import { FAQs } from "@/components/common/faq";
 import Hero from "@/components/common/hero";

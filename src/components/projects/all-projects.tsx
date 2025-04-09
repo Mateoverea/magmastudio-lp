@@ -131,7 +131,7 @@ type CardType = {
 const cards: CardType[] = [
   {
     images: [
-      "/projects/adorantes/1.png",
+      "/projects/adorantes/1.webp",
     ],
     title: "Adorantes",
     year: "2025",
@@ -142,7 +142,7 @@ const cards: CardType[] = [
   },
   {
     images: [
-      "/projects/acredia/1.png",
+      "/projects/acredia/1.webp",
     ],
     title: "Acredia",
     year: "2025",

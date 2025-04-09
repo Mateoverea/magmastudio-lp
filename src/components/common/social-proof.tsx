@@ -11,8 +11,9 @@ const SocialProof = () => {
   const [hovered, setHovered] = useState(false);
   const [hovered2, setHovered2] = useState(false);
   const [hovered3, setHovered3] = useState(false);
+  
   return (
-    <section className="pt-0 pb-12 md:pt-0 md:pb-12">
+    <section className="pt-0 pb-12 md:pt-0 md:pb-24">
       <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-12 py-20">
         <div className="flex flex-col gap-2">
           <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">

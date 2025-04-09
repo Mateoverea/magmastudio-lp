@@ -33,7 +33,7 @@ const Cta = () => {
   const [isPending, startTransition] = useTransition();
 
   const handleConfetti = () => {
-    const duration = 5 * 1000;
+    const duration = 4 * 1000;
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
@@ -47,7 +47,7 @@ const Cta = () => {
         return clearInterval(interval);
       }
 
-      const particleCount = 50 * (timeLeft / duration);
+      const particleCount = 40 * (timeLeft / duration); // Reduced particle count
       confetti({
         ...defaults,
         particleCount,

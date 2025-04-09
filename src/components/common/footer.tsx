@@ -12,7 +12,7 @@ import { Separator } from "../ui/separator";
 import Wrapper from "../wrapper/wrapper";
 import AnimatedLink from "./animated-link";
 import { FooterText } from "./footer-text";
-import { useTransform, motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 const Footer = () => {
@@ -39,35 +39,8 @@ const Footer = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const backgroundPositionY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [-300, 300]
-  );
-
-  if (pathName === "/studio" || pathName.includes("/blog/")) {
-    return null;
-  }
-
   return (
-    <motion.section
-      ref={sectionRef}
-      animate={{
-        backgroundPositionX: "800px",
-      }}
-      transition={{
-        repeat: Infinity,
-        ease: "linear",
-        duration: 120,
-      }}
-      className="custom-gradient-bg w-full h-fit md:h-screen relative md:max-h-screen overflow-hidden px-3 md:px-0"
-    >
+    <section className="custom-gradient-bg w-full h-fit md:h-screen relative md:max-h-screen overflow-hidden px-3 md:px-0">
       <div className="flex flex-col items-center w-full md:h-screen md:justify-between pt-8 md:pt-12 pb-8 md:pb-10">
         <Wrapper className="w-full flex flex-col lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
           <div className="z-[51] flex flex-col items-start gap-0 w-full">
@@ -90,7 +63,7 @@ const Footer = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
+                    transition={{ duration: 0.1, delay: 0.1 }}
                     whileHover={{ scale: 1.05 }}
                     className="relative inline-flex w-fit h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group mt-6"
                   >
@@ -281,7 +254,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
