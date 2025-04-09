@@ -48,7 +48,7 @@ export default function Home() {
       
       {/* Start of custom gradient background section */}
       <div className="custom-gradient-bg">
-        <Hero />
+        {/* <Hero /> */}
         <SocialProof />
         <Cards />
         <OurProcess />
@@ -60,7 +60,7 @@ export default function Home() {
         </div>
         <Pricing />
         <FAQs />
-        <Cta />
+        {/* <Cta /> */}
       </div>
       {/* End of custom gradient background section */}
       
