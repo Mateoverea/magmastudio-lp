@@ -5,22 +5,24 @@ import { Suspense, useEffect, useState } from 'react';
 import { OrbitControls } from '@react-three/drei';
 import LavaMesh from '@/components/lava-sphere/LavaMesh';
 import { useMediaQuery } from 'usehooks-ts';
+import { useInView } from 'react-intersection-observer';
 
 const LavaScene = () => {
   const isMobile = useMediaQuery('(max-width: 767px)');
   const [isLoaded, setIsLoaded] = useState(false);
+  const { ref, inView } = useInView({ threshold: 0.1 });
 
   useEffect(() => {
     if (isLoaded) document.body.classList.remove('loading');
   }, [isLoaded]);
 
   return (
-    <div className="absolute md:relative inset-0 w-full h-full pointer-events-none">
+    <div ref={ref} className="absolute md:relative inset-0 w-full h-full pointer-events-none">
       <Canvas 
         camera={{ position: [0, 0, 4], fov: 45 }} 
         gl={{ alpha: true }}
         style={{ background: 'transparent' }}
-        frameloop="always"
+        frameloop={inView ? 'always' : 'demand'}
         onCreated={({ gl }) => {
           gl.setSize(isMobile ? window.innerWidth : window.innerWidth / 2, window.innerHeight);
           gl.setPixelRatio(window.devicePixelRatio);
@@ -36,3 +38,4 @@ const LavaScene = () => {
 };
 
 export default LavaScene;
+

@@ -1,11 +1,9 @@
 "use client";
-import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import StarSvg from "./star";
+import ArrowSvg from "./star";
 
 import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
-import Link from "next/link";
 import LavaScene from "../lava-sphere/LavaScene";
 
 const Hero = () => {
@@ -67,13 +65,13 @@ const Hero = () => {
                     Web con intención
                   </h2>
                   <div className="mx-2 md:mx-6 lg:mx-10 md:w-auto md:h-auto scale-75 md:scale-100">
-                    <StarSvg />
+                    <ArrowSvg />
                   </div>
                   <h2 className="uppercase font-cabinetGrotesk font-bold text-4xl sm:text-4xl md:text-5xl lg:text-7xl text-white tracking-tighter drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]">
                     Resultado con impacto
                   </h2>
                   <div className="mx-2 md:mx-6 lg:mx-10 md:w-auto scale-75 md:scale-100">
-                    <StarSvg />
+                    <ArrowSvg />
                   </div>
                 </Marquee>
               </div>
