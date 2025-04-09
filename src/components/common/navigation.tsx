@@ -20,14 +20,12 @@ export const Navigation = () => {
 
   const [visible, setVisible] = useState(true);
   const [scrolled, setScrolled] = useState(false);
-
   const [isActive, setIsActive] = useState(false);
+  const [mobileNav, setMobileNav] = useState(false);
 
   useEffect(() => {
     if (isActive) setIsActive(false);
   }, []);
-
-  const [mobileNav, setMobileNav] = useState(false);
 
   const toggleMobileNav = () => {
     setMobileNav(!mobileNav);
@@ -45,7 +43,7 @@ export const Navigation = () => {
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+      let direction = current - scrollYProgress.getPrevious();
 
       if (isActive) {
         setVisible(true);
@@ -53,11 +51,7 @@ export const Navigation = () => {
         if (scrollYProgress.get() < 0.055) {
           setVisible(true);
         } else {
-          if (direction < 0) {
-            setVisible(true);
-          } else {
-            setVisible(false);
-          }
+          setVisible(direction < 0);
         }
       }
     }
@@ -67,19 +61,11 @@ export const Navigation = () => {
     <div className="w-full max-w-full overflow-x-hidden">
       <AnimatePresence mode="wait">
         <motion.div
-          initial={{
-            opacity: 1,
-            y: -100,
-          }}
-          animate={{
-            y: visible ? 0 : -100,
-            opacity: visible ? 1 : 0,
-          }}
-          transition={{
-            duration: 0.2,
-          }}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: visible ? 1 : 0 }}
+          transition={{ duration: 0.2 }}
           className={cn(
-            "flex fixed top-0 2xl:top-0 w-full z-[2147483000]",
+            "flex fixed top-0 w-full z-[2147483000] transition-opacity duration-200",
             scrolled
               ? "bg-[#1A1A1A]/90 backdrop-blur-md"
               : "bg-[#1A1A1A]/90 backdrop-blur-md",
@@ -114,77 +100,50 @@ export const Navigation = () => {
 
             <div className="absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%] hidden md:block">
               <div className="inline-flex items-center gap-6 md:gap-8">
-                {navItems.map((item, index) => {
-                  return (
-                    <Link 
-                      key={index} 
-                      href={item.href}
-                      className="text-white hover:scale-110 transition-transform duration-200 ease-in-out opacity-70 hover:opacity-100 uppercase lg:text-lg tracking-wider font-cabinetGrotesk font-semibold"
-                    >
-                      {item.title}
-                    </Link>
-                  );
-                })}
+                {navItems.map((item, index) => (
+                  <Link 
+                    key={index} 
+                    href={item.href}
+                    className="text-white hover:scale-110 transition-transform duration-200 ease-in-out opacity-70 hover:opacity-100 uppercase lg:text-lg tracking-wider font-cabinetGrotesk font-semibold"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
               </div>
             </div>
 
             <aside className="flex items-center gap-4">
               <ContactDrawer />
-
               <div className="md:hidden">
-                <div>
-                  <motion.button
-                    initial="hide"
-                    animate={mobileNav ? "show" : "hide"}
-                    onClick={() => {
-                      toggleMobileNav();
-                      setIsActive(!isActive);
-                    }}
-                    className="flex flex-col space-y-1.5 relative z-[2147483000]"
-                    aria-label={mobileNav ? "Cerrar menú" : "Abrir menú"}
-                  >
-                    <motion.span
-                      variants={{
-                        hide: {
-                          rotate: 0,
-                        },
-                        show: {
-                          rotate: 45,
-                          y: 7.5,
-                        },
-                      }}
-                      className="w-6 bg-white rounded-full h-[1.5px] block"
-                    ></motion.span>
-                    <motion.span
-                      variants={{
-                        hide: {
-                          opacity: 1,
-                        },
-                        show: {
-                          opacity: 0,
-                        },
-                      }}
-                      className="w-6 bg-white rounded-full h-[1.5px] block"
-                    ></motion.span>
-                    <motion.span
-                      variants={{
-                        hide: {
-                          rotate: 0,
-                        },
-                        show: {
-                          rotate: -45,
-                          y: -7.5,
-                        },
-                      }}
-                      className="w-6 bg-white rounded-full h-[1.5px] block"
-                    ></motion.span>
-                  </motion.button>
-                </div>
+                <motion.button
+                  initial="hide"
+                  animate={mobileNav ? "show" : "hide"}
+                  onClick={() => {
+                    toggleMobileNav();
+                    setIsActive(!isActive);
+                  }}
+                  className="flex flex-col space-y-1.5 relative z-[2147483000]"
+                  aria-label={mobileNav ? "Cerrar menú" : "Abrir menú"}
+                >
+                  <motion.span
+                    variants={{ hide: { rotate: 0 }, show: { rotate: 45, y: 7.5 } }}
+                    className="w-6 bg-white rounded-full h-[1.5px] block"
+                  />
+                  <motion.span
+                    variants={{ hide: { opacity: 1 }, show: { opacity: 0 } }}
+                    className="w-6 bg-white rounded-full h-[1.5px] block"
+                  />
+                  <motion.span
+                    variants={{ hide: { rotate: 0 }, show: { rotate: -45, y: -7.5 } }}
+                    className="w-6 bg-white rounded-full h-[1.5px] block"
+                  />
+                </motion.button>
               </div>
             </aside>
           </Wrapper>
         </motion.div>
       </AnimatePresence>
+
       <AnimatePresence mode="wait">
         {isActive && (
           <SideMenu setIsActive={setIsActive} setMobileNav={setMobileNav} />

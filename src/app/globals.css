@@ -672,3 +672,18 @@
   opacity: 1;
 }
 /* End Lava Hover Effect */
+
+/* Arrow Glow Effect */
+@keyframes arrowGlowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.5));
+  }
+}
+
+.animate-arrow-glow {
+  animation: arrowGlowPulse 2.5s ease-in-out infinite;
+}
+

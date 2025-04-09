@@ -1,70 +1,47 @@
 "use client";
 
-import { Check, Copy } from "lucide-react";
-import Image from "next/image";
+import { Check, Copy, CornerDownLeft, Loader } from "lucide-react";
 import Link from "next/link";
-import Wrapper from "../wrapper/wrapper";
-import { motion } from "framer-motion";
-import { CornerDownLeft, Loader } from "lucide-react";
-
-import confetti from "canvas-confetti";
-
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-
-import { Input } from "@/components/ui/input";
-import { ctaFormSchema } from "@/schema";
-import { useState, useTransition } from "react";
-import { Textarea } from "../ui/textarea";
 import toast from "react-hot-toast";
+import { useState, useTransition, Suspense } from "react";
+import dynamic from "next/dynamic";
+
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "../ui/textarea";
+import { ctaFormSchema } from "@/schema";
 import { createCtaProspect } from "../../../actions";
+import Wrapper from "../wrapper/wrapper";
+
+const MotionDiv = dynamic(() => import("framer-motion").then((mod) => mod.motion.div), { ssr: false });
 
 const Cta = () => {
   const [isPending, startTransition] = useTransition();
+  const [copied, setCopied] = useState(false);
 
-  const handleConfetti = () => {
-    const duration = 4 * 1000;
+  const handleConfetti = async () => {
+    const confetti = (await import("canvas-confetti")).default;
+    const duration = 4000;
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
-    const randomInRange = (min: number, max: number) =>
-      Math.random() * (max - min) + min;
+    const randomInRange = (min: number, max: number) => Math.random() * (max - min) + min;
 
     const interval = window.setInterval(() => {
       const timeLeft = animationEnd - Date.now();
+      if (timeLeft <= 0) return clearInterval(interval);
 
-      if (timeLeft <= 0) {
-        return clearInterval(interval);
-      }
-
-      const particleCount = 40 * (timeLeft / duration); // Reduced particle count
-      confetti({
-        ...defaults,
-        particleCount,
-        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-      });
-      confetti({
-        ...defaults,
-        particleCount,
-        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-      });
+      const particleCount = 40 * (timeLeft / duration);
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+      confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
     }, 250);
   };
 
-  const [copied, setCopied] = useState(false);
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText("contacto@magmastudio.mx");
+  const copyEmail = (email: string) => {
+    navigator.clipboard.writeText(email);
     setCopied(true);
     toast.success("Email copiado al portapapeles!");
     setTimeout(() => setCopied(false), 4000);
@@ -87,11 +64,7 @@ const Cta = () => {
         handleConfetti();
         toast.success("Nos pondremos en contacto contigo pronto");
       } else {
-        if (result.error === "Email already exists") {
-          toast.error("El email ya existe");
-        } else {
-          toast.error("Algo salió mal");
-        }
+        toast.error(result.error === "Email already exists" ? "El email ya existe" : "Algo salió mal");
       }
     });
   };
@@ -115,61 +88,35 @@ const Cta = () => {
             </h4>
 
             <div
-              onClick={copyToClipboard}
+              onClick={() => copyEmail("contacto@magmastudio.mx")}
               className="flex items-center gap-2 cursor-pointer text-lg text-white font-archivo"
             >
-              <div
-                className={`inline-flex gap-2 items-center w-fit ${
-                  copied ? "scale-0 hidden" : "scale-100"
-                }`}
-              >
-                {" "}
-                <Copy
-                  className={`h-5 w-5 transition-all duration-300 ${
-                    copied ? "scale-0" : "scale-100"
-                  }`}
-                />
-                Copiar
+              <div className={`inline-flex gap-2 items-center w-fit ${copied ? "scale-0 hidden" : "scale-100"}`}>
+                <Copy className="h-5 w-5 transition-all duration-300" /> Copiar
               </div>
-              <div
-                className={`inline-flex gap-2 items-center w-fit ${
-                  copied ? "scale-100" : "scale-0 hidden"
-                }`}
-              >
-                <Check
-                  className={`h-5 w-5 transition-all duration-300 ${
-                    copied ? "scale-100" : "scale-0"
-                  }`}
-                />
-                Copiado
+              <div className={`inline-flex gap-2 items-center w-fit ${copied ? "scale-100" : "scale-0 hidden"}`}>
+                <Check className="h-5 w-5 transition-all duration-300" /> Copiado
               </div>
             </div>
           </div>
 
-          <motion.div
-            className="relative inline-block cursor-pointer w-full overflow-visible mb-2"
-            onClick={() => {
-              navigator.clipboard.writeText("magmastudioweb@gmail.com");
-              toast.success("Email copiado al portapapeles!");
-            }}
-            whileHover="hover"
-            initial="initial"
-          >
-            <p className="text-white font-archivo text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-medium truncate">
-              magmastudioweb@gmail.com
-            </p>
-            <motion.div
-              className="absolute -bottom-2 left-0 h-[3px] bg-white w-full origin-left"
-              variants={{
-                initial: { scaleX: 0 },
-                hover: { scaleX: 1 },
-              }}
-              transition={{
-                duration: 0.2,
-                ease: "easeOut",
-              }}
-            />
-          </motion.div>
+          <Suspense fallback={<div />}>
+            <MotionDiv
+              className="relative inline-block cursor-pointer w-full overflow-visible mb-2"
+              onClick={() => copyEmail("magmastudioweb@gmail.com")}
+              whileHover="hover"
+              initial="initial"
+            >
+              <p className="text-white font-archivo text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-medium truncate">
+                magmastudioweb@gmail.com
+              </p>
+              <MotionDiv
+                className="absolute -bottom-2 left-0 h-[3px] bg-white w-full origin-left"
+                variants={{ initial: { scaleX: 0 }, hover: { scaleX: 1 } }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              />
+            </MotionDiv>
+          </Suspense>
 
           <Form {...form}>
             <form
@@ -177,75 +124,63 @@ const Cta = () => {
               className="flex flex-col gap-6 md:gap-2 w-full h-full mt-8 md:mt-10"
             >
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-8 w-full">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem className="w-full">
-                      <FormLabel className="text-white">
-                        Nombre <span className="text-red-500">*</span>
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          className="bg-transparent border-b border-b-white/50 focus:border-b-2 focus:border-b-white placeholder:text-white/70 text-white py-2"
-                          disabled={isPending}
-                          placeholder="Tu Nombre"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-white" />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem className="w-full">
-                      <FormLabel className="text-white">
-                        Contacto <span className="text-red-500">*</span>
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          className="bg-transparent border-b border-b-white/50 focus:border-b-2 focus:border-b-white placeholder:text-white/70 text-white py-2"
-                          disabled={isPending}
-                          placeholder="Tu Correo Electrónico"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-white" />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <FormField
-                control={form.control}
-                name="projectBrief"
-                render={({ field }) => (
-                  <FormItem>
+                <FormField control={form.control} name="name" render={({ field }) => (
+                  <FormItem className="w-full">
                     <FormLabel className="text-white">
-                      Mensaje <span className="text-red-500">*</span>
+                      Nombre <span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
-                      <Textarea
+                      <Input
+                        className="bg-transparent border-b border-b-white/50 focus:border-b-2 focus:border-b-white placeholder:text-white/70 text-white py-2"
                         disabled={isPending}
-                        placeholder="Breve descripción del proyecto"
-                        className="md:min-h-[120px] lg:min-h-[140px] resize-none bg-transparent border-b border-b-white/50 focus:border-b-2 focus:border-b-white placeholder:text-white/70 text-white py-2"
+                        placeholder="Tu Nombre"
                         {...field}
                       />
                     </FormControl>
                     <FormMessage className="text-white" />
                   </FormItem>
-                )}
-              />
-              
+                )} />
+
+                <FormField control={form.control} name="email" render={({ field }) => (
+                  <FormItem className="w-full">
+                    <FormLabel className="text-white">
+                      Contacto <span className="text-red-500">*</span>
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        className="bg-transparent border-b border-b-white/50 focus:border-b-2 focus:border-b-white placeholder:text-white/70 text-white py-2"
+                        disabled={isPending}
+                        placeholder="Tu Correo Electrónico"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-white" />
+                  </FormItem>
+                )} />
+              </div>
+
+              <FormField control={form.control} name="projectBrief" render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-white">
+                    Mensaje <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <Textarea
+                      disabled={isPending}
+                      placeholder="Breve descripción del proyecto"
+                      className="md:min-h-[120px] lg:min-h-[140px] resize-none bg-transparent border-b border-b-white/50 focus:border-b-2 focus:border-b-white placeholder:text-white/70 text-white py-2"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage className="text-white" />
+                </FormItem>
+              )} />
+
               <div className="w-full mt-8 md:mt-0 mb-4 relative z-10">
                 <button
                   type="submit"
                   disabled={isPending}
-                  className="relative w-full inline-flex h-12 md:h-14 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group disabled:opacity-70 z-10"
+                  className="relative w-full inline-flex h-12 md:h-14 overflow-hidden rounded-full p-[3px] group disabled:opacity-70 z-10"
                 >
                   <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF6A00_0%,#FF4500_50%,#FF6A00_100%)]" />
                   <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#FF4500] px-6 py-1 text-lg md:text-xl font-archivo font-medium text-white backdrop-blur-3xl">
@@ -267,3 +202,4 @@ const Cta = () => {
 };
 
 export default Cta;
+
