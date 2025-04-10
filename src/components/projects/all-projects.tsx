@@ -151,4 +151,15 @@ const cards: CardType[] = [
     id: 2,
     url: "https://acredia.mx",
   },
+  {
+    images: [
+      "/projects/flover/flover.webp",
+    ],
+    title: "FLOVER",
+    year: "2025",
+    description:
+      "FLOVER es una landing page para una empresa de producción agrícola en hidroponía.",
+    id: 3,
+    url: "https://flover.mx",
+  },
 ];

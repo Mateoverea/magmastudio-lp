@@ -84,5 +84,14 @@ const cards: CardType[] = [
       "Acredia es una landing page para una empresa de servicios financieros y brokers de créditos.",
     id: 2,
     url: "https://acredia.mx",
-  }
+  },
+  {
+    src: "/projects/flover/flover.webp",
+    title: "FLOVER",
+    year: "2025",
+    description:
+      "FLOVER es una landing page para una empresa de producción agrícola en hidroponía.",
+    id: 3,
+    url: "https://flover.mx",
+  },
 ];
