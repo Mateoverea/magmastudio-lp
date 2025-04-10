@@ -35,8 +35,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         }}
         className="card w-full overflow-y-clip"
       >
-        <div className={`body md:ml-12 -mt-5 lg:ml-10 text-${textColor}`}>
-          <div className="flex flex-col items-start mt-10 w-full md:w-[80%] lg:[70%] 2xl:w-[65%] 3xl:w-[50%] 4xl:w-[75%] justify-center md:-mt-[5rem] pl-5 pr-5 md:pl-20 md:pr-0 pt-10 md:pt-0">
+        <div className={`body -pt-5 md:pl-12 md:pt-4 lg:pl-10 text-${textColor}`}>
+          <div className="flex flex-col items-start pt-10 w-full md:w-[80%] lg:[70%] 2xl:w-[65%] 3xl:w-[50%] 4xl:w-[75%] justify-center md:-mt-[5rem] pl-5 pr-5 md:pl-20 md:pr-0 pt-10 md:pt-0">
             <h2 className="text-4xl md:text-6xl uppercase tracking-tighter font-semibold font-cabinetGrotesk">
               {title}
             </h2>
