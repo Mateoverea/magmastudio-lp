@@ -30,10 +30,10 @@ const Pricing = () => {
             </p>
             <div className="flex flex-col gap-2 mt-4">
               {[
-                "1 sección tipo one-pager",
+                "Hasta 3 secciones tipo one-pager",
                 "Diseño personalizado",
                 "Desarrollo en Next.js o Vite",
-                "Hosting y dominio por 1 año",
+                "Hosting de dominio por 1 año",
                 "Formulario de contacto integrado",
                 "Entrega en 5 días",
               ].map((item, i) => (
@@ -74,7 +74,7 @@ const Pricing = () => {
             </p>
             <div className="flex flex-col gap-2 mt-4">
               {[
-                "3–5 secciones: Hero, servicios, beneficios, contacto, etc.",
+                "Hasta 5 secciones: Hero, servicios, beneficios, contacto, etc.",
                 "Animaciones suaves",
                 "Optimización SEO básica",
                 "Responsive en todos los dispositivos",
@@ -167,6 +167,7 @@ const Pricing = () => {
               {[
                 "Sitio completamente personalizado",
                 "Hasta 8 secciones clave",
+                "2 plantillas extra",
                 "Animaciones e interacciones avanzadas",
                 "Optimización SEO y performance",
                 "Responsive y adaptable a todos los dispositivos",

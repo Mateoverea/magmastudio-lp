@@ -1,6 +1,6 @@
 export const features = [
   {
-    title: "01. Landing Page",
+    title: "Landing Page",
     description:
       "Diseñamos páginas rápidas y modernas enfocadas en conversión. Perfectas para validar una idea o lanzar un producto.",
     descriptionMobile:
@@ -10,7 +10,7 @@ export const features = [
     text: "white",
   },
   {
-    title: "02. MVP Rápido",
+    title: "MVP Rápido",
     description:
       "Creamos un prototipo funcional para que valides tu idea con usuarios reales sin perder tiempo ni dinero.",
     descriptionMobile:
@@ -20,7 +20,7 @@ export const features = [
     text: "white",
   },
   {
-    title: "03. Software",
+    title: "Software",
     description:
       "Desarrollamos plataformas y sistemas web adaptados a tu operación. Escalables, eficientes y listos para crecer contigo.",
     descriptionMobile:
@@ -30,7 +30,7 @@ export const features = [
     text: "white",
   },
   {
-    title: "04. E-commerce",
+    title: "E-commerce",
     description:
       "Creamos tiendas online personalizadas, con pagos integrados y una experiencia de usuario optimizada para vender más.",
     descriptionMobile:
