@@ -12,17 +12,17 @@ const AllProjects = () => {
   const isInView = useInView(containerRef, { once: false, amount: 0.2 });
 
   return (
-    <section id="portfolio" className="w-full py-20 md:py-32">
+    <section id="portfolio" className="w-full py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16 md:mb-24">
+        <div className="mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center mt-6">
+            <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center">
             Nuestros Proyectos
             </h2>
             <p className="font-archivo max-w-[52ch] mx-auto text-lg md:text-xl text-white/80 text-center w-full mt-2">

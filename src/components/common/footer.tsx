@@ -2,7 +2,6 @@
 
 import { navItems } from "@/constants/data";
 import { Instagram } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { FaDribbble, FaGithub } from "react-icons/fa";
@@ -13,14 +12,11 @@ import Wrapper from "../wrapper/wrapper";
 import AnimatedLink from "./animated-link";
 import { FooterText } from "./footer-text";
 import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
 
 const Footer = () => {
-  const pathName = usePathname();
   const [time, setTime] = useState<string>("");
   const [year, setYear] = useState<number>(new Date().getFullYear());
-  const [isEntered, setIsEntered] = useState<boolean>(false);
-  const [isLinkHovered, setIsLinkHovered] = useState<boolean>(false);
+
 
   useEffect(() => {
     const updateTime = () => {
@@ -40,12 +36,12 @@ const Footer = () => {
   }, []);
 
   return (
-    <section className="custom-gradient-bg w-full h-fit md:h-screen relative md:max-h-screen overflow-hidden px-3 md:px-0">
-      <div className="flex flex-col items-center w-full md:h-screen md:justify-between pt-8 md:pt-12 pb-8 md:pb-10">
+    <section className="custom-gradient-bg w-full h-fit h-screen relative md:max-h-screen overflow-hidden px-3 lg:px-0">
+      <div className="flex flex-col items-center w-full h-screen md:justify-between pt-8 lg:pt-12 pb-8 lg:pb-10">
         <Wrapper className="w-full flex flex-col lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
           <div className="z-[51] flex flex-col items-start gap-0 w-full">
-            <div className="w-full flex flex-col md:flex-row justify-between items-start">
-              <div className="w-full md:w-[80%]">
+            <div className="w-full flex flex-col lg:flex-row justify-between items-start">
+              <div className="w-full lg:w-[80%]">
                 <div className="w-full flex flex-col">
                   <motion.div 
                     initial={{ opacity: 0, y: 20 }}
@@ -55,7 +51,7 @@ const Footer = () => {
                   >
                     <h3 className="font-cabinetGrotesk uppercase text-white font-semibold text-5xl md:text-7xl tracking-tighter leading-[0.85]">
                       Haz Que <br className="hidden md:block" /> Tu Negocio 
-                      <br className="hidden md:block" /> 
+                      <br className="hidden lg:block" /> 
                       <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF4500] to-[#FF6A00]"> Despegue!</span>
                     </h3>
                   </motion.div>
@@ -80,7 +76,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="w-full mt-8 md:mt-0">
+              <div className="w-full mt-8 lg:mt-0">
                 <div className="flex flex-wrap md:flex-nowrap md:flex-row gap-6 md:gap-8 items-start w-full justify-between">
                   <motion.div 
                     initial={{ opacity: 0, y: 20 }}
@@ -141,7 +137,7 @@ const Footer = () => {
                     className="w-fit md:w-1/3 md:flex-grow"
                   >
                     <h3 className="font-cabinetGrotesk uppercase text-white font-medium mt-3 text-xl relative">
-                      <span className="relative z-10">Recursos</span>
+                      <span className="relative z-10">Recursos (Proximamente)</span>
                       <span className="absolute bottom-0 left-0 h-[2px] w-8 bg-gradient-to-r from-[#FF4500] to-[#FF6A00]"></span>
                     </h3>
                     <div className="flex flex-col items-start gap-2 mt-4">

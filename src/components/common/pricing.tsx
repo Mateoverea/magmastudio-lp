@@ -8,7 +8,7 @@ import Link from "next/link";
 const Pricing = () => {
   return (
     <section id="pricing" className="w-full px-3">
-      <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center mt-6">
+      <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center">
         <span className="hidden md:block">Precios Simples y Flexibles</span>
         <span className="md:hidden">Precios Simples</span>
       </h2>

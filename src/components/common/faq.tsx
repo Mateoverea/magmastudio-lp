@@ -4,7 +4,7 @@ import { FaqItems } from "./faq-items";
 
 export const FAQs = () => {
   return (
-    <section id="faqs" className="pt-20 pb-0 relative px-3 md:px-0 mb-20 lg:-mb-20">
+    <section id="faqs" className="relative px-3 lg:px-0 pt-12 pb-12 md:pt-14 md:pb-24">
       <div className="relative z-10 flex flex-col items-center justify-center">
         <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl tracking-tighter lg:text-7xl text-white text-center mt-6">
           Nuestras Preguntas Frecuentes
