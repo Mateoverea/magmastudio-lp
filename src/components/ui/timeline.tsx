@@ -30,7 +30,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div ref={containerRef} className="min-h-screen w-full md:px-10">
-      <div className=" w-full py-20 px-4 md:px-8 lg:px-10">
+      <div className=" w-full py-14 px-4 md:px-8 lg:px-10">
         <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl tracking-tighter lg:text-7xl text-white text-center mt-6">
           De la visión a la ejecución
         </h2>
@@ -40,11 +40,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         </p>
       </div>
 
-      <div ref={ref} className="relative w-full max-w-5xl mx-auto pb-20">
+      <div ref={ref} className="relative w-full max-w-5xl mx-auto pb-10 md:pb-0">
         {data.map((item, index) => (
           <div
             key={index}
-            className=" min-h-[40vh] md:min-h-[30vh] lg:min-h-[45vh] flex flex-col justify-start w-full"
+            className=" min-h-[40vh] md:min-h-[30vh] lg:min-h-[50vh] flex flex-col justify-start w-full"
           >
             <div className="sticky top-28 flex flex-col items-center w-full z-50">
               <div className="h-10 absolute left-3 lg:left-1/2 lg:-translate-x-5 w-10 rounded-full bg-black flex items-center justify-center">

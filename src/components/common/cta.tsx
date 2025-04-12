@@ -70,8 +70,8 @@ const Cta = () => {
   };
 
   return (
-    <section className="bg-[#7a290e] h-fit md:h-auto w-full md:mt-40 px-3 md:px-0 overflow-hidden">
-      <Wrapper className="w-full py-12 md:py-20 lg:py-24 h-full flex flex-col md:flex-row md:justify-between gap-12 md:gap-10 lg:gap-16 items-center md:px-0 group lg:px-[1rem] xl:px-[4rem] 2xl:px-[6rem] 3xl:px-[8rem] 4xl:px-[10rem] 5xl:px-[0rem] my-4">
+    <section className="bg-[#7a290e] h-fit md:h-auto w-full px-3 lg:px-0 overflow-hidden">
+      <Wrapper className="w-full py-12 md:py-20 lg:py-24 h-full flex flex-col md:flex-row md:justify-between gap-12 md:gap-10 lg:gap-16 items-center md:px-3 lg:px-0 group lg:px-[1rem] xl:px-[4rem] 2xl:px-[6rem] 3xl:px-[8rem] 4xl:px-[10rem] 5xl:px-[0rem] my-4">
         <div className="w-full md:w-[40%] lg:w-[40%] flex flex-col items-start h-full justify-center">
           <Link className="h-full" href="/">
           </Link>

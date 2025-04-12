@@ -13,8 +13,8 @@ const SocialProof = () => {
   const [hovered3, setHovered3] = useState(false);
   
   return (
-    <section className="pt-0 pb-12 md:pt-0 md:pb-24">
-      <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-12 py-20">
+    <section className="pt-0 pb-12 md:pt-0 md:-mt-12 md:pb-16">
+      <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-12 pt-12">
         <div className="flex flex-col gap-2">
           <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">
             <br className=" hidden md:block" />
@@ -48,8 +48,8 @@ const SocialProof = () => {
                     animationSpeed={5}
                     containerClassName="bg-transparent"
                     colors={[
-                      [122, 41, 14], // Volcanico (#7a290e)
                       [255, 165, 0], // Naranja (#FFA500)
+                      [255, 230, 0], // Amarillo pato (#FFE600)
                     ]}
                     opacities={[0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.4, 0.4, 0.4, 1]}
                     dotSize={2}
@@ -84,9 +84,9 @@ const SocialProof = () => {
                   <CanvasRevealEffect
                     animationSpeed={5}
                     containerClassName="bg-transparent"
-                    colors={[
-                      [122, 41, 14], // Volcanico (#7a290e)
+                    colors={[                     
                       [255, 165, 0], // Naranja (#FFA500)
+                      [255, 230, 0], // Amarillo pato (#FFE600)
                     ]}
                     opacities={[0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.4, 0.4, 0.4, 1]}
                     dotSize={2}
@@ -122,8 +122,8 @@ const SocialProof = () => {
                     animationSpeed={5}
                     containerClassName="bg-transparent"
                     colors={[
-                      [122, 41, 14], // Volcanico (#7a290e)
                       [255, 165, 0], // Naranja (#FFA500)
+                      [255, 230, 0], // Amarillo pato (#FFE600)
                     ]}
                     opacities={[0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.4, 0.4, 0.4, 1]}
                     dotSize={2}
@@ -145,7 +145,7 @@ const SocialProof = () => {
         </div>
       </Wrapper>
       <div className="h-6 md:h-[2rem]" />
-      <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-20">
+      <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-20 pt-12 md:pt-14">
         <div className="flex flex-col gap-2">
           <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">
             Confiado por fundadores
@@ -155,7 +155,7 @@ const SocialProof = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-center w-fit md:w-full">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-center w-fit md:w-full md:-mt-[4rem]">
           <Stat num={3} subheading="Proyectos Completados" />
 
           <Stat num={3} subheading="Clientes Satisfechos" />
