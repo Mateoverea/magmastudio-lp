@@ -5,6 +5,7 @@ import Cards from "@/components/common/cards";
 import Cta from "@/components/common/cta";
 import { FAQs } from "@/components/common/faq";
 import Hero from "@/components/common/hero";
+import MobileHero from "@/components/common/mobile-hero";
 import OurProcess from "@/components/common/our-process";
 import Preloader from "@/components/common/preloader";
 import Pricing from "@/components/common/pricing";
@@ -49,6 +50,7 @@ export default function Home() {
       {/* Start of custom gradient background section */}
       <div className="custom-gradient-bg">
         <Hero />
+        <MobileHero />
         <SocialProof />
         <Cards />
         <OurProcess />
