@@ -94,19 +94,19 @@ const MobileHero = () => {
       />
       
       {/* Mobilava Image at the top */}
-      <div className="relative z-5 flex justify-center pt-28">
+      <div className="relative z-5 flex justify-center pt-32">
         <Image
-          src="/lava/1.png"
+          src="/lava/3.png"
           alt="Magma Studio Mobile"
-          width={700}
-          height={700}
+          width={400}
+          height={400}
           className="object-contain scale-150"
           priority
         />
       </div>
 
       {/* Main content container - Left aligned */}
-      <div className="relative z-10 flex flex-col items-start px-6 flex-1 justify-center pt-10">
+      <div className="relative z-10 flex flex-col items-start px-6 flex-1 justify-center pt-4">
         
         {/* Main title */}
         <h1 
