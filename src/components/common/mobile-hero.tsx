@@ -85,7 +85,7 @@ const MobileHero = () => {
   return (
     <section
       ref={heroRef}
-      className="w-full min-h-screen relative lg:hidden overflow-hidden flex flex-col"
+      className="w-full min-h-screen relative lg:hidden overflow-hidden flex flex-col -mb-20"
     >
       {/* Animated background shape */}
       <div
@@ -94,7 +94,7 @@ const MobileHero = () => {
       />
       
       {/* Mobilava Image at the top */}
-      <div className="relative z-5 flex justify-center pt-32">
+      <div className="relative z-5 flex justify-center">
         <Image
           src="/lava/3.png"
           alt="Magma Studio Mobile"
@@ -106,12 +106,12 @@ const MobileHero = () => {
       </div>
 
       {/* Main content container - Left aligned */}
-      <div className="relative z-10 flex flex-col items-start px-6 flex-1 justify-center pt-4">
+      <div className="relative z-10 flex flex-col items-start px-6 flex-1 justify-center">
         
         {/* Main title */}
         <h1 
           ref={titleRef}
-          className="font-cabinetGrotesk font-bold text-5xl sm:text-6xl text-white leading-tight mb-8 uppercase tracking-tighter text-left"
+          className="font-cabinetGrotesk font-bold text-6xl sm:text-6xl text-white leading-tight mb-8 uppercase tracking-tighter text-left"
         >
           <span className="block">Desarrollo web a la</span>
           <span className="block bg-clip-text text-white font-light">
@@ -120,11 +120,11 @@ const MobileHero = () => {
         </h1>
 
         {/* Services grid - 2 rows */}
-        <div className="mb-8 grid grid-cols-2 gap-x-6 gap-y-4 w-full max-w-md">
+        <div className="mb-8 grid grid-cols-2 gap-x-8 gap-y-6 w-full max-w-md">
           {['Sitios web', 'Landing Pages', 'Software', 'E-commerce'].map((service) => (
             <span
               key={service}
-              className="text-white text-xl font-archivo font-normal italic uppercase text-left"
+              className="text-white text-2xl font-cabinetGrotesk font-bold italic uppercase text-left tracking-wide leading-tight"
             >
               {service}
             </span>
