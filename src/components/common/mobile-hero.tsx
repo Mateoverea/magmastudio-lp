@@ -85,7 +85,7 @@ const MobileHero = () => {
   return (
     <section
       ref={heroRef}
-      className="w-full min-h-screen relative lg:hidden overflow-hidden flex flex-col -mb-20"
+      className="w-full min-h-screen relative lg:hidden overflow-hidden flex flex-col"
     >
       {/* Animated background shape */}
       <div
@@ -100,27 +100,27 @@ const MobileHero = () => {
           alt="Magma Studio Mobile"
           width={400}
           height={400}
-          className="object-contain scale-150"
+          className="object-contain scale-150 -mb-8"
           priority
         />
       </div>
 
       {/* Main content container - Left aligned */}
-      <div className="relative z-10 flex flex-col items-start px-6 flex-1 justify-center">
+      <div className="relative z-10 flex flex-col items-start px-2 flex-1 justify-center">
         
         {/* Main title */}
         <h1 
           ref={titleRef}
-          className="font-cabinetGrotesk font-bold text-6xl sm:text-6xl text-white leading-tight mb-8 uppercase tracking-tighter text-left"
+          className="font-cabinetGrotesk font-bold text-6xl sm:text-6xl text-white leading-[0.92] mb-6 uppercase tracking-tighter text-left"
         >
           <span className="block">Desarrollo web a la</span>
-          <span className="block bg-clip-text text-white font-light">
+          <span className="block bg-clip-text text-white font-light italic">
             medida
           </span>
         </h1>
 
         {/* Services grid - 2 rows */}
-        <div className="mb-8 grid grid-cols-2 gap-x-8 gap-y-6 w-full max-w-md">
+        <div className="mb-8 grid grid-cols-2 gap-x-8 gap-y-2 w-full max-w-md">
           {['Sitios web', 'Landing Pages', 'Software', 'E-commerce'].map((service) => (
             <span
               key={service}

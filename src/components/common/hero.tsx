@@ -32,7 +32,7 @@ const Hero = () => {
               </h2>
 
               <div className="flex items-center gap-10">
-                <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-extrabold text-4xl md:text-5xl lg:text-8xl text-white text-left relative">
+                <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-light italic text-4xl md:text-5xl lg:text-8xl text-white text-left relative">
                   <span className="lava-hover" data-text="medida">medida</span>
                 </h2>
                 <p className="font-archivo text-sm md:text-base lg:text-3xl text-[#333333]/80 text-left max-w-[30ch] md:max-w-[40ch] uppercase pt-2">
