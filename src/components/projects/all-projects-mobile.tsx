@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const AllProjectsMobile = () => {
   return (
-    <section id="portfolio-mobile" className=" w-full px-3 mb-20">
+    <section id="portfolio-mobile" className=" w-full px-3 mb-10">
       <h2 className="text-white text-center uppercase text-5xl font-semibold font-cabinetGrotesk">
         Nuestros Proyectos
       </h2>

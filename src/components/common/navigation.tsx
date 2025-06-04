@@ -74,7 +74,7 @@ export const Navigation = () => {
         >
           <Wrapper className="w-full flex flex-row justify-between items-center md:px-0 lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
             <Link href="/" className="flex items-center">
-              <div className="flex items-center justify-center w-[52px] h-[52px] hover:scale-110 ease-in-out transition-all duration-200 lg:hidden">
+              <div className="flex items-center justify-center hover:scale-110 ease-in-out transition-all duration-200 lg:hidden">
                 <Image
                   width={100}
                   height={42}
@@ -85,7 +85,7 @@ export const Navigation = () => {
                   priority
                 />
               </div>
-              <div className="flex items-center justify-center w-[180px] h-[50px] hover:scale-110 ease-in-out transition-all duration-200 hidden lg:block -mt-4">
+              <div className="flex items-center justify-center hover:scale-110 ease-in-out transition-all duration-200 hidden lg:block">
                 <Image
                   width={136}
                   height={40}
@@ -114,7 +114,7 @@ export const Navigation = () => {
 
             <aside className="flex items-center gap-4">
               <ContactDrawer />
-              <div className="md:hidden">
+              <div>
                 <motion.button
                   initial="hide"
                   animate={mobileNav ? "show" : "hide"}
