@@ -12,7 +12,7 @@ const Pricing = () => {
         <span className="hidden md:block">Precios Simples y Flexibles</span>
         <span className="md:hidden">Precios Simples</span>
       </h2>
-      <p className="font-archivo max-w-[52ch] mx-auto text-lg md:text-xl text-white/80 text-center w-full mt-2">
+      <p className="font-archivo max-w-[52ch] mx-auto text-lg md:text-2xl text-white/80 text-center w-full mt-2">
         Diseño, Desarrollo, o ambos - ¡Cualquier cosa que necesites te cubrimos para asegurarnos de dar vida a tu proyecto!
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto mt-12 max-w-[70rem]">
@@ -26,16 +26,18 @@ const Pricing = () => {
               Ideal para validar una idea o presentar tu producto de forma profesional y rápida.
             </p>
             <p className="font-archivo text-xl md:text-2xl font-semibold text-[#FF4500] my-4">
-              Desde $300 USD
+              Desde $399 USD
             </p>
             <div className="flex flex-col gap-2 mt-4">
               {[
                 "Hasta 5 secciones tipo one-pager",
                 "Diseño personalizado",
-                "Desarrollo en Next.js o Vite",
-                "Hosting de dominio por 1 año",
+                "Conexión con tu dominio",
                 "Formulario de contacto integrado",
-                "Entrega en 5 días",
+                "Optimización SEO",
+                "Responsive en todos los dispositivos",
+                "Animaciones suaves",
+              
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <Check className="text-[#FF4500]" />
@@ -70,16 +72,17 @@ const Pricing = () => {
               Para marcas que necesitan contar su historia y construir confianza con sus clientes.
             </p>
             <p className="font-archivo text-xl md:text-2xl font-semibold text-[#FF4500] my-4">
-              Desde $600 USD
+              Desde $599 USD
             </p>
             <div className="flex flex-col gap-2 mt-4">
               {[
+                "Todo el paquete Landing Express",
                 "Hasta 7 secciones tipo one-pager",
-                "Animaciones suaves",
-                "Optimización SEO básica",
-                "Responsive en todos los dispositivos",
+                "Ronda de ajustes post-entrega",
+                "Hosting por 6 meses",
                 "Integración con Google Analytics / Meta Pixel",
-                "Entrega en 7 a 10 días",
+                "Animaciones e interacciones avanzadas",
+                "CMS para gestionar contenido",
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <Check className="text-[#FF4500]" />
@@ -114,7 +117,7 @@ const Pricing = () => {
               Tu tienda online, conectada a pasarelas de pago y lista para vender.
             </p>
             <p className="font-archivo text-xl md:text-2xl font-semibold text-[#FF4500] my-4">
-              Desde $850 USD
+              Desde $849 USD
             </p>
             <div className="flex flex-col gap-2 mt-4">
               {[
@@ -161,7 +164,7 @@ const Pricing = () => {
               Para empresas o startups que necesitan una solución digital robusta, escalable y totalmente personalizada.
             </p>
             <p className="font-archivo text-xl md:text-2xl font-semibold text-white my-4">
-              Desde $1,200 USD
+              Desde $1,199 USD
             </p>
             <div className="flex flex-col gap-2 mt-4">
               {[

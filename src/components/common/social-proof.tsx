@@ -18,9 +18,9 @@ const SocialProof = () => {
         <div className="flex flex-col gap-2">
           <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">
             <br className=" hidden md:block" />
-            Impulsa tu Negocio Digital
+            Impulsa tu Negocio en el Mundo Digital
           </h2>
-          <p className="font-archivo md:max-w-[60ch] text-lg md:text-xl text-white/80 text-center w-full mx-auto">
+          <p className="font-archivo md:max-w-[60ch] text-lg md:text-2xl text-white/80 text-center w-full mx-auto">
             <span className="hidden md:inline text-center">
               La presencia digital es crucial para las empresas. Te ayudamos a construir productos que
               te posicionan de la mejor forma para crecer.
@@ -60,11 +60,11 @@ const SocialProof = () => {
             <div className=" z-10 h-14 aspect-square bg-[#7a290e] border border-[#272727] rounded-full flex items-center justify-center">
               <Rocket />
             </div>
-            <h4 className="z-10 mt-4 mb-1 text-3xl md:text-4xl tracking-tighter font-cabinetGrotesk font-medium text-white">
-              Construye Rápido
+            <h4 className="z-10 mt-4 mb-1 text-3xl md:text-3xl tracking-tighter font-cabinetGrotesk font-medium text-white">
+              ¿Tu marca ya tiene presencia digital real?
             </h4>
             <p className="z-10 font-archivo font-normal text-lg text-white/70 group-hover:text-white/100">
-              Entregamos tu primer prototipo en poco tiempo, para que puedas visualizar tu producto.
+              Muchos negocios siguen sin una página efectiva. O peor: tienen una que no vende ni refleja el valor de su producto o servicio.
             </p>
             <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-transparent dark:bg-black/10" />
           </div>
@@ -97,12 +97,11 @@ const SocialProof = () => {
             <div className=" z-10 h-14 aspect-square bg-[#7a290e] border border-[#272727] rounded-full flex items-center justify-center">
               <TestTube />
             </div>
-            <h4 className="z-10 mt-4 mb-1 text-3xl md:text-4xl tracking-tighter font-cabinetGrotesk font-medium text-white">
-              Valida la Idea
+            <h4 className="z-10 mt-4 mb-1 text-3xl md:text-3xl tracking-tighter font-cabinetGrotesk font-medium text-white">
+              Estás a una herramienta de crecer más rápido
             </h4>
             <p className="z-10 font-archivo font-normal text-lg text-white/70 group-hover:text-white/100">
-              Valida tu idea con clientes reales: ¿realmente resuelve sus
-              problema(s) y punto(s) de dolor?
+              Una landing, un sistema de gestión o un buen e-commerce. Vendes más. Pierdes menos tiempo. Escalas mejor.
             </p>
           </div>
           <div
@@ -134,18 +133,17 @@ const SocialProof = () => {
             <div className=" z-10 h-14 aspect-square bg-[#7a290e] border border-[#272727] rounded-full flex items-center justify-center">
               <RefreshCcw />
             </div>
-            <h4 className=" z-10 mt-4 mb-1 text-3xl md:text-4xl tracking-tighter font-cabinetGrotesk font-medium text-white">
-              Impulsa y Mejora
+            <h4 className=" z-10 mt-4 mb-1 text-3xl md:text-3xl tracking-tighter font-cabinetGrotesk font-medium text-white">
+             Nosotros lo hacemos realidad
             </h4>
             <p className=" z-10  font-archivo font-normal text-lg text-white/70 group-hover:text-white/100">
-              Utiliza la retroalimentación real de los usuarios para refinar, optimizar y mejorar tu
-              producto.
+              Creamos desde páginas web hasta software a la medida. Siempre con diseño potente, estrategia clara y resultados que importan.
             </p>
           </div>
         </div>
       </Wrapper>
       <div className="h-6 md:h-[2rem]" />
-      <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-20 pt-12 md:pt-14">
+      {/* <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-20 pt-12 md:pt-14">
         <div className="flex flex-col gap-2">
           <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">
             Confiado por fundadores
@@ -162,7 +160,7 @@ const SocialProof = () => {
 
           <Stat num={0} subheading="Tiendas Creadas" />
         </div>
-      </Wrapper>
+      </Wrapper> */}
     </section>
   );
 };

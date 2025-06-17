@@ -100,7 +100,7 @@ export function ContactDrawer() {
           <span className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#1A1A1A_100%)]" />
           <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#1A1A1A] px-4 md:px-6 py-1 text-base font-archivo font-medium text-white backdrop-blur-3xl">
             Crea tu Proyecto
-            <ArrowRight className="ml-2" />
+            
           </span>
         </div>
       </DrawerTrigger>

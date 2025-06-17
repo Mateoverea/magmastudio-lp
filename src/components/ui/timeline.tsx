@@ -34,7 +34,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl tracking-tighter lg:text-7xl text-white text-center mt-6">
           De la visión a la ejecución
         </h2>
-        <p className=" font-archivo max-w-[52ch] mx-auto text-lg lg:text-xl text-white/80 text-center w-full mt-2">
+        <p className=" font-archivo max-w-[52ch] mx-auto text-lg lg:text-2xl text-white/80 text-center w-full mt-2">
           Convertimos ideas audaces en soluciones escalables a través de un enfoque
           simplificado e iterativo diseñado para un impacto máximo.
         </p>
@@ -63,7 +63,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     {item.title}
                   </h3>
 
-                  <h4 className=" text-white text-lg lg:text-xl font-archivo mt-2 opacity-80 max-w-[35ch] md:max-w-[50ch] lg:max-w-[35ch]">
+                  <h4 className=" text-white text-lg lg:text-xl font-archivo mt-2 opacity-80 max-w-[35ch] md:max-w-[50ch] lg:max-w-[38ch]">
                     {item.description}
                   </h4>
                 </div>
