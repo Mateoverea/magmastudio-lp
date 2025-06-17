@@ -17,7 +17,7 @@ export function FaqItems() {
         </AccordionTrigger>
         <AccordionContent>
           Dividimos el proyecto en etapas: descubrimiento, diseño, desarrollo y entrega. 
-          Durante todo el proceso tendrás comunicación constante con nosotros por Slack, 
+          Durante todo el proceso tendrás comunicación constante con nosotros, 
           avances semanales y demos en vivo. Queremos que estés al tanto y 100% alineado.
         </AccordionContent>
       </AccordionItem>
@@ -34,7 +34,7 @@ export function FaqItems() {
         <AccordionTrigger>¿Qué necesitan para empezar un proyecto?</AccordionTrigger>
         <AccordionContent>
           Solo necesitamos tu idea, un brief (si lo tienes) y cualquier material que ya tengas. 
-          En una llamada inicial definimos metas, tiempos y presupuesto para asegurarnos 
+          En una llamada inicial definimos metas y tiempos para asegurarnos 
           de que vamos por el camino correcto desde el día uno.
         </AccordionContent>
       </AccordionItem>

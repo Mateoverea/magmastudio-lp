@@ -25,7 +25,7 @@ const AllProjects = () => {
             <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center">
             Nuestros Proyectos
             </h2>
-            <p className="font-archivo max-w-[52ch] mx-auto text-lg md:text-xl text-white/80 text-center w-full mt-2">
+            <p className="font-archivo max-w-[52ch] mx-auto text-lg md:text-2xl text-white/80 text-center w-full mt-2">
               Transformamos ideas en experiencias digitales excepcionales
             </p>
           </motion.div>

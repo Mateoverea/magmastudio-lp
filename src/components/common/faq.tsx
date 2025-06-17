@@ -9,7 +9,7 @@ export const FAQs = () => {
         <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl tracking-tighter lg:text-7xl text-white text-center mt-6">
           Preguntas Frecuentes
         </h2>
-        <p className=" font-archivo max-w-[70ch] text-lg md:text-xl text-white/80 text-center w-full mt-2">
+        <p className=" font-archivo max-w-[70ch] text-lg md:text-2xl text-white/80 text-center w-full mt-2">
           Las preguntas más comunes que nos hacen.
         </p>
         <FaqItems />

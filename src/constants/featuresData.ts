@@ -1,30 +1,20 @@
 export const features = [
   {
-    title: "Landing Page",
+    title: "Landing Pages",
     description:
-      "Diseñamos páginas rápidas y modernas enfocadas en conversión. Perfectas para validar una idea o lanzar un producto.",
+      "Creamos páginas enfocadas en conversión: rápidas, visualmente atractivas y alineadas con tus objetivos comerciales. Ideales para campañas, lanzamientos o presentación de servicios.",
     descriptionMobile:
-      "Diseñamos páginas rápidas y modernas enfocadas en conversión. Perfectas para validar una idea o lanzar un producto.",
+      "Creamos páginas enfocadas en conversión: rápidas, visualmente atractivas y alineadas con tus objetivos comerciales. Ideales para campañas, lanzamientos o presentación de servicios.",
     src: "lava4.webp",
-    color: "#000000",
-    text: "white",
-  },
-  {
-    title: "MVP Rápido",
-    description:
-      "Creamos un prototipo funcional para que valides tu idea con usuarios reales sin perder tiempo ni dinero.",
-    descriptionMobile:
-      "Creamos un prototipo funcional para que valides tu idea con usuarios reales sin perder tiempo ni dinero.",
-    src: "lava5.webp",
     color: "#000000",
     text: "white",
   },
   {
     title: "Software",
     description:
-      "Desarrollamos plataformas y sistemas web adaptados a tu operación. Escalables, eficientes y listos para crecer contigo.",
+      "Desarrollamos sistemas web personalizados para automatizar tareas, optimizar procesos internos y escalar tu operación. Tú lo imaginas, nosotros lo programamos.",
     descriptionMobile:
-      "Desarrollamos plataformas y sistemas web adaptados a tu operación. Escalables, eficientes y listos para crecer contigo.",
+      "Desarrollamos sistemas web personalizados para automatizar tareas, optimizar procesos internos y escalar tu operación. Tú lo imaginas, nosotros lo programamos.",
     src: "lava6.webp",
     color: "#000000",
     text: "white",

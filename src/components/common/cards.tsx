@@ -54,8 +54,8 @@ const Cards: React.FC<CardsProps> = () => {
         <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">
             Servicios <br className=" hidden md:block" />
         </h2>
-        <p className="font-archivo md:max-w-[60ch] text-lg md:text-xl text-white/80 text-center w-full mx-auto">
-          <span className="hidden md:inline text-center block">
+        <p className="font-archivo md:max-w-[60ch] text-lg md:text-2xl text-white/80 text-center w-full mx-auto">
+          <span className="hidden md:inline text-center">
               Nos especializamos en convertir ideas en productos digitales de alto impacto. Encontramos la mejor manera de construir, lanzar y escalar con éxito. 
           </span>
         </p>
