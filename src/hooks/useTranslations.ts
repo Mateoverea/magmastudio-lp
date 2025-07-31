@@ -124,7 +124,9 @@ class TranslationService {
   // Sistema de subscripción para cambios
   subscribe(callback: () => void) {
     this.listeners.add(callback);
-    return () => this.listeners.delete(callback);
+    return () => {
+      this.listeners.delete(callback);
+    };
   }
 
   private notifyListeners() {
