@@ -657,15 +657,17 @@
   position: absolute;
   top: 0;
   left: 0;
-  color: transparent;
-  background: linear-gradient(90deg, #e15927, #f48a01, #ffffff);
-  background-size: 200% 200%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: lavaPulseHover 3s ease-in-out infinite;
+  width: 100%;
+  height: 100%;
+  color: #d85a00; /* Volcanic Orange - color sólido de la paleta */
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
   pointer-events: none;
+  /* Asegurar que cubra todo el texto */
+  display: flex;
+  align-items: center;
+  justify-content: inherit;
+  text-align: inherit;
 }
 
 .lava-hover:hover::before {

@@ -12,8 +12,15 @@ import Wrapper from "../wrapper/wrapper";
 import AnimatedLink from "./animated-link";
 import { FooterText } from "./footer-text";
 import { motion } from "framer-motion";
+import { useTranslations, useTranslationArray } from "@/hooks/useTranslations";
 
 const Footer = () => {
+  const { t } = useTranslations(); // Hook de traducciones
+  const { getArray: getLegalLinks } = useTranslationArray("footer.legal_links");
+  const { getArray: getResourceLinks } = useTranslationArray("footer.resource_links");
+  const legalLinks = getLegalLinks();
+  const resourceLinks = getResourceLinks();
+  
   const [time, setTime] = useState<string>("");
   const [year, setYear] = useState<number>(new Date().getFullYear());
 
@@ -50,9 +57,9 @@ const Footer = () => {
                     className="flex flex-col items-start mt-8"
                   >
                     <h3 className="font-cabinetGrotesk uppercase text-white font-semibold text-5xl md:text-7xl tracking-tighter leading-[0.85]">
-                      Haz Que <br className="hidden md:block" /> Tu Negocio 
+                      {t("footer.title")} <br className="hidden md:block" /> {t("footer.title_highlight")} 
                       <br className="hidden lg:block" /> 
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF4500] to-[#FF6A00]"> Despegue!</span>
+                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF4500] to-[#FF6A00]"> {t("footer.title_action")}</span>
                     </h3>
                   </motion.div>
 
@@ -70,7 +77,7 @@ const Footer = () => {
                       rel="noopener noreferrer"
                       className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#333333] px-3 md:px-6 py-1 text-base font-archivo font-medium text-white backdrop-blur-3xl"
                     >
-                      Contáctanos por WhatsApp
+                      {t("footer.cta_button")}
                     </Link>
                   </motion.div>
                 </div>
@@ -85,7 +92,7 @@ const Footer = () => {
                     className="w-fit md:w-1/3 md:flex-grow"
                   >
                     <h3 className="font-cabinetGrotesk uppercase text-white font-medium mt-3 text-xl relative">
-                      <span className="relative z-10">Navegación</span>
+                      <span className="relative z-10">{t("footer.sections.navigation")}</span>
                       <span className="absolute bottom-0 left-0 h-[2px] w-8 bg-gradient-to-r from-[#FF4500] to-[#FF6A00]"></span>
                     </h3>
                     <div className="flex flex-col items-start gap-2 mt-4">
@@ -94,7 +101,7 @@ const Footer = () => {
                           <AnimatedLink
                             key={index}
                             link={navItem.href}
-                            text={navItem.title}
+                            text={t(navItem.titleKey)}
                           />
                         );
                       })}
@@ -108,25 +115,18 @@ const Footer = () => {
                     className="w-fit md:w-1/3 md:flex-grow"
                   >
                     <h3 className="font-cabinetGrotesk uppercase text-white font-medium mt-3 text-xl relative">
-                      <span className="relative z-10">Información Legal</span>
+                      <span className="relative z-10">{t("footer.sections.legal")}</span>
                       <span className="absolute bottom-0 left-0 h-[2px] w-8 bg-gradient-to-r from-[#FF4500] to-[#FF6A00]"></span>
                     </h3>
                     <div className="flex flex-col items-start gap-2 mt-4">
-                      <AnimatedLink
-                        link=""
-                        text="Términos y Condiciones"
-                        className="text-sm md:text-base"
-                      />
-                      <AnimatedLink
-                        link=""
-                        text="Política de Privacidad"
-                        className="text-sm md:text-base"
-                      />
-                      <AnimatedLink
-                        link=""
-                        text="Política de Cookies"
-                        className="text-sm md:text-base"
-                      />
+                      {legalLinks.map((linkText, index) => (
+                        <AnimatedLink
+                          key={index}
+                          link=""
+                          text={linkText}
+                          className="text-sm md:text-base"
+                        />
+                      ))}
                     </div>
                   </motion.div>
 
@@ -137,20 +137,18 @@ const Footer = () => {
                     className="w-fit md:w-1/3 md:flex-grow"
                   >
                     <h3 className="font-cabinetGrotesk uppercase text-white font-medium mt-3 text-xl relative">
-                      <span className="relative z-10">Recursos (Proximamente)</span>
+                      <span className="relative z-10">{t("footer.sections.resources")}</span>
                       <span className="absolute bottom-0 left-0 h-[2px] w-8 bg-gradient-to-r from-[#FF4500] to-[#FF6A00]"></span>
                     </h3>
                     <div className="flex flex-col items-start gap-2 mt-4">
-                      <AnimatedLink
-                        link=""
-                        text="Presentación Corporativa"
-                        className="text-sm md:text-base"
-                      />
-                      <AnimatedLink
-                        link=""
-                        text="Guía MVP Gratuita"
-                        className="text-sm md:text-base"
-                      />
+                      {resourceLinks.map((linkText, index) => (
+                        <AnimatedLink
+                          key={index}
+                          link=""
+                          text={linkText}
+                          className="text-sm md:text-base"
+                        />
+                      ))}
                       <motion.div 
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -160,49 +158,13 @@ const Footer = () => {
                         <Link
                           rel="noopener noreferrer"
                           target="_blank"
-                          href=""
-                        >
-                          <Button 
-                            size="icon"
-                            className="bg-[#333333] hover:bg-white transition-colors duration-300"
-                          >
-                            <FaDribbble className="scale-125 text-[#FF4500]" />
-                          </Button>
-                        </Link>
-                        <Link
-                          rel="noopener noreferrer"
-                          target="_blank"
-                          href=""
+                          href="https://www.instagram.com/magmastudio.pro/"
                         >
                           <Button 
                             size="icon" 
                             className="bg-[#333333] hover:bg-white transition-colors duration-300"
                           >
                             <Instagram className="scale-100 text-[#FF4500]" />
-                          </Button>
-                        </Link>
-                        <Link
-                          rel="noopener noreferrer"
-                          target="_blank"
-                          href=""
-                        >
-                          <Button 
-                            size="icon"
-                            className="bg-[#333333] hover:bg-white transition-colors duration-300"
-                          >
-                            <FaGithub className="scale-125 text-[#FF4500]" />
-                          </Button>
-                        </Link>
-                        <Link
-                          rel="noopener noreferrer"
-                          target="_blank"
-                          href=""
-                        >
-                          <Button 
-                            size="icon"
-                            className="bg-[#333333] hover:bg-white transition-colors duration-300"
-                          >
-                            <FaXTwitter className="scale-125 text-[#FF4500]" />
                           </Button>
                         </Link>
                       </motion.div>
@@ -229,7 +191,7 @@ const Footer = () => {
               transition={{ duration: 0.5, delay: 0.7 }}
               className="font-archivo text-white text-lg hidden md:block"
             >
-              © Magma Studio {year}, Todos los derechos reservados.
+              {t("footer.copyright").replace("{year}", year.toString())}
             </motion.h4>
             <motion.h4 
               initial={{ opacity: 0 }}
@@ -237,7 +199,7 @@ const Footer = () => {
               transition={{ duration: 0.5, delay: 0.7 }}
               className="font-archivo text-white text-lg md:hidden"
             >
-              © Magma Studio {year}
+              {t("footer.copyright_mobile").replace("{year}", year.toString())}
             </motion.h4>
             <motion.h4 
               initial={{ opacity: 0 }}

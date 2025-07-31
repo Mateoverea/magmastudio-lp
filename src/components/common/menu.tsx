@@ -6,6 +6,7 @@ import { menuSlide } from "@/anim/anim";
 import { navItemsMobile } from "@/constants/data";
 import Curve from "./curve";
 import MenuLink from "./menu-link";
+import { useTranslations } from "@/hooks/useTranslations";
 
 interface SideMenuProps {
   setIsActive: (value: boolean) => void;
@@ -13,6 +14,7 @@ interface SideMenuProps {
 }
 
 const SideMenu = ({ setIsActive, setMobileNav }: SideMenuProps) => {
+  const { t } = useTranslations(); // Hook de traducciones
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
 
@@ -36,7 +38,7 @@ const SideMenu = ({ setIsActive, setMobileNav }: SideMenuProps) => {
               return (
                 <MenuLink
                   key={index}
-                  data={{ ...data, index }}
+                  data={{ ...data, title: t(data.titleKey), index }}
                   isActive={selectedIndicator == data.href}
                   setSelectedIndicator={setSelectedIndicator}
                   setIsActive={setIsActive}

@@ -15,10 +15,12 @@ import { Textarea } from "../ui/textarea";
 import { ctaFormSchema } from "@/schema";
 import { createCtaProspect } from "../../../actions";
 import Wrapper from "../wrapper/wrapper";
+import { useTranslations } from "@/hooks/useTranslations";
 
 const MotionDiv = dynamic(() => import("framer-motion").then((mod) => mod.motion.div), { ssr: false });
 
 const Cta = () => {
+  const { t } = useTranslations(); // Hook de traducciones
   const [isPending, startTransition] = useTransition();
   const [copied, setCopied] = useState(false);
 
@@ -43,7 +45,7 @@ const Cta = () => {
   const copyEmail = (email: string) => {
     navigator.clipboard.writeText(email);
     setCopied(true);
-    toast.success("Email copiado al portapapeles!");
+    toast.success(t("cta.messages.email_copied_toast"));
     setTimeout(() => setCopied(false), 4000);
   };
 
@@ -62,9 +64,9 @@ const Cta = () => {
       if (result.success) {
         form.reset();
         handleConfetti();
-        toast.success("Nos pondremos en contacto contigo pronto");
+        toast.success(t("cta.messages.success_toast"));
       } else {
-        toast.error(result.error === "Email already exists" ? "El email ya existe" : "Algo salió mal");
+        toast.error(result.error === "Email already exists" ? t("cta.messages.error_email_exists") : t("cta.messages.error_general"));
       }
     });
   };
@@ -77,14 +79,14 @@ const Cta = () => {
           </Link>
           <div className="h-full flex flex-col justify-center mt-8 md:mt-0">
             <h3 className="font-cabinetGrotesk uppercase text-white font-semibold text-5xl md:text-5xl lg:text-7xl tracking-tighter leading-[0.85]">
-              Obtén una estimación de tu proyecto
+              {t("cta.title")}
             </h3>
           </div>
         </div>
         <div className="w-full md:w-[60%] lg:w-[70%] flex flex-col items-start h-full overflow-hidden">
           <div className="w-full flex items-center justify-between mb-0">
             <h4 className="font-archivo uppercase text-white text-lg">
-              Escríbenos
+              {t("cta.subtitle")}
             </h4>
 
             <div
@@ -92,10 +94,10 @@ const Cta = () => {
               className="flex items-center gap-2 cursor-pointer text-lg text-white font-archivo"
             >
               <div className={`inline-flex gap-2 items-center w-fit ${copied ? "scale-0 hidden" : "scale-100"}`}>
-                <Copy className="h-5 w-5 transition-all duration-300" /> Copiar
+                <Copy className="h-5 w-5 transition-all duration-300" /> {t("cta.copy_email")}
               </div>
               <div className={`inline-flex gap-2 items-center w-fit ${copied ? "scale-100" : "scale-0 hidden"}`}>
-                <Check className="h-5 w-5 transition-all duration-300" /> Copiado
+                <Check className="h-5 w-5 transition-all duration-300" /> {t("cta.email_copied")}
               </div>
             </div>
           </div>
@@ -127,13 +129,13 @@ const Cta = () => {
                 <FormField control={form.control} name="name" render={({ field }) => (
                   <FormItem className="w-full">
                     <FormLabel className="text-white">
-                      Nombre <span className="text-red-500">*</span>
+                      {t("cta.form.name_label")} <span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
                       <Input
                         className="bg-transparent border-b border-b-white/50 focus:border-b-2 focus:border-b-white placeholder:text-white/70 text-white py-2"
                         disabled={isPending}
-                        placeholder="Tu Nombre"
+                        placeholder={t("cta.form.name_placeholder")}
                         {...field}
                       />
                     </FormControl>
@@ -144,13 +146,13 @@ const Cta = () => {
                 <FormField control={form.control} name="email" render={({ field }) => (
                   <FormItem className="w-full">
                     <FormLabel className="text-white">
-                      Contacto <span className="text-red-500">*</span>
+                      {t("cta.form.email_label")} <span className="text-red-500">*</span>
                     </FormLabel>
                     <FormControl>
                       <Input
                         className="bg-transparent border-b border-b-white/50 focus:border-b-2 focus:border-b-white placeholder:text-white/70 text-white py-2"
                         disabled={isPending}
-                        placeholder="Tu Correo Electrónico"
+                        placeholder={t("cta.form.email_placeholder")}
                         {...field}
                       />
                     </FormControl>
@@ -162,12 +164,12 @@ const Cta = () => {
               <FormField control={form.control} name="projectBrief" render={({ field }) => (
                 <FormItem>
                   <FormLabel className="text-white">
-                    Mensaje <span className="text-red-500">*</span>
+                    {t("cta.form.message_label")} <span className="text-red-500">*</span>
                   </FormLabel>
                   <FormControl>
                     <Textarea
                       disabled={isPending}
-                      placeholder="Breve descripción del proyecto"
+                      placeholder={t("cta.form.message_placeholder")}
                       className="md:min-h-[120px] lg:min-h-[140px] resize-none bg-transparent border-b border-b-white/50 focus:border-b-2 focus:border-b-white placeholder:text-white/70 text-white py-2"
                       {...field}
                     />
@@ -184,7 +186,7 @@ const Cta = () => {
                 >
                   <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF6A00_0%,#FF4500_50%,#FF6A00_100%)]" />
                   <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#FF4500] px-6 py-1 text-lg md:text-xl font-archivo font-medium text-white backdrop-blur-3xl">
-                    {isPending ? "Enviando..." : "Enviar Formulario"}
+                    {isPending ? t("cta.form.submitting") : t("cta.form.submit_button")}
                     {isPending ? (
                       <Loader className="ml-2 animate-spin text-white" />
                     ) : (

@@ -5,9 +5,11 @@ import ArrowSvg from "./star";
 import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import LavaScene from "../lava-sphere/LavaScene";
+import { useTranslations } from "@/hooks/useTranslations";
 
 const Hero = () => {
   const sectionRef = useRef(null);
+  const { t } = useTranslations(); // Hook de traducciones
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -28,15 +30,15 @@ const Hero = () => {
             <div className="flex flex-col items-center md:items-center md:mt-20 lg:mt-4 md:gap-1 z-[30]">
               {/* Desktop */}
               <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-bold text-4xl md:text-5xl lg:text-8xl text-white text-left">
-                Desarrollo web a la
+                {t("hero.title_part1")}
               </h2>
 
               <div className="flex items-center gap-10">
                 <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-light italic text-4xl md:text-5xl lg:text-8xl text-white text-left relative">
-                  <span className="lava-hover" data-text="medida">medida</span>
+                  <span className="lava-hover" data-text={t("hero.title_part2")}>{t("hero.title_part2")}</span>
                 </h2>
                 <p className="font-archivo text-sm md:text-base lg:text-3xl text-[#333333]/80 text-left max-w-[30ch] md:max-w-[40ch] uppercase pt-2">
-                  Sitios web, Landing Pages, Software, E-commerce
+                  {t("hero.subtitle")}
                 </p>
               </div>
             </div>
@@ -47,13 +49,13 @@ const Hero = () => {
               <div className="w-fit max-w-[90vw] md:max-w-[90%] lg:max-w-4xl overflow-hidden md:px-0 rounded-full bg-[#7a290e] py-2 md:py-3 lg:py-4 mt-0 border border-white/20 shadow-lg shadow-black/40 sm:z-10 lg:z-auto">
                 <Marquee speed={70} className="w-fit">
                   <h2 className="uppercase font-cabinetGrotesk font-bold text-4xl sm:text-4xl md:text-5xl lg:text-7xl text-white tracking-tighter drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]">
-                    Web con intención
+                    {t("hero.marquee_text1")}
                   </h2>
                   <div className="mx-2 md:mx-6 lg:mx-10 md:w-auto md:h-auto scale-75 md:scale-100">
                     <ArrowSvg />
                   </div>
                   <h2 className="uppercase font-cabinetGrotesk font-bold text-4xl sm:text-4xl md:text-5xl lg:text-7xl text-white tracking-tighter drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]">
-                    Resultado con impacto
+                    {t("hero.marquee_text2")}
                   </h2>
                   <div className="mx-2 md:mx-6 lg:mx-10 md:w-auto scale-75 md:scale-100">
                     <ArrowSvg />

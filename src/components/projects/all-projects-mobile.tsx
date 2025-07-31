@@ -2,23 +2,35 @@ import { cn } from "@/lib/utils";
 import { Code, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations, useTranslationArray } from "@/hooks/useTranslations";
 
 const AllProjectsMobile = () => {
+  const { t } = useTranslations(); // Hook de traducciones
+  const { getArray } = useTranslationArray("projects.items"); // Para los proyectos
+  const translatedProjects = getArray(); // Obtener los proyectos traducidos
+  
+  // Combinar datos estáticos con traducciones
+  const projects = cards.map((project, index) => ({
+    ...project,
+    title: translatedProjects[index]?.title || project.title,
+    description: translatedProjects[index]?.description || project.description,
+  }));
+
   return (
     <section id="portfolio-mobile" className=" w-full px-3 mb-10">
       <h2 className="text-white text-center uppercase text-5xl font-semibold font-cabinetGrotesk">
-        Nuestros Proyectos
+        {t("projects.title")}
       </h2>
       <div className="flex flex-col gap-6 mt-8">
-        {cards.map((card) => {
-          return <Card card={card} key={card.id} />;
+        {projects.map((card) => {
+          return <Card card={card} key={card.id} t={t} />;
         })}
       </div>
     </section>
   );
 };
 
-const Card = ({ card }: { card: CardType }) => {
+const Card = ({ card, t }: { card: CardType; t: (key: string) => string }) => {
   return (
     <Link href={card.url} target="_blank" rel="noopener noreferrer" className="block mb-10 group hover:opacity-95 transition-opacity">
       <div key={card.id} className="mb-2">
@@ -36,7 +48,7 @@ const Card = ({ card }: { card: CardType }) => {
         <div className="mt-4">
           <div className="flex flex-wrap gap-2">
             <div className="bg-[#1A1A1A]/80 backdrop-blur-sm flex items-center text-white font-archivo text-lg border border-[#333333] rounded-full w-fit px-4 py-1">
-              <Code className="mr-2" /> Desarrollo Web
+              <Code className="mr-2" /> {t("projects.web_development")}
             </div>
             <div className="bg-[#FF4500] flex items-center text-white font-archivo text-lg rounded-full w-fit px-4 py-1">
               {card.year}
@@ -69,28 +81,25 @@ type CardType = {
 const cards: CardType[] = [
   {
     src: "/projects/adorantes/1.webp",
-    title: "Adorantes",
+    title: "Adorantes", // Se traduce dinámicamente
     year: "2025",
-    description:
-      "Adorantes es una landing page para una artista mexicana, escultora y ceramista.",
+    description: "Adorantes es una landing page para una artista mexicana, escultora y ceramista.", // Se traduce dinámicamente
     id: 1,
     url: "https://adrianadorantes.com",
   },
   {
     src: "/projects/acredia/1.webp",
-    title: "Acredia",
+    title: "Acredia", // Se traduce dinámicamente
     year: "2025",
-    description:
-      "Acredia es una landing page para una empresa de servicios financieros y brokers de créditos.",
+    description: "Acredia es una landing page para una empresa de servicios financieros y brokers de créditos.", // Se traduce dinámicamente
     id: 2,
     url: "https://acredia.mx",
   },
   {
     src: "/projects/flover/flover.webp",
-    title: "FLOVER",
+    title: "FLOVER", // Se traduce dinámicamente
     year: "2025",
-    description:
-      "FLOVER es una landing page para una empresa de producción agrícola en hidroponía.",
+    description: "FLOVER es una landing page para una empresa de producción agrícola en hidroponía.", // Se traduce dinámicamente
     id: 3,
     url: "https://flover.mx",
   },

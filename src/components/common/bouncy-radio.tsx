@@ -1,5 +1,6 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
+import { useTranslations } from "@/hooks/useTranslations";
 
 interface BouncyComponentProps {
   disabled?: boolean;
@@ -7,6 +8,7 @@ interface BouncyComponentProps {
 
 const BouncyComponent: React.FC<BouncyComponentProps> = ({ disabled }) => {
   const { setValue, watch } = useFormContext();
+  const { t } = useTranslations(); // Hook de traducciones
   const selectedOption = watch("projectType") || "projectType";
 
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,8 +40,8 @@ const BouncyComponent: React.FC<BouncyComponentProps> = ({ disabled }) => {
             selectedOption === "landing-page" ? "text-white" : "text-black"
           } hidden z-10 font-archivo font-normal text-xl py-2 px-6`}
         >
-          <span className="md:hidden">Landing</span>{" "}
-          <span className="hidden md:block">Landing</span>
+          <span className="md:hidden">{t("contact.project_types.landing")}</span>{" "}
+          <span className="hidden md:block">{t("contact.project_types.landing")}</span>
         </label>
 
         <input
@@ -57,7 +59,7 @@ const BouncyComponent: React.FC<BouncyComponentProps> = ({ disabled }) => {
             selectedOption === "e-commerce" ? "text-white" : "text-black"
           } hidden z-10 font-archivo font-normal text-xl py-2 px-0`}
         >
-          Ecommerce
+          {t("contact.project_types.ecommerce")}
         </label>
 
         <input
@@ -75,7 +77,7 @@ const BouncyComponent: React.FC<BouncyComponentProps> = ({ disabled }) => {
             selectedOption === "other" ? "text-white" : "text-black"
           } hidden z-10 font-archivo font-normal text-xl py-2 px-6`}
         >
-          Otro
+          {t("contact.project_types.other")}
         </label>
 
         <div className="selection-indicator-wrapper absolute top-1/2 h-full w-1/3 transform -translate-y-1/2">

@@ -14,9 +14,12 @@ import { useEffect, useState } from "react";
 import Wrapper from "../wrapper/wrapper";
 import { ContactDrawer } from "./contact-drawer";
 import SideMenu from "./menu";
+import LanguageSelector from "./language-selector";
+import { useTranslations } from "@/hooks/useTranslations";
 
 export const Navigation = () => {
   const { scrollYProgress } = useScroll();
+  const { t } = useTranslations(); // Hook de traducciones
 
   const [visible, setVisible] = useState(true);
   const [scrolled, setScrolled] = useState(false);
@@ -72,8 +75,9 @@ export const Navigation = () => {
             "py-3 md:py-2.5"
           )}
         >
-          <Wrapper className="w-full flex flex-row justify-between items-center md:px-0 lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
-            <Link href="/" className="flex items-center">
+          <Wrapper className="w-full flex flex-row items-center justify-between md:justify-normal md:px-0 lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem]">
+            {/* Logo - Lado izquierdo */}
+            <Link href="/" className="flex items-center flex-shrink-0">
               <div className="flex items-center justify-center hover:scale-110 ease-in-out transition-all duration-200 lg:hidden">
                 <Image
                   width={100}
@@ -85,7 +89,7 @@ export const Navigation = () => {
                   priority
                 />
               </div>
-              <div className="flex items-center justify-center hover:scale-110 ease-in-out transition-all duration-200 hidden lg:block">
+              <div className="items-center justify-center hover:scale-110 ease-in-out transition-all duration-200 hidden lg:flex">
                 <Image
                   width={136}
                   height={40}
@@ -98,21 +102,24 @@ export const Navigation = () => {
               </div>
             </Link>
 
-            <div className="absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%] hidden md:block">
-              <div className="inline-flex items-center gap-6 md:gap-8">
+            {/* Navegación - Centro con flexbox (solo desktop) */}
+            <nav className="hidden md:flex flex-1 justify-center px-4">
+              <div className="flex items-center gap-4 lg:gap-6 xl:gap-8">
                 {navItems.map((item, index) => (
                   <Link 
                     key={index} 
                     href={item.href}
-                    className="text-white hover:scale-110 transition-transform duration-200 ease-in-out opacity-70 hover:opacity-100 uppercase lg:text-lg tracking-wider font-cabinetGrotesk font-semibold"
+                    className="text-white hover:scale-110 transition-transform duration-200 ease-in-out opacity-70 hover:opacity-100 uppercase text-sm lg:text-base xl:text-lg tracking-wider font-cabinetGrotesk font-semibold whitespace-nowrap"
                   >
-                    {item.title}
+                    {t(item.titleKey)}
                   </Link>
                 ))}
               </div>
-            </div>
+            </nav>
 
-            <aside className="flex items-center gap-4">
+            {/* Controles - Lado derecho */}
+            <aside className="flex items-center gap-4 md:flex-shrink-0">
+              <LanguageSelector />
               <ContactDrawer />
               <div>
                 <motion.button

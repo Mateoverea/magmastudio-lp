@@ -25,8 +25,10 @@ import { useState, useTransition } from "react";
 import toast from "react-hot-toast";
 import { createProspect } from "../../../actions";
 import { Textarea } from "../ui/textarea";
+import { useTranslations } from "@/hooks/useTranslations";
 
 export function ContactDrawer() {
+  const { t } = useTranslations(); // Hook de traducciones
   const [isPending, startTransition] = useTransition();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -76,17 +78,17 @@ export function ContactDrawer() {
         form.reset();
         handleConfetti();
         setIsDrawerOpen(false);
-        toast.success("Nos contactaremos contigo pronto");
+        toast.success(t("contact_drawer.messages.success"));
       } else {
         if (result.error === "Email already exists") {
-          toast.error("El email ya existe");
+          toast.error(t("contact_drawer.messages.error_email_exists"));
         } else {
           console.error("Form submission error:", result.error);
           if (typeof result.error === 'object') {
             const errorMessage = JSON.stringify(result.error);
-            toast.error(`Error de validación: ${errorMessage}`);
+            toast.error(`${t("contact_drawer.messages.error_validation")}: ${errorMessage}`);
           } else {
-            toast.error(`Error: ${result.error || "Algo salió mal"}`);
+            toast.error(`Error: ${result.error || t("contact_drawer.messages.error_general")}`);
           }
         }
       }
@@ -99,7 +101,7 @@ export function ContactDrawer() {
         <div className="relative inline-flex h-12 overflow-hidden rounded-full p-[3px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 group">
           <span className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#1A1A1A_100%)]" />
           <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-[#1A1A1A] px-4 md:px-6 py-1 text-base font-archivo font-medium text-white backdrop-blur-3xl">
-            Crea tu Proyecto
+            {t("contact_drawer.trigger_button")}
             
           </span>
         </div>
@@ -109,14 +111,14 @@ export function ContactDrawer() {
           <div className="md:w-[45%] flex flex-col items-start w-full lg:mt-10">
             <div className="hidden md:block text-start">
               <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-6xl text-[#1A1A1A] text-start md:mt-0">
-                Nos Alegra
+                {t("contact_drawer.title_desktop.line1")}
               </h2>
               
               <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-6xl text-[#1A1A1A] text-start md:-mt-3">
-                 Que Hayas Elegido
+                 {t("contact_drawer.title_desktop.line2")}
               </h2>
               <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-6xl text-[#7a290e] text-start md:-mt-3">
-                Magma Studio®
+                {t("contact_drawer.title_desktop.line3")}
               </h2>
             </div>
 
@@ -127,7 +129,7 @@ export function ContactDrawer() {
               >
                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#FF4500_100%)]" />
                 <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white pl-6 pr-6 py-1 text-base font-archivo font-medium text-[#1A1A1A] backdrop-blur-3xl">
-                  {isPending ? "Enviando..." : "Enviar Formulario"}
+                  {isPending ? t("contact_drawer.form.submitting") : t("contact_drawer.form.submit_button")}
                   {isPending ? (
                     <Loader className="ml-2 animate-spin text-[#FF4500]" />
                   ) : (
@@ -146,8 +148,8 @@ export function ContactDrawer() {
 
             <div className=" md:hidden">
               <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-8xl text-[#1A1A1A] text-start md:mt-0">
-                Nos alegra <br /> que hayas elegido{" "}
-                <span className="text-[#FF4500]">Magma Studio®</span>
+                {t("contact_drawer.title_mobile")} <br /> {" "}
+                <span className="text-[#FF4500]">{t("contact_drawer.brand_name")}</span>
               </h2>
             </div>
 
@@ -163,12 +165,12 @@ export function ContactDrawer() {
                     render={({ field }) => (
                       <FormItem className=" w-full">
                         <FormLabel>
-                          Nombre <span className=" text-[#FF4500]">*</span>
+                          {t("contact_drawer.form.name_label")} <span className=" text-[#FF4500]">*</span>
                         </FormLabel>
                         <FormControl>
                           <Input
                             disabled={isPending}
-                            placeholder="Tu Nombre"
+                            placeholder={t("contact_drawer.form.name_placeholder")}
                             {...field}
                           />
                         </FormControl>
@@ -183,12 +185,12 @@ export function ContactDrawer() {
                     render={({ field }) => (
                       <FormItem className=" w-full">
                         <FormLabel>
-                          Contacto <span className=" text-[#FF4500]">*</span>
+                          {t("contact_drawer.form.email_label")} <span className=" text-[#FF4500]">*</span>
                         </FormLabel>
                         <FormControl>
                           <Input
                             disabled={isPending}
-                            placeholder="Tu Correo Electrónico"
+                            placeholder={t("contact_drawer.form.email_placeholder")}
                             {...field}
                           />
                         </FormControl>
@@ -199,7 +201,7 @@ export function ContactDrawer() {
                 </div>
                 <div className="flex flex-col items-start gap-2.5 md:gap-4 w-full">
                   <h4 className=" font-archivo font-semibold text-xl text-[#1A1A1A]">
-                    Necesito ayuda con
+                    {t("contact_drawer.form.help_with")}
                   </h4>
                   <BouncyComponent disabled={isPending} />
                 </div>
@@ -209,12 +211,12 @@ export function ContactDrawer() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>
-                        Mensaje <span className=" text-[#FF4500]">*</span>
+                        {t("contact_drawer.form.message_label")} <span className=" text-[#FF4500]">*</span>
                       </FormLabel>{" "}
                       <FormControl>
                         <Textarea
                           disabled={isPending}
-                          placeholder="Breve descripción del proyecto"
+                          placeholder={t("contact_drawer.form.message_placeholder")}
                           className="resize-none"
                           {...field}
                         />
@@ -231,7 +233,7 @@ export function ContactDrawer() {
                 >
                   <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FF4500_0%,#FF6A00_50%,#FF4500_100%)]" />
                   <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white pl-3 pr-6 py-1 text-base font-archivo font-medium text-[#1A1A1A] backdrop-blur-3xl">
-                    {isPending ? "Enviando..." : "Enviar Formulario"}
+                    {isPending ? t("contact_drawer.form.submitting") : t("contact_drawer.form.submit_button")}
                     {isPending ? (
                       <Loader className="ml-2 animate-spin text-[#FF4500]" />
                     ) : (

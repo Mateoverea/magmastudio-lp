@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
+import { useTranslations } from "@/hooks/useTranslations";
 
 const scaleAnimation = {
   initial: { scale: 0, x: "-50%", y: "-50%" },
@@ -20,6 +21,7 @@ const scaleAnimation = {
 
 const ProjectModal = ({ modal }: { modal: { active: boolean } }) => {
   const { active } = modal;
+  const { t } = useTranslations(); // Hook de traducciones
 
   const modalContainer = useRef(null);
   const cursor = useRef(null);
@@ -89,7 +91,7 @@ const ProjectModal = ({ modal }: { modal: { active: boolean } }) => {
         initial="initial"
         animate={active ? "enter" : "closed"}
       >
-        VISTA PREVIA
+        {t("projects.preview")}
       </motion.div>
     </div>
   );
