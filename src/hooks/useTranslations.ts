@@ -121,6 +121,12 @@ class TranslationService {
     return this.currentLocale;
   }
 
+  // Obtener traducciones para un locale específico (método público)
+  getTranslations(locale?: Locale): TranslationData {
+    const targetLocale = locale || this.currentLocale;
+    return this.translations[targetLocale] || this.translations[DEFAULT_LOCALE];
+  }
+
   // Sistema de subscripción para cambios
   subscribe(callback: () => void) {
     this.listeners.add(callback);
@@ -188,8 +194,7 @@ export function useTranslationArray(key: TranslationKey) {
   const { t, locale } = useTranslations();
   
   const getArray = useCallback((): any[] => {
-    const targetLocale = locale;
-    const translations = translationService.translations[targetLocale] || translationService.translations[DEFAULT_LOCALE];
+    const translations = translationService.getTranslations(locale);
     
     const keys = key.split('.');
     let result: any = translations;
