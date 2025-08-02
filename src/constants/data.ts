@@ -1,47 +1,48 @@
 
 
+// Elementos de navegación con keys de traducción
 export const navItems = [
   {
-    title: "Servicios",
+    titleKey: "navigation.services", // Se traduce con el hook
     href: "/#services",
   },
   {
-    title: "Proceso",
+    titleKey: "navigation.process",
     href: "/#how-it-works",
   },
   {
-    title: "Portafolio",
+    titleKey: "navigation.portfolio",
     href: "/#portfolio",
   },
   {
-    title: "Precios",
+    titleKey: "navigation.pricing",
     href: "/#pricing",
   },
   {
-    title: "FAQs",
+    titleKey: "navigation.faqs",
     href: "/#faqs",
   },
 ];
 
 export const navItemsMobile = [
   {
-    title: "Servicios",
+    titleKey: "navigation.services",
     href: "/#services",
   },
   {
-    title: "Proceso",
+    titleKey: "navigation.process",
     href: "/#how-it-works",
   },
   {
-    title: "Portafolio",
+    titleKey: "navigation.portfolio",
     href: "/#portfolio",
   },
   {
-    title: "Precios",
+    titleKey: "navigation.pricing",
     href: "/#pricing",
   },
   {
-    title: "FAQs",
+    titleKey: "navigation.faqs",
     href: "/#faqs",
   },
 ];

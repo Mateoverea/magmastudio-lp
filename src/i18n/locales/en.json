@@ -1,0 +1,358 @@
+{
+  "navigation": {
+    "services": "Services",
+    "process": "Process",
+    "portfolio": "Portfolio", 
+    "pricing": "Pricing",
+    "faqs": "FAQs",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title_part1": "Development With a", 
+    "title_part2": "Purpose",
+    "subtitle": "Websites, Landing Pages, Software, E-commerce",
+    "marquee_text1": "Web with intention",
+    "marquee_text2": "Results with impact"
+  },
+  "mobile_hero": {
+    "title_part1": "Custom web",
+    "title_part2": "development",
+    "services": [
+      "Websites",
+      "Landing Pages",
+      "Software", 
+      "E-commerce"
+    ],
+    "cta_button": "Start your project!"
+  },
+  "social_proof": {
+    "title": "Boost Your Business in the Digital World",
+    "description": "Digital presence is crucial for businesses. We help you build products that position you in the best way to grow.",
+    "description_mobile": "We help you build a product to have digital presence."
+  },
+  "pricing": {
+    "title": "Simple and Flexible Pricing",
+    "title_mobile": "Simple Pricing",
+    "subtitle": "Design, Development, or both - Whatever you need, we've got you covered to bring your project to life!",
+    "packages": {
+      "express": {
+        "name": "Landing Express",
+        "description": "Ideal for validating an idea or presenting your product professionally and quickly.",
+        "price": "From $399 USD",
+        "features": [
+          "Up to 5 one-pager sections",
+          "Custom design",
+          "Connect to your domain",
+          "Integrated contact form",
+          "SEO optimization",
+          "Responsive on all devices",
+          "Smooth animations"
+        ],
+        "note": "→ Perfect for express launches or initial brand presence.",
+        "cta": "Request information"
+      },
+      "pro": {
+        "name": "Landing Pro",
+        "description": "For brands that need to tell their story and build trust with their customers.",
+        "price": "From $599 USD",
+        "features": [
+          "Everything in Landing Express",
+          "Up to 7 one-pager sections",
+          "Post-delivery adjustment round",
+          "6 months hosting",
+          "Google Analytics / Meta Pixel integration",
+          "Advanced animations and interactions",
+          "CMS for content management"
+        ],
+        "note": "→ Ideal for digital businesses, startups or long-term vision projects.",
+        "cta": "Request information"
+      },
+      "ecommerce": {
+        "name": "Express Store",
+        "description": "Your online store, connected to payment gateways and ready to sell.",
+        "price": "From $849 USD",
+        "features": [
+          "Custom and responsive design",
+          "Ready to load products",
+          "Functional cart and checkout",
+          "Payment gateway (Stripe or PayPal)",
+          "Contact and thank you page",
+          "Shopify integrated for inventory management"
+        ],
+        "extras": "Optional extras: product variants, automated emails, inventory integrations.",
+        "note": "→ Ideal for selling physical or digital products from day one.",
+        "cta": "Request information"
+      },
+      "custom": {
+        "name": "Custom Web",
+        "description": "For companies or startups that need a robust, scalable and fully customized digital solution.",
+        "price": "From $1,199 USD",
+        "features": [
+          "Fully customized site",
+          "Custom sections",
+          "2 extra templates",
+          "Advanced animations and interactions",
+          "SEO and performance optimization",
+          "Responsive and adaptable to all devices"
+        ],
+        "extras": "Optional extras: Ecommerce, API integrations, multi-language content, migrations, integrated artificial intelligence.",
+        "note": "→ Designed for big vision projects with specific needs.",
+        "cta": "Request information"
+      }
+    }
+  },
+  "contact": {
+    "name_label": "Name",
+    "email_label": "Contact",
+    "name_placeholder": "Your Name", 
+    "email_placeholder": "Your Email",
+    "help_with": "I need help with",
+    "project_types": {
+      "landing": "Landing",
+      "ecommerce": "Ecommerce", 
+      "other": "Other"
+    }
+  },
+  "contact_drawer": {
+    "trigger_button": "Build Your Project",
+    "title_desktop": {
+      "line1": "We're Happy",
+      "line2": "You Chose",
+      "line3": "Magma Studio®"
+    },
+    "title_mobile": "We're happy you chose",
+    "brand_name": "Magma Studio®",
+    "form": {
+      "name_label": "Name",
+      "email_label": "Contact",
+      "message_label": "Message",
+      "name_placeholder": "Your Name",
+      "email_placeholder": "Your Email",
+      "message_placeholder": "Brief project description",
+      "help_with": "I need help with",
+      "submit_button": "Send Form",
+      "submitting": "Sending..."
+    },
+    "messages": {
+      "success": "We will contact you soon",
+      "error_email_exists": "Email already exists",
+      "error_validation": "Validation error",
+      "error_general": "Something went wrong"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "description": "We specialize in turning ideas into high-impact digital products. We find the best way to build, launch and scale successfully.",
+    "features": [
+      {
+        "title": "Landing Pages",
+        "description": "We create conversion-focused pages: fast, visually appealing and aligned with your business goals. Ideal for campaigns, launches or service presentations.",
+        "descriptionMobile": "We create conversion-focused pages: fast, visually appealing and aligned with your business goals. Ideal for campaigns, launches or service presentations."
+      },
+      {
+        "title": "Software",
+        "description": "We develop custom web systems to automate tasks, optimize internal processes and scale your operation. You imagine it, we program it.",
+        "descriptionMobile": "We develop custom web systems to automate tasks, optimize internal processes and scale your operation. You imagine it, we program it."
+      },
+      {
+        "title": "E-commerce",
+        "description": "We create custom online stores, with integrated payments and a user experience optimized to sell more.",
+        "descriptionMobile": "We create custom online stores, with integrated payments and a user experience optimized to sell more."
+      }
+    ]
+  },
+  "process": {
+    "title": "Our Process",
+    "subtitle": "From vision to execution",
+    "description": "We turn bold ideas into scalable solutions through a streamlined and iterative approach designed for maximum impact.",
+    "steps": [
+      {
+        "title": "Discovery and Strategy",
+        "step": "Step 01",
+        "description": "We analyze your idea, define the main features and create an agile development strategy that gets your product to market quickly."
+      },
+      {
+        "title": "Design and Prototyping",
+        "step": "Step 02",
+        "description": "We create intuitive user interfaces and interactive prototypes to validate the main functionality of your project before starting full development."
+      },
+      {
+        "title": "Construction and Development",
+        "step": "Step 03",
+        "description": "We start the project using modern technologies, focusing on essential features while maintaining flexibility for scalability and future improvements."
+      },
+      {
+        "title": "Maintenance and Improvements",
+        "step": "Step 04",
+        "description": "We help you continue improving your product and implement data-driven enhancements to prepare your product for growth and expansion."
+      }
+    ]
+  },
+  "social_proof": {
+    "title": "Boost Your Business in the Digital World",
+    "description": "Digital presence is crucial for businesses. We help you build products that position you in the best way to grow.",
+    "description_mobile": "We help you build a product to have digital presence.",
+    "cards": [
+      {
+        "title": "Does your brand already have real digital presence?",
+        "description": "Many businesses still don't have an effective website. Or worse: they have one that doesn't sell or reflect the value of their product or service."
+      },
+      {
+        "title": "You're one tool away from growing faster",
+        "description": "A landing page, a management system or a good e-commerce. You sell more. You waste less time. You scale better."
+      },
+      {
+        "title": "We make it reality",
+        "description": "We create everything from websites to custom software. Always with powerful design, clear strategy and results that matter."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Get an estimate for your project",
+    "subtitle": "Write to us",
+    "copy_email": "Copy",
+    "email_copied": "Copied",
+    "form": {
+      "name_label": "Name",
+      "email_label": "Contact",
+      "message_label": "Message",
+      "name_placeholder": "Your Name",
+      "email_placeholder": "Your Email",
+      "message_placeholder": "Brief project description",
+      "submit_button": "Send Form",
+      "submitting": "Sending..."
+    },
+    "messages": {
+      "email_copied_toast": "Email copied to clipboard!",
+      "success_toast": "We will contact you soon",
+      "error_email_exists": "Email already exists",
+      "error_general": "Something went wrong"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "The most common questions people ask us.",
+    "items": [
+      {
+        "question": "What is your development process like?",
+        "answer": "We divide the project into stages: discovery, design, development and delivery. Throughout the process you will have constant communication with us, weekly progress updates and live demos. We want you to be aware and 100% aligned."
+      },
+      {
+        "question": "What technologies do you work with?",
+        "answer": "We use modern technologies like React, Next.js, TypeScript and Node.js. This allows us to create fast, scalable products ready for the future."
+      },
+      {
+        "question": "What do you need to start a project?",
+        "answer": "We just need your idea, a brief (if you have one) and any material you already have. In an initial call we define goals and timelines to make sure we're on the right track from day one."
+      },
+      {
+        "question": "Do you offer support after launch?",
+        "answer": "Yes. We can help you with maintenance, fixes, improvements, updates or monitoring. We are here to help your project continue growing after going live."
+      },
+      {
+        "question": "Are there hidden costs?",
+        "answer": "No. Everything is clear from the start. If something extra is required (like third-party tools), we communicate and quote it immediately before moving forward."
+      },
+      {
+        "question": "How long does a project take on average?",
+        "answer": "It depends on the type of project. A landing page: 2-3 weeks. An e-commerce: 4-6 weeks. Custom software: 6-12 weeks. We give you detailed timelines from day one."
+      },
+      {
+        "question": "When does the delivery time start running?",
+        "answer": "It starts once we have everything: down payment, materials and clear objectives. From there, we run with you."
+      },
+      {
+        "question": "How do I get started?",
+        "answer": "Write to us on WhatsApp or fill out the form on the site. We schedule a call to get to know each other and if everything matches, we normally start 1 or 2 weeks after your approval."
+      }
+    ]
+  },
+  "footer": {
+    "title": "Make Your",
+    "title_highlight": "Business",
+    "title_action": "Take Off!",
+    "cta_button": "Contact us on WhatsApp",
+    "sections": {
+      "navigation": "Navigation",
+      "legal": "Legal Information",
+      "resources": "Resources (Coming Soon)"
+    },
+    "legal_links": [
+      "Terms and Conditions",
+      "Privacy Policy",
+      "Cookie Policy"
+    ],
+    "resource_links": [
+      "Corporate Presentation",
+      "Free MVP Guide"
+    ],
+    "copyright": "© Magma Studio {year}, All rights reserved.",
+    "copyright_mobile": "© Magma Studio {year}"
+  },
+  "testimonials": {
+    "title": "Client Reviews",
+    "description": "We've worked with innovative startups to create impactful MVPs. Read about their experiences working with Magma Studio."
+  },
+  "projects": {
+    "title": "Our Projects",
+    "description": "We transform ideas into exceptional digital experiences",
+    "web_development": "Web Development",
+    "view_project": "View Project",
+    "preview": "PREVIEW",
+    "items": [
+      {
+        "title": "Adorantes",
+        "description": "Adorantes is a landing page for a Mexican artist, sculptor and ceramist."
+      },
+      {
+        "title": "Acredia",
+        "description": "Acredia is a landing page for a financial services company and credit brokers."
+      },
+      {
+        "title": "FLOVER",
+        "description": "FLOVER is a landing page for an agricultural production company in hydroponics."
+      }
+    ]
+  },
+  "seo": {
+    "site": {
+      "title": "Magma Studio — Professional Web Development in Guadalajara",
+      "description": "We are a web development agency in Guadalajara that transforms ideas into scalable digital products. Specialists in landing pages, e-commerce and software development.",
+      "keywords": [
+        "Web Development Agency",
+        "MVP Builder for startups",
+        "Landing page development", 
+        "Online store development",
+        "Web systems development",
+        "Agency for tech startups",
+        "Rapid prototyping",
+        "Product strategy",
+        "Software development",
+        "Product validation",
+        "Startup consulting",
+        "Digital product design",
+        "Web application development",
+        "Mobile application development",
+        "Full-stack development",
+        "Web design Guadalajara",
+        "Web development Mexico",
+        "Digital agency Jalisco",
+        "Website design",
+        "SEO optimization"
+      ]
+    },
+    "organization": {
+      "name": "Magma Studio",
+      "description": "Web development agency in Guadalajara specialized in landing pages, e-commerce and software development.",
+      "logo_alt": "Magma Studio - Web Development Agency",
+      "address": {
+        "locality": "Guadalajara", 
+        "region": "Jalisco",
+        "country": "Mexico"
+      }
+    },
+    "social": {
+      "twitter_creator": "@magmastudiomx"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "@/hooks/useTranslations";
 
 interface TimelineEntry {
   title: string;
@@ -9,6 +10,7 @@ interface TimelineEntry {
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+  const { t } = useTranslations(); // Hook de traducciones
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -32,11 +34,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     <div ref={containerRef} className="min-h-screen w-full md:px-10">
       <div className=" w-full py-14 px-4 md:px-8 lg:px-10">
         <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl tracking-tighter lg:text-7xl text-white text-center mt-6">
-          De la visión a la ejecución
+          {t("process.subtitle")}
         </h2>
         <p className=" font-archivo max-w-[52ch] mx-auto text-lg lg:text-2xl text-white/80 text-center w-full mt-2">
-          Convertimos ideas audaces en soluciones escalables a través de un enfoque
-          simplificado e iterativo diseñado para un impacto máximo.
+          {t("process.description")}
         </p>
       </div>
 

@@ -6,10 +6,22 @@ import { ArrowUpRight, Code } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { useTranslations, useTranslationArray } from "@/hooks/useTranslations";
 
 const AllProjects = () => {
+  const { t } = useTranslations(); // Hook de traducciones
+  const { getArray } = useTranslationArray("projects.items"); // Para los proyectos
+  const translatedProjects = getArray(); // Obtener los proyectos traducidos
+  
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: false, amount: 0.2 });
+
+  // Combinar datos estáticos con traducciones
+  const projects = cards.map((project, index) => ({
+    ...project,
+    title: translatedProjects[index]?.title || project.title,
+    description: translatedProjects[index]?.description || project.description,
+  }));
 
   return (
     <section id="portfolio" className="w-full py-20">
@@ -23,18 +35,18 @@ const AllProjects = () => {
             className="text-center"
           >
             <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center">
-            Nuestros Proyectos
+            {t("projects.title")}
             </h2>
             <p className="font-archivo max-w-[52ch] mx-auto text-lg md:text-2xl text-white/80 text-center w-full mt-2">
-              Transformamos ideas en experiencias digitales excepcionales
+              {t("projects.description")}
             </p>
           </motion.div>
         </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
-          {cards.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} t={t} />
           ))}
         </div>
       </div>
@@ -42,7 +54,7 @@ const AllProjects = () => {
   );
 };
 
-const ProjectCard = ({ project, index }: { project: CardType; index: number }) => {
+const ProjectCard = ({ project, index, t }: { project: CardType; index: number; t: (key: string) => string }) => {
   const [isHovered, setIsHovered] = useState(false);
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: false, amount: 0.3 });
@@ -95,7 +107,7 @@ const ProjectCard = ({ project, index }: { project: CardType; index: number }) =
                 {project.year}
               </span>
               <span className="bg-white/10 backdrop-blur-sm text-white/90 text-xs sm:text-sm px-2.5 py-1 rounded-full flex items-center gap-1.5">
-                <Code className="w-3.5 h-3.5" /> Desarrollo Web
+                <Code className="w-3.5 h-3.5" /> {t("projects.web_development")}
               </span>
             </div>
             
@@ -108,7 +120,7 @@ const ProjectCard = ({ project, index }: { project: CardType; index: number }) =
             </p>
 
             <div className="flex items-center text-white gap-1.5 text-sm font-medium">
-              Ver Proyecto <ArrowUpRight className="w-4 h-4" />
+              {t("projects.view_project")} <ArrowUpRight className="w-4 h-4" />
             </div>
           </div>
         </div>
@@ -133,10 +145,9 @@ const cards: CardType[] = [
     images: [
       "/projects/adorantes/1.webp",
     ],
-    title: "Adorantes",
+    title: "Adorantes", // Se traduce dinámicamente
     year: "2025",
-    description:
-      "Adorantes es una landing page para una artista mexicana, escultora y ceramista.",
+    description: "Adorantes es una landing page para una artista mexicana, escultora y ceramista.", // Se traduce dinámicamente
     id: 1,
     url: "https://adrianadorantes.com",
   },
@@ -144,10 +155,9 @@ const cards: CardType[] = [
     images: [
       "/projects/acredia/1.webp",
     ],
-    title: "Acredia",
+    title: "Acredia", // Se traduce dinámicamente
     year: "2025",
-    description:
-      "Acredia es una landing page para una empresa de servicios financieros y brokers de créditos.",
+    description: "Acredia es una landing page para una empresa de servicios financieros y brokers de créditos.", // Se traduce dinámicamente
     id: 2,
     url: "https://acredia.mx",
   },
@@ -155,10 +165,9 @@ const cards: CardType[] = [
     images: [
       "/projects/flover/flover.webp",
     ],
-    title: "FLOVER",
+    title: "FLOVER", // Se traduce dinámicamente
     year: "2025",
-    description:
-      "FLOVER es una landing page para una empresa de producción agrícola en hidroponía.",
+    description: "FLOVER es una landing page para una empresa de producción agrícola en hidroponía.", // Se traduce dinámicamente
     id: 3,
     url: "https://flover.mx",
   },
