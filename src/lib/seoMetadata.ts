@@ -37,9 +37,12 @@ export function detectUserLanguage(): Locale {
   // En el servidor, podemos usar headers de aceptar idioma
   if (typeof window === "undefined") {
     try {
-      // Acceder a los headers de la request (esto funcionará en server components)
-      const headers = require("next/headers");
-      const acceptLanguage = headers.headers().get("accept-language") || "";
+      // ✅ Corrección: Acceso correcto a headers de Next.js
+      const { headers } = require("next/headers");
+      const headersList = headers();
+      const acceptLanguage = headersList.get("accept-language") || "";
+      
+      console.log(`[SEO Debug] Accept-Language header: ${acceptLanguage}`);
       
       // Parsear Accept-Language header
       const languages = acceptLanguage
@@ -47,16 +50,23 @@ export function detectUserLanguage(): Locale {
         .map((lang: string) => lang.split(";")[0].trim().split("-")[0])
         .filter((lang: string) => ["es", "en"].includes(lang));
       
-      return languages.length > 0 ? languages[0] as Locale : "es";
+      const detectedLang = languages.length > 0 ? languages[0] as Locale : "es";
+      console.log(`[SEO Debug] Detected server language: ${detectedLang}`);
+      
+      return detectedLang;
     } catch (error) {
       // Fallback si no podemos acceder a headers
+      console.warn("[SEO Debug] Error detecting server-side language:", error);
       return "es";
     }
   }
   
   // En el cliente, usar navigator.language
   const browserLang = navigator.language.split("-")[0] as Locale;
-  return ["es", "en"].includes(browserLang) ? browserLang : "es";
+  const detectedLang = ["es", "en"].includes(browserLang) ? browserLang : "es";
+  console.log(`[SEO Debug] Detected client language: ${detectedLang}`);
+  
+  return detectedLang;
 }
 
 /**
@@ -64,6 +74,7 @@ export function detectUserLanguage(): Locale {
  */
 export async function loadSEOTranslations(locale: Locale): Promise<SEOTranslations> {
   try {
+    console.log(`[SEO Debug] Loading translations for locale: ${locale}`);
     // Importar dinámicamente las traducciones
     const translations = await import(`@/i18n/locales/${locale}.json`);
     return translations.default;
@@ -80,6 +91,7 @@ export async function loadSEOTranslations(locale: Locale): Promise<SEOTranslatio
 export async function generateDynamicMetadata(locale?: Locale): Promise<Metadata> {
   // Detectar idioma si no se proporciona
   const detectedLocale = locale || detectUserLanguage();
+  console.log(`[SEO Debug] Generating metadata for locale: ${detectedLocale}`);
   
   // Cargar traducciones SEO
   const translations = await loadSEOTranslations(detectedLocale);
@@ -87,6 +99,10 @@ export async function generateDynamicMetadata(locale?: Locale): Promise<Metadata
   
   // Determinar locale para OpenGraph (es -> es_MX, en -> en_US)
   const ogLocale = detectedLocale === "es" ? "es_MX" : "en_US";
+  
+  console.log(`[SEO Debug] Generated title: ${seo.site.title}`);
+  console.log(`[SEO Debug] Generated description: ${seo.site.description}`);
+  console.log(`[SEO Debug] OpenGraph locale: ${ogLocale}`);
   
   return {
     metadataBase: new URL(baseUrl) || new URL(wwwBaseUrl),
@@ -148,7 +164,7 @@ export async function generateDynamicMetadata(locale?: Locale): Promise<Metadata
     
     // Verificación de Google (mantener el valor existente)
     verification: {
-      google: "your-google-site-verification",
+      google: "76qz3pfwBgBVRBIhVJv64zBD2bFnRp0creVqAXna-as",
     },
   };
 }
@@ -181,13 +197,13 @@ export async function generateSchemaOrg(locale?: Locale): Promise<object> {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+52-33-XXXX-XXXX",
+      telephone: "+52-33-3676-7331",
       contactType: "customer service",
       areaServed: "MX",
       availableLanguage: ["Spanish", "English"],
     },
     sameAs: [
-      "https://instagram.com/magmastudio",
+      "https://instagram.com/magmastudio.pro",
     ],
   };
 }
