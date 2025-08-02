@@ -313,5 +313,46 @@
         "description": "FLOVER is a landing page for an agricultural production company in hydroponics."
       }
     ]
+  },
+  "seo": {
+    "site": {
+      "title": "Magma Studio — Professional Web Development in Guadalajara",
+      "description": "We are a web development agency in Guadalajara that transforms ideas into scalable digital products. Specialists in landing pages, e-commerce and software development.",
+      "keywords": [
+        "Web Development Agency",
+        "MVP Builder for startups",
+        "Landing page development", 
+        "Online store development",
+        "Web systems development",
+        "Agency for tech startups",
+        "Rapid prototyping",
+        "Product strategy",
+        "Software development",
+        "Product validation",
+        "Startup consulting",
+        "Digital product design",
+        "Web application development",
+        "Mobile application development",
+        "Full-stack development",
+        "Web design Guadalajara",
+        "Web development Mexico",
+        "Digital agency Jalisco",
+        "Website design",
+        "SEO optimization"
+      ]
+    },
+    "organization": {
+      "name": "Magma Studio",
+      "description": "Web development agency in Guadalajara specialized in landing pages, e-commerce and software development.",
+      "logo_alt": "Magma Studio - Web Development Agency",
+      "address": {
+        "locality": "Guadalajara", 
+        "region": "Jalisco",
+        "country": "Mexico"
+      }
+    },
+    "social": {
+      "twitter_creator": "@magmastudiomx"
+    }
   }
 }

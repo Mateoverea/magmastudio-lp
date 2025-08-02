@@ -3,97 +3,68 @@ import "../globals.css";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { headers } from "next/headers";
 
 import Footer from "@/components/common/footer";
 import { Navigation } from "@/components/common/navigation";
 import { archivo, cabinetGrotesk } from "@/lib/customFonts";
 import { Toaster } from "react-hot-toast";
+import { 
+  generateDynamicMetadata, 
+  generateSchemaOrg, 
+  generateHreflangLinks 
+} from "@/lib/seoMetadata";
+import type { Locale } from "@/hooks/useTranslations";
 
-const baseUrl = "https://magmastudio.pro";
-const wwwBaseUrl = "https://www.magmastudio.pro";
+/**
+ * Detecta el idioma del usuario desde los headers del servidor
+ */
+function detectServerSideLanguage(): Locale {
+  try {
+    const headersList = headers();
+    const acceptLanguage = headersList.get("accept-language") || "";
+    
+    // Parsear Accept-Language header para extraer idiomas preferidos
+    const languages = acceptLanguage
+      .split(",")
+      .map((lang: string) => lang.split(";")[0].trim().split("-")[0])
+      .filter((lang: string) => ["es", "en"].includes(lang));
+    
+    return languages.length > 0 ? languages[0] as Locale : "es";
+  } catch (error) {
+    // Fallback a español si hay algún error
+    console.warn("Error detecting server-side language:", error);
+    return "es";
+  }
+}
 
-export const metadata: Metadata = {
-  metadataBase: new URL(`${baseUrl}`) || new URL(`${wwwBaseUrl}`),
-  keywords: [
-    "Agencia de desarrollo Web",
-    "Constructor de MVP para startups",
-    "Desarrollo de landing pages",
-    "Desarrollo de tiendas online",
-    "Desarrollo de sistemas web",
-    "Agencia para startups tecnológicas",
-    "Prototipado rápido",
-    "Estrategia de producto",
-    "Desarrollo de software",
-    "Validación de producto",
-    "Consultoría para startups",
-    "Diseño de productos digitales",
-    "Desarrollo de aplicaciones web",
-    "Desarrollo de aplicaciones móviles",
-    "Desarrollo full-stack",
-    "Diseño web Guadalajara",
-    "Desarrollo web México",
-    "Agencia digital Jalisco",
-    "Diseño de sitios web",
-    "Optimización SEO"
-  ],
-  title: "Magma Studio — Desarrollo Web Profesional en Guadalajara",
-  description:
-    "Somos una agencia de desarrollo web en Guadalajara que transforma ideas en productos digitales escalables. Especialistas en landing pages, e-commerce y desarrollo de software.",
-  openGraph: {
-    title: "Magma Studio — Desarrollo Web Profesional en Guadalajara",
-    siteName: "Magma Studio",
-    description:
-      "Somos una agencia de desarrollo web en Guadalajara que transforma ideas en productos digitales escalables. Especialistas en landing pages, e-commerce y desarrollo de software.",
-    images: [
-      {
-        url: "/images/thumbnail.png",
-        width: 1200,
-        height: 630,
-        alt: "Magma Studio - Agencia de Desarrollo Web"
-      }
-    ],
-    url: `${baseUrl}`,
-    locale: "es_MX",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Magma Studio — Desarrollo Web Profesional en Guadalajara",
-    description:
-      "Somos una agencia de desarrollo web en Guadalajara que transforma ideas en productos digitales escalables. Especialistas en landing pages, e-commerce y desarrollo de software.",
-    images: ["/images/thumbnail.png"],
-    creator: "@magmastudiomx",
-  },
-  icons: "/favicon.ico",
-  alternates: {
-    canonical: baseUrl,
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: 'your-google-site-verification',
-  },
-};
+/**
+ * Genera metadatos dinámicos basados en el idioma del usuario
+ */
+export async function generateMetadata(): Promise<Metadata> {
+  const detectedLocale = detectServerSideLanguage();
+  return await generateDynamicMetadata(detectedLocale);
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // Detectar idioma del usuario para contenido dinámico
+  const detectedLocale = detectServerSideLanguage();
+  
+  // Generar Schema.org dinámico basado en idioma
+  const schemaOrgData = await generateSchemaOrg(detectedLocale);
+  
+  // Generar links hreflang para idiomas alternativos
+  const hreflangLinks = generateHreflangLinks();
+  
   return (
-    <html lang="es">
+    <html lang={detectedLocale}>
       <head>
-        {/* Add preload for critical assets */}
+        {/* Preload para assets críticos */}
         <link 
           rel="preload" 
           href="/logo/logo_white.svg" 
@@ -101,37 +72,21 @@ export default function RootLayout({
           type="image/svg+xml" 
         />
         
+        {/* Hreflang tags para SEO multiidioma */}
+        {hreflangLinks.map((link) => (
+          <link
+            key={link.hreflang}
+            rel="alternate"
+            hrefLang={link.hreflang}
+            href={link.href}
+          />
+        ))}
+        
+        {/* Schema.org JSON-LD dinámico */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Magma Studio",
-              url: baseUrl,
-              logo: `${baseUrl}/images/logo.png`,
-              description: "Agencia de desarrollo web en Guadalajara especializada en landing pages, e-commerce y desarrollo de software.",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Guadalajara, Jalisco",
-                addressLocality: "Guadalajara",
-                addressRegion: "Jalisco",
-                postalCode: "44100",
-                addressCountry: "MX"
-              },
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+52-33-XXXX-XXXX",
-                contactType: "customer service",
-                areaServed: "MX",
-                availableLanguage: ["Spanish", "English"]
-              },
-              sameAs: [
-                "https://twitter.com/magmastudiomx",
-                "https://linkedin.com/company/magma-studio",
-                "https://instagram.com/magmastudio"
-              ]
-            })
+            __html: JSON.stringify(schemaOrgData)
           }}
         />
       </head>
