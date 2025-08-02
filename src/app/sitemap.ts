@@ -45,22 +45,13 @@ const pages = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://magmastudio.pro";
-  const wwwBaseUrl = "https://www.magmastudio.pro";
-
-  const staticPages = pages.map((page) => ({
+  
+  // ✅ Solo generar URLs canónicas (sin duplicados www)
+  // Esto reduce de 16 URLs duplicadas a 8 URLs únicas
+  return pages.map((page) => ({
     url: `${baseUrl}${page.path}`,
     lastModified: new Date().toISOString().split("T")[0],
     changeFrequency: page.changeFrequency,
     priority: page.priority,
   }));
-
-  const staticPagesWWW = pages.map((page) => ({
-    url: `${wwwBaseUrl}${page.path}`,
-    lastModified: new Date().toISOString().split("T")[0],
-    changeFrequency: page.changeFrequency,
-    priority: page.priority,
-  }));
-
-  // Unir las URL normales y las www
-  return [...staticPages, ...staticPagesWWW];
 }
