@@ -165,7 +165,7 @@ export async function generateSchemaOrg(locale?: Locale): Promise<object> {
       "@type": "ContactPoint",
       telephone: "+52-33-3676-7331",
       contactType: "customer service",
-      areaServed: "MX",
+      areaServed: ["MX", "US", "CA"],
       availableLanguage: ["Spanish", "English"],
     },
     sameAs: [
