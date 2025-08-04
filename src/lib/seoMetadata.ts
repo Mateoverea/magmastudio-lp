@@ -19,9 +19,6 @@ interface SEOTranslations {
         country: string;
       };
     };
-    social: {
-      twitter_creator: string;
-    };
   };
 }
 
@@ -97,45 +94,14 @@ export async function generateDynamicMetadata(locale?: Locale): Promise<Metadata
   const translations = await loadSEOTranslations(detectedLocale);
   const seo = translations.seo;
   
-  // Determinar locale para OpenGraph (es -> es_MX, en -> en_US)
-  const ogLocale = detectedLocale === "es" ? "es_MX" : "en_US";
-  
   console.log(`[SEO Debug] Generated title: ${seo.site.title}`);
   console.log(`[SEO Debug] Generated description: ${seo.site.description}`);
-  console.log(`[SEO Debug] OpenGraph locale: ${ogLocale}`);
   
   return {
     metadataBase: new URL(baseUrl) || new URL(wwwBaseUrl),
     title: seo.site.title,
     description: seo.site.description,
     keywords: seo.site.keywords,
-    
-    // OpenGraph metadata
-    openGraph: {
-      title: seo.site.title,
-      siteName: seo.organization.name,
-      description: seo.site.description,
-      images: [
-        {
-          url: "/images/thumbnail.png",
-          width: 1200,
-          height: 630,
-          alt: seo.organization.logo_alt,
-        },
-      ],
-      url: baseUrl,
-      locale: ogLocale,
-      type: "website",
-    },
-    
-    // Twitter metadata
-    twitter: {
-      card: "summary_large_image",
-      title: seo.site.title,
-      description: seo.site.description,
-      images: ["/images/thumbnail.png"],
-      creator: seo.social.twitter_creator,
-    },
     
     // Iconos y configuraciones básicas
     icons: "/favicon.ico",
@@ -192,7 +158,7 @@ export async function generateSchemaOrg(locale?: Locale): Promise<object> {
       streetAddress: `${seo.organization.address.locality}, ${seo.organization.address.region}`,
       addressLocality: seo.organization.address.locality,
       addressRegion: seo.organization.address.region,
-      postalCode: "44100",
+      postalCode: "44500",
       addressCountry: detectedLocale === "es" ? "MX" : "MX", // Siempre México, pero podríamos adaptarlo
     },
     contactPoint: {

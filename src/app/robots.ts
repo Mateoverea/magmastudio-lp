@@ -41,11 +41,13 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: "GPTBot",
-        disallow: ["/"],
+        allow: ["/"],
+        disallow: ["/api/", "/admin/", "/private/", "/studio/"],
       },
       {
         userAgent: "CCBot",
-        disallow: ["/"],
+        allow: ["/"],
+        disallow: ["/api/", "/admin/", "/private/", "/studio/"],
       },
       {
         userAgent: "Googlebot-Image",
