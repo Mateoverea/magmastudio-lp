@@ -316,43 +316,40 @@
   },
   "seo": {
     "site": {
-      "title": "Magma Studio — Professional Web Development in Guadalajara",
-      "description": "We are a web development agency in Guadalajara that transforms ideas into scalable digital products. Specialists in landing pages, e-commerce and software development.",
+      "title": "Magma Studio — Landing Pages & Custom Software That Convert",
+      "description": "We design and build fast, visually striking landing pages and tailored web solutions that drive results. Web development with intention, from Guadalajara to the world.",
       "keywords": [
-        "Web Development Agency",
-        "MVP Builder for startups",
-        "Landing page development", 
-        "Online store development",
-        "Web systems development",
-        "Agency for tech startups",
-        "Rapid prototyping",
-        "Product strategy",
-        "Software development",
-        "Product validation",
-        "Startup consulting",
-        "Digital product design",
-        "Web application development",
-        "Mobile application development",
-        "Full-stack development",
+        "Web development agency",
+        "Custom landing pages",
+        "E-commerce development",
+        "Tailored software solutions",
+        "Startup MVP builder",
+        "Digital agency Mexico",
+        "Web development agency Mexico",
+        "Latin American web agency",
+        "Offshore development services",
+        "Nearshore software development",
+        "UI/UX design",
+        "Fast web design",
+        "Conversion-focused websites",
         "Web design Guadalajara",
-        "Web development Mexico",
-        "Digital agency Jalisco",
-        "Website design",
-        "SEO optimization"
+        "SEO optimization",
+        "Responsive web development",
+        "Creative web studio",
+        "Web app development",
+        "Full-stack development",
+        "Remote development services"
       ]
     },
     "organization": {
       "name": "Magma Studio",
-      "description": "Web development agency in Guadalajara specialized in landing pages, e-commerce and software development.",
-      "logo_alt": "Magma Studio - Web Development Agency",
+      "description": "Creative web development agency focused on impact and performance. We transform ideas into powerful digital products — from Mexico to the world.",
+      "logo_alt": "Magma Studio — Creative web agency that delivers results",
       "address": {
-        "locality": "Guadalajara", 
+        "locality": "Guadalajara",
         "region": "Jalisco",
         "country": "Mexico"
       }
-    },
-    "social": {
-      "twitter_creator": "@magmastudiomx"
     }
   }
 }
