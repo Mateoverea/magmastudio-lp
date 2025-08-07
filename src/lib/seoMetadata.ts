@@ -31,29 +31,34 @@ const wwwBaseUrl = "https://www.magmastudio.pro/";
  * Esta función puede ser llamada tanto del lado del servidor como del cliente
  */
 export function detectUserLanguage(): Locale {
-  // En el servidor, podemos usar headers de aceptar idioma
+  // En el servidor, usamos headers Accept-Language pero con la misma lógica de países
   if (typeof window === "undefined") {
     try {
-      // ✅ Corrección: Acceso correcto a headers de Next.js
+      // ✅ Durante el build estático, no podemos hacer requests HTTP
+      // Usamos una estrategia híbrida: headers + misma lista de países
       const { headers } = require("next/headers");
       const headersList = headers();
       const acceptLanguage = headersList.get("accept-language") || "";
       
-      console.log(`[SEO Debug] Accept-Language header: ${acceptLanguage}`);
+      console.log(`[SEO Debug] Server-side Accept-Language: ${acceptLanguage}`);
       
-      // Parsear Accept-Language header
+      // Parseamos Accept-Language para obtener el idioma principal
       const languages = acceptLanguage
         .split(",")
-        .map((lang: string) => lang.split(";")[0].trim().split("-")[0])
-        .filter((lang: string) => ["es", "en"].includes(lang));
+        .map((lang: string) => lang.split(";")[0].trim().split("-")[0]);
       
-      const detectedLang = languages.length > 0 ? languages[0] as Locale : "es";
-      console.log(`[SEO Debug] Detected server language: ${detectedLang}`);
+      console.log(`[SEO Debug] Parsed languages: ${JSON.stringify(languages)}`);
+      
+      // Buscar español como idioma principal
+      const hasSpanish = languages.includes('es');
+      
+      const detectedLang = hasSpanish ? 'es' : 'en';
+      console.log(`[SEO Debug] Server-side detected language: ${detectedLang} (hasSpanish: ${hasSpanish})`);
       
       return detectedLang;
     } catch (error) {
-      // Fallback si no podemos acceder a headers
-      console.warn("[SEO Debug] Error detecting server-side language:", error);
+      // Fallback: usar español por defecto para Latinoamérica
+      console.warn("[SEO Debug] Server-side language detection failed:", error);
       return "es";
     }
   }

@@ -95,7 +95,7 @@ export const Navigation = () => {
                   height={28}
                   quality={100}
                   className="object-contain"
-                  src="/logo/image01.webp"
+                  src="/logo/Image01.webp"
                   alt="Logo de Magma Studio"
                   priority
                 />

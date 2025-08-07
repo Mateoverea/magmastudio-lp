@@ -13,37 +13,16 @@ import { Toaster } from "react-hot-toast";
 import { 
   generateDynamicMetadata, 
   generateSchemaOrg, 
-  generateHreflangLinks 
+  generateHreflangLinks,
+  detectUserLanguage
 } from "@/lib/seoMetadata";
 import type { Locale } from "@/hooks/useTranslations";
-
-/**
- * Detecta el idioma del usuario desde los headers del servidor
- */
-function detectServerSideLanguage(): Locale {
-  try {
-    const headersList = headers();
-    const acceptLanguage = headersList.get("accept-language") || "";
-    
-    // Parsear Accept-Language header para extraer idiomas preferidos
-    const languages = acceptLanguage
-      .split(",")
-      .map((lang: string) => lang.split(";")[0].trim().split("-")[0])
-      .filter((lang: string) => ["es", "en"].includes(lang));
-    
-    return languages.length > 0 ? languages[0] as Locale : "es";
-  } catch (error) {
-    // Fallback a español si hay algún error
-    console.warn("Error detecting server-side language:", error);
-    return "es";
-  }
-}
 
 /**
  * Genera metadatos dinámicos basados en el idioma del usuario
  */
 export async function generateMetadata(): Promise<Metadata> {
-  const detectedLocale = detectServerSideLanguage();
+  const detectedLocale = detectUserLanguage();
   return await generateDynamicMetadata(detectedLocale);
 }
 
@@ -53,7 +32,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   // Detectar idioma del usuario para contenido dinámico
-  const detectedLocale = detectServerSideLanguage();
+  const detectedLocale = detectUserLanguage();
   
   // Generar Schema.org dinámico basado en idioma
   const schemaOrgData = await generateSchemaOrg(detectedLocale);

@@ -64,7 +64,7 @@ const Preloader = () => {
                   quality={100}
                   className="object-contain"
                   priority
-                  src="/logo/image02.webp"
+                  src="/logo/Image02.webp"
                   alt="MAGMA STUDIO"
                 />
               </div>

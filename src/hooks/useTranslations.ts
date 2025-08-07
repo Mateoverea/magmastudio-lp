@@ -51,32 +51,15 @@ class TranslationService {
         return stored;
       }
 
-      // 2. Detectar por IP geolocalización (opcional, simple)
+      // 2. Detectar idioma del navegador (consistente con server-side)
       if (typeof window !== 'undefined') {
-        try {
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 3000);
-          
-          const response = await fetch('https://ipapi.co/json/', { 
-            signal: controller.signal
-          });
-          clearTimeout(timeoutId);
-          const data = await response.json();
-          
-          // Países de habla hispana
-          const spanishCountries = ['MX', 'ES', 'AR', 'CO', 'PE', 'VE', 'CL', 'EC', 'BO', 'PY', 'UY'];
-          if (spanishCountries.includes(data.country_code)) {
-            return 'es';
-          }
-          
-          // Para el resto, inglés
-          return 'en';
-        } catch (error) {
-          console.log('IP detection failed, using browser language');
-        }
-
-        // 3. Detectar idioma del navegador
+        console.log('[Client Debug] Using browser language detection');
+        
+        // Usar navigator.language para consistencia con Accept-Language header
         const browserLang = navigator.language.split('-')[0] as Locale;
+        console.log(`[Client Debug] navigator.language: ${navigator.language}`);
+        console.log(`[Client Debug] Browser language detected: ${browserLang}`);
+        
         if (['es', 'en'].includes(browserLang)) {
           return browserLang;
         }
