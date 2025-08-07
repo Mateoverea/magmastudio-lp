@@ -58,9 +58,9 @@ const Stat = ({ num, decimals = 0, subheading }: Props) => {
       animate={isInView ? "visible" : "hidden"}
       className="flex flex-row md:w-72 md:flex-col items-center gap-4 md:gap-0 py-8 relative"
     >
-      <h4 className="mb-2 text-center text-white text-7xl lg:text-9xl font-cabinetGrotesk font-semibold">
+                  <span className="mb-2 text-center text-white text-7xl lg:text-9xl font-cabinetGrotesk font-semibold block">
         <span ref={ref}></span>
-      </h4>
+      </span>
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}

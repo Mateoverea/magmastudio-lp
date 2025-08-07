@@ -110,15 +110,10 @@ export function ContactDrawer() {
         <div className="h-fit md:h-[75dvh] py-5 md:py-6 w-full flex flex-col md:flex-row justify-between items-start md:items-center px-3 md:px-20">
           <div className="md:w-[45%] flex flex-col items-start w-full lg:mt-10">
             <div className="hidden md:block text-start">
-              <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-6xl text-[#1A1A1A] text-start md:mt-0">
-                {t("contact_drawer.title_desktop.line1")}
-              </h2>
-              
-              <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-6xl text-[#1A1A1A] text-start md:-mt-3">
-                 {t("contact_drawer.title_desktop.line2")}
-              </h2>
-              <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-6xl text-[#7a290e] text-start md:-mt-3">
-                {t("contact_drawer.title_desktop.line3")}
+              <h2 className="uppercase font-cabinetGrotesk font-extrabold text-5xl tracking-tighter lg:text-6xl text-start md:mt-0">
+                <span className="text-[#1A1A1A] block">{t("contact_drawer.title_desktop.line1")}</span>
+                <span className="text-[#1A1A1A] block md:-mt-3">{t("contact_drawer.title_desktop.line2")}</span>
+                <span className="text-[#7a290e] block md:-mt-3">{t("contact_drawer.title_desktop.line3")}</span>
               </h2>
             </div>
 

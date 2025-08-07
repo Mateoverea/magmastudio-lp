@@ -80,22 +80,22 @@ export const Navigation = () => {
             <Link href="/" className="flex items-center flex-shrink-0">
               <div className="flex items-center justify-center hover:scale-110 ease-in-out transition-all duration-200 lg:hidden">
                 <Image
-                  width={100}
-                  height={42}
+                  width={40}
+                  height={22}
                   quality={100}
                   className="object-contain"
-                  src="/logo/logo_white.svg"
+                  src="/logo/Image01.webp"
                   alt="Logo de Magma Studio"
                   priority
                 />
               </div>
               <div className="items-center justify-center hover:scale-110 ease-in-out transition-all duration-200 hidden lg:flex">
                 <Image
-                  width={136}
-                  height={40}
+                  width={50}
+                  height={28}
                   quality={100}
                   className="object-contain"
-                  src="/logo/logo_white.svg"
+                  src="/logo/Image01.webp"
                   alt="Logo de Magma Studio"
                   priority
                 />

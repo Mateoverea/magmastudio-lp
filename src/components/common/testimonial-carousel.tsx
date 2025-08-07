@@ -58,12 +58,12 @@ const TestimonialCarousel = () => {
               className="w-full flex gap-4 flex-col md:h-[40rem] justify-between"
             >
               <div>
-                <h3 className="font-cabinetGrotesk font-medium text-3xl md:text-4xl uppercase text-white">
+                                  <span className="font-cabinetGrotesk font-medium text-3xl md:text-4xl uppercase text-white block">
                   {testimonial.name}
-                </h3>
-                <h4 className="font-archivo text-lg md:text-xl text-white opacity-80">
+                </span>
+                <span className="font-archivo text-lg md:text-xl text-white opacity-80 block">
                   {testimonial.role}
-                </h4>
+                </span>
               </div>
 
               <div className="flex flex-col items-start gap-4">

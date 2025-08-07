@@ -114,7 +114,7 @@ const MobileHero = () => {
       <div className="relative z-10 flex flex-col items-start px-2 flex-1 justify-center">
         
         {/* Main title */}
-        <h1 
+        <h2 
           ref={titleRef}
           className="font-cabinetGrotesk font-bold text-6xl sm:text-6xl text-white leading-[0.92] mb-6 uppercase tracking-tighter text-left"
         >
@@ -122,7 +122,7 @@ const MobileHero = () => {
           <span className="block bg-clip-text text-white font-light italic">
             {t("mobile_hero.title_part2")}
           </span>
-        </h1>
+        </h2>
 
         {/* Services grid - 2 rows */}
         <div className="mb-8 grid grid-cols-2 gap-x-8 gap-y-2 w-full max-w-md">

@@ -25,11 +25,6 @@
     ],
     "cta_button": "Start your project!"
   },
-  "social_proof": {
-    "title": "Boost Your Business in the Digital World",
-    "description": "Digital presence is crucial for businesses. We help you build products that position you in the best way to grow.",
-    "description_mobile": "We help you build a product to have digital presence."
-  },
   "pricing": {
     "title": "Simple and Flexible Pricing",
     "title_mobile": "Simple Pricing",
@@ -145,19 +140,19 @@
     "description": "We specialize in turning ideas into high-impact digital products. We find the best way to build, launch and scale successfully.",
     "features": [
       {
-        "title": "Landing Pages",
+        "title": "Landing Page",
         "description": "We create conversion-focused pages: fast, visually appealing and aligned with your business goals. Ideal for campaigns, launches or service presentations.",
-        "descriptionMobile": "We create conversion-focused pages: fast, visually appealing and aligned with your business goals. Ideal for campaigns, launches or service presentations."
+        "descriptionMobile": "Effective websites that convert visitors into customers. Mobile-optimized design with fast loading and strategic call-to-action."
       },
       {
         "title": "Software",
         "description": "We develop custom web systems to automate tasks, optimize internal processes and scale your operation. You imagine it, we program it.",
-        "descriptionMobile": "We develop custom web systems to automate tasks, optimize internal processes and scale your operation. You imagine it, we program it."
+        "descriptionMobile": "Custom technological solutions that automate business processes. We create digital tools that boost your productivity."
       },
       {
         "title": "E-commerce",
         "description": "We create custom online stores, with integrated payments and a user experience optimized to sell more.",
-        "descriptionMobile": "We create custom online stores, with integrated payments and a user experience optimized to sell more."
+        "descriptionMobile": "Complete virtual stores with shopping cart, secure payment gateways and integrated inventory management."
       }
     ]
   },
@@ -277,11 +272,9 @@
       "legal": "Legal Information",
       "resources": "Resources (Coming Soon)"
     },
-    "legal_links": [
-      "Terms and Conditions",
-      "Privacy Policy",
-      "Cookie Policy"
-    ],
+         "legal_links": [
+       
+     ],
     "resource_links": [
       "Corporate Presentation",
       "Free MVP Guide"
@@ -316,8 +309,8 @@
   },
   "seo": {
     "site": {
-      "title": "Magma Studio — Landing Pages & Custom Software That Convert",
-      "description": "We design and build fast, visually striking landing pages and tailored web solutions that drive results. Web development with intention, from Guadalajara to the world.",
+      "title": "Magma Studio — Websites & Custom Software",
+      "description": "We build fast, visually striking landing pages and tailored web solutions that drive results. Web development with intention.",
       "keywords": [
         "Web development agency",
         "Custom landing pages",

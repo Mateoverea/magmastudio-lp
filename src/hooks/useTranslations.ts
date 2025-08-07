@@ -51,35 +51,21 @@ class TranslationService {
         return stored;
       }
 
-      // 2. Detectar por IP geolocalización (opcional, simple)
+      // 2. Detectar idioma del navegador (consistente con server-side)
       if (typeof window !== 'undefined') {
-        try {
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 3000);
-          
-          const response = await fetch('https://ipapi.co/json/', { 
-            signal: controller.signal
-          });
-          clearTimeout(timeoutId);
-          const data = await response.json();
-          
-          // Países de habla hispana
-          const spanishCountries = ['MX', 'ES', 'AR', 'CO', 'PE', 'VE', 'CL', 'EC', 'BO', 'PY', 'UY'];
-          if (spanishCountries.includes(data.country_code)) {
-            return 'es';
-          }
-          
-          // Para el resto, inglés
-          return 'en';
-        } catch (error) {
-          console.log('IP detection failed, using browser language');
-        }
-
-        // 3. Detectar idioma del navegador
+        console.log('[Client Debug] Using browser language detection');
+        
+        // ✅ Sincronizar con server-side: usar la misma lógica de Accept-Language
+        // En el cliente, simulamos la misma lógica que usa el servidor
         const browserLang = navigator.language.split('-')[0] as Locale;
+        
+        // ✅ Misma lógica que server-side: usar el primer idioma válido
         if (['es', 'en'].includes(browserLang)) {
           return browserLang;
         }
+        
+        // ✅ Fallback consistente con server-side
+        return 'es';
       }
 
       // 4. Fallback al español (idioma por defecto de Magma Studio)

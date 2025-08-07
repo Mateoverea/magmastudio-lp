@@ -87,24 +87,6 @@ const SocialProof = () => {
         </div>
       </Wrapper>
       <div className="h-6 md:h-[2rem]" />
-      {/* <Wrapper className="flex flex-col w-full items-center justify-center lg:px-[1rem] xl:px-[6rem] 2xl:px-[10rem] 3xl:px-[12rem] 4xl:px-[14rem] 5xl:px-[0rem] gap-10 lg:gap-20 pt-12 md:pt-14">
-        <div className="flex flex-col gap-2">
-          <h2 className="uppercase font-cabinetGrotesk font-bold text-5xl lg:text-7xl text-white text-center md:mt-0">
-            Confiado por fundadores
-          </h2>
-          <p className=" font-archivo text-lg md:text-xl text-white/80 text-center w-full">
-            Mira cuánto impacto hemos generado
-          </p>
-        </div>
-
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-center w-fit md:w-full md:-mt-[4rem]">
-          <Stat num={3} subheading="Proyectos Completados" />
-
-          <Stat num={3} subheading="Clientes Satisfechos" />
-
-          <Stat num={0} subheading="Tiendas Creadas" />
-        </div>
-      </Wrapper> */}
     </section>
   );
 };

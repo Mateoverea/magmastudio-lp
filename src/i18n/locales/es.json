@@ -25,11 +25,6 @@
     ],
     "cta_button": "¡Comienza tu proyecto!"
   },
-  "social_proof": {
-    "title": "Impulsa tu Negocio en el Mundo Digital",
-    "description": "La presencia digital es crucial para las empresas. Te ayudamos a construir productos que te posicionan de la mejor forma para crecer.",
-    "description_mobile": "Te ayudamos a construir un producto para tener presencia digital."
-  },
   "pricing": {
     "title": "Precios Simples y Flexibles",
     "title_mobile": "Precios Simples",
@@ -142,29 +137,29 @@
   },
   "services": {
     "title": "Servicios",
-    "description": "Nos especializamos en convertir ideas en productos digitales de alto impacto. Encontramos la mejor manera de construir, lanzar y escalar con éxito.",
+    "description": "Nos especializamos en crear sitios web y software a medida que generan alto impacto. Encontramos la mejor manera de construir, lanzar y escalar con éxito.",
     "features": [
       {
-        "title": "Landing Pages",
+        "title": "Landing Page",
         "description": "Creamos páginas enfocadas en conversión: rápidas, visualmente atractivas y alineadas con tus objetivos comerciales. Ideales para campañas, lanzamientos o presentación de servicios.",
-        "descriptionMobile": "Creamos páginas enfocadas en conversión: rápidas, visualmente atractivas y alineadas con tus objetivos comerciales. Ideales para campañas, lanzamientos o presentación de servicios."
+        "descriptionMobile": "Páginas web efectivas que convierten visitantes en clientes. Diseño optimizado para móviles con carga rápida y llamadas a acción estratégicas."
       },
       {
         "title": "Software",
         "description": "Desarrollamos sistemas web personalizados para automatizar tareas, optimizar procesos internos y escalar tu operación. Tú lo imaginas, nosotros lo programamos.",
-        "descriptionMobile": "Desarrollamos sistemas web personalizados para automatizar tareas, optimizar procesos internos y escalar tu operación. Tú lo imaginas, nosotros lo programamos."
+        "descriptionMobile": "Soluciones tecnológicas a medida que automatizan procesos empresariales. Creamos herramientas digitales que potencian tu productividad."
       },
       {
         "title": "E-commerce",
         "description": "Creamos tiendas online personalizadas, con pagos integrados y una experiencia de usuario optimizada para vender más.",
-        "descriptionMobile": "Creamos tiendas online personalizadas, con pagos integrados y una experiencia de usuario optimizada para vender más."
+        "descriptionMobile": "Tiendas virtuales completas con carrito de compras, pasarelas de pago seguras y gestión de inventario integrada."
       }
     ]
   },
   "process": {
     "title": "Nuestro Proceso",
     "subtitle": "De la visión a la ejecución",
-    "description": "Convertimos ideas audaces en soluciones escalables a través de un enfoque simplificado e iterativo diseñado para un impacto máximo.",
+    "description": "Convertimos ideas audaces en soluciones de desarrollo web a medida a través de un enfoque simplificado e iterativo diseñado para un impacto máximo.",
     "steps": [
       {
         "title": "Descubrimiento y Estrategia",
@@ -190,7 +185,7 @@
   },
   "social_proof": {
     "title": "Impulsa tu Negocio en el Mundo Digital",
-    "description": "La presencia digital es crucial para las empresas. Te ayudamos a construir productos que te posicionan de la mejor forma para crecer.",
+    "description": "La presencia digital es crucial para las empresas. Te ayudamos a construir sitios web a medida que te posicionan de la mejor forma para crecer.",
     "description_mobile": "Te ayudamos a construir un producto para tener presencia digital.",
     "cards": [
       {
@@ -203,12 +198,12 @@
       },
       {
         "title": "Nosotros lo hacemos realidad",
-        "description": "Creamos desde páginas web hasta software a la medida. Siempre con diseño potente, estrategia clara y resultados que importan."
+        "description": "Creamos desde sitios web hasta software a la medida. Siempre con diseño potente, estrategia clara y resultados que importan."
       }
     ]
   },
   "cta": {
-    "title": "Obtén una estimación de tu proyecto",
+    "title": "Obtén una estimación para tu sitio web a medida",
     "subtitle": "Escríbenos",
     "copy_email": "Copiar",
     "email_copied": "Copiado",
@@ -277,11 +272,9 @@
       "legal": "Información Legal",
       "resources": "Recursos (Proximamente)"
     },
-    "legal_links": [
-      "Términos y Condiciones",
-      "Política de Privacidad", 
-      "Política de Cookies"
-    ],
+         "legal_links": [
+       
+     ],
     "resource_links": [
       "Presentación Corporativa",
       "Guía MVP Gratuita"
@@ -316,8 +309,8 @@
   },
   "seo": {
     "site": {
-      "title": "Magma Studio — Landing Pages y Software a la Medida que Venden",
-      "description": "Creamos landing pages, e-commerce y software con diseño visual atractivo, velocidad y enfoque en resultados. Desarrollo web con intención desde Guadalajara.",
+      "title": "Magma Studio — Sitios Web y Software a la Medida",
+      "description": "Creamos landing pages, e-commerce y software con diseño visual atractivo, velocidad y enfoque en resultados. Desarrollo web con intención.",
       "keywords": [
         "Agencia de desarrollo web",
         "Landing pages personalizadas",

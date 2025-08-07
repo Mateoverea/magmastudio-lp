@@ -23,37 +23,38 @@ interface SEOTranslations {
 }
 
 // URLs base del sitio
-const baseUrl = "https://magmastudio.pro";
-const wwwBaseUrl = "https://www.magmastudio.pro";
+const baseUrl = "https://magmastudio.pro/";
+const wwwBaseUrl = "https://www.magmastudio.pro/";
 
 /**
  * Detecta el idioma del usuario basado en headers del servidor
  * Esta función puede ser llamada tanto del lado del servidor como del cliente
  */
 export function detectUserLanguage(): Locale {
-  // En el servidor, podemos usar headers de aceptar idioma
+  // En el servidor, usamos headers Accept-Language pero con la misma lógica de países
   if (typeof window === "undefined") {
     try {
-      // ✅ Corrección: Acceso correcto a headers de Next.js
+      // ✅ Durante el build estático, no podemos hacer requests HTTP
+      // Usamos una estrategia híbrida: headers + misma lista de países
       const { headers } = require("next/headers");
       const headersList = headers();
       const acceptLanguage = headersList.get("accept-language") || "";
       
-      console.log(`[SEO Debug] Accept-Language header: ${acceptLanguage}`);
-      
-      // Parsear Accept-Language header
+      // Parseamos Accept-Language para obtener el idioma principal
       const languages = acceptLanguage
         .split(",")
-        .map((lang: string) => lang.split(";")[0].trim().split("-")[0])
-        .filter((lang: string) => ["es", "en"].includes(lang));
+        .map((lang: string) => lang.split(";")[0].trim().split("-")[0]);
       
-      const detectedLang = languages.length > 0 ? languages[0] as Locale : "es";
-      console.log(`[SEO Debug] Detected server language: ${detectedLang}`);
+      // ✅ LÓGICA CORREGIDA: Usar el PRIMER idioma de la lista (mayor prioridad)
+      // Buscar el primer idioma válido en el orden de preferencia
+      const firstValidLanguage = languages.find((lang: string) => ['es', 'en'].includes(lang));
+      
+      // Usar el primer idioma válido encontrado, o español por defecto
+      const detectedLang: Locale = firstValidLanguage as Locale || 'es';
       
       return detectedLang;
     } catch (error) {
-      // Fallback si no podemos acceder a headers
-      console.warn("[SEO Debug] Error detecting server-side language:", error);
+      // Fallback: usar español por defecto para Latinoamérica
       return "es";
     }
   }
@@ -61,7 +62,6 @@ export function detectUserLanguage(): Locale {
   // En el cliente, usar navigator.language
   const browserLang = navigator.language.split("-")[0] as Locale;
   const detectedLang = ["es", "en"].includes(browserLang) ? browserLang : "es";
-  console.log(`[SEO Debug] Detected client language: ${detectedLang}`);
   
   return detectedLang;
 }
@@ -88,14 +88,10 @@ export async function loadSEOTranslations(locale: Locale): Promise<SEOTranslatio
 export async function generateDynamicMetadata(locale?: Locale): Promise<Metadata> {
   // Detectar idioma si no se proporciona
   const detectedLocale = locale || detectUserLanguage();
-  console.log(`[SEO Debug] Generating metadata for locale: ${detectedLocale}`);
   
   // Cargar traducciones SEO
   const translations = await loadSEOTranslations(detectedLocale);
   const seo = translations.seo;
-  
-  console.log(`[SEO Debug] Generated title: ${seo.site.title}`);
-  console.log(`[SEO Debug] Generated description: ${seo.site.description}`);
   
   return {
     metadataBase: new URL(baseUrl) || new URL(wwwBaseUrl),
