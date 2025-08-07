@@ -29,14 +29,14 @@ const Hero = () => {
           <div className="w-full flex flex-col items-center">
             <div className="flex flex-col items-center md:items-center md:mt-20 lg:mt-4 md:gap-1 z-[30]">
               {/* Desktop */}
-              <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-bold text-4xl md:text-5xl lg:text-8xl text-white text-left">
+              <h1 className="uppercase tracking-tighter font-cabinetGrotesk font-bold text-4xl md:text-5xl lg:text-8xl text-white text-left">
                 {t("hero.title_part1")}
-              </h2>
+              </h1>
 
               <div className="flex items-center gap-10">
-                <h2 className="uppercase tracking-tighter font-cabinetGrotesk font-light italic text-4xl md:text-5xl lg:text-8xl text-white text-left relative">
+                <span className="uppercase tracking-tighter font-cabinetGrotesk font-light italic text-4xl md:text-5xl lg:text-8xl text-white text-left relative">
                   <span className="lava-hover" data-text={t("hero.title_part2")}>{t("hero.title_part2")}</span>
-                </h2>
+                </span>
                 <p className="font-archivo text-sm md:text-base lg:text-3xl text-[#333333]/80 text-left max-w-[30ch] md:max-w-[40ch] uppercase pt-2">
                   {t("hero.subtitle")}
                 </p>

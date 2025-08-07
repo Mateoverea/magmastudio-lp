@@ -9,7 +9,7 @@ const pages = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://magmastudio.pro";
+  const baseUrl = "https://magmastudio.pro/";
   
   // ✅ Solo generar URLs canónicas (sin duplicados www)
   // Esto reduce de 16 URLs duplicadas a 8 URLs únicas

@@ -66,9 +66,9 @@ const Pricing = () => {
         {/* Landing Express */}
         <div className="flex flex-col justify-between items-start p-6 w-full h-auto md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#1A1A1A]/80 backdrop-blur-sm border border-[#333333] rounded-3xl">
           <div>
-            <h4 className="font-archivo text-xl md:text-2xl w-full text-white uppercase">
+                                <span className="font-archivo text-xl md:text-2xl w-full text-white uppercase block">
               {packages.express.name}
-            </h4>
+                                </span>
             <p className="font-archivo text-lg md:text-xl w-full text-white/70 mt-2">
               {packages.express.description}
             </p>
@@ -103,9 +103,9 @@ const Pricing = () => {
         {/* Landing Pro */}
         <div className="flex flex-col justify-between items-start p-6 w-full h-auto md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#1A1A1A]/80 backdrop-blur-sm border border-[#333333] rounded-3xl">
           <div>
-            <h4 className="font-archivo text-xl md:text-2xl w-full text-white uppercase">
+                                <span className="font-archivo text-xl md:text-2xl w-full text-white uppercase block">
               {packages.pro.name}
-            </h4>
+                                </span>
             <p className="font-archivo text-lg md:text-xl w-full text-white/70 mt-2">
               {packages.pro.description}
             </p>
@@ -140,9 +140,9 @@ const Pricing = () => {
         {/* Tienda Express */}
         <div className="flex flex-col justify-between items-start p-6 w-full h-auto md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#1A1A1A]/80 backdrop-blur-sm border border-[#333333] rounded-3xl">
           <div>
-            <h4 className="font-archivo text-xl md:text-2xl w-full text-white uppercase">
+                                <span className="font-archivo text-xl md:text-2xl w-full text-white uppercase block">
               {packages.ecommerce.name}
-            </h4>
+                                </span>
             <p className="font-archivo text-lg md:text-xl w-full text-white/70 mt-2">
               {packages.ecommerce.description}
             </p>
@@ -180,9 +180,9 @@ const Pricing = () => {
         {/* Web a Medida */}
         <div className="flex flex-col justify-between items-start p-6 w-full h-auto md:hover:-translate-y-4 transition-transform ease-in-out duration-500 bg-[#1A1A1A]/80 backdrop-blur-sm border border-[#333333] rounded-3xl relative overflow-clip">
           <div className="z-10">
-            <h4 className="font-archivo text-xl md:text-2xl w-full text-[#FF4500] uppercase">
+                                <span className="font-archivo text-xl md:text-2xl w-full text-[#FF4500] uppercase block">
               {packages.custom.name}
-            </h4>
+                                </span>
             <p className="font-archivo text-lg md:text-xl w-full text-white/70 mt-2">
               {packages.custom.description}
             </p>

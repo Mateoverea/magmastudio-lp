@@ -91,11 +91,11 @@ export const Navigation = () => {
               </div>
               <div className="items-center justify-center hover:scale-110 ease-in-out transition-all duration-200 hidden lg:flex">
                 <Image
-                  width={136}
-                  height={40}
+                  width={50}
+                  height={28}
                   quality={100}
                   className="object-contain"
-                  src="/logo/logo_white.svg"
+                  src="/logo/image01.webp"
                   alt="Logo de Magma Studio"
                   priority
                 />

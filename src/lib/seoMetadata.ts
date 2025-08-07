@@ -23,8 +23,8 @@ interface SEOTranslations {
 }
 
 // URLs base del sitio
-const baseUrl = "https://magmastudio.pro";
-const wwwBaseUrl = "https://www.magmastudio.pro";
+const baseUrl = "https://magmastudio.pro/";
+const wwwBaseUrl = "https://www.magmastudio.pro/";
 
 /**
  * Detecta el idioma del usuario basado en headers del servidor
