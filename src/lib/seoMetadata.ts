@@ -40,25 +40,21 @@ export function detectUserLanguage(): Locale {
       const headersList = headers();
       const acceptLanguage = headersList.get("accept-language") || "";
       
-      console.log(`[SEO Debug] Server-side Accept-Language: ${acceptLanguage}`);
-      
       // Parseamos Accept-Language para obtener el idioma principal
       const languages = acceptLanguage
         .split(",")
         .map((lang: string) => lang.split(";")[0].trim().split("-")[0]);
       
-      console.log(`[SEO Debug] Parsed languages: ${JSON.stringify(languages)}`);
+      // ✅ LÓGICA CORREGIDA: Usar el PRIMER idioma de la lista (mayor prioridad)
+      // Buscar el primer idioma válido en el orden de preferencia
+      const firstValidLanguage = languages.find((lang: string) => ['es', 'en'].includes(lang));
       
-      // Buscar español como idioma principal
-      const hasSpanish = languages.includes('es');
-      
-      const detectedLang = hasSpanish ? 'es' : 'en';
-      console.log(`[SEO Debug] Server-side detected language: ${detectedLang} (hasSpanish: ${hasSpanish})`);
+      // Usar el primer idioma válido encontrado, o español por defecto
+      const detectedLang: Locale = firstValidLanguage as Locale || 'es';
       
       return detectedLang;
     } catch (error) {
       // Fallback: usar español por defecto para Latinoamérica
-      console.warn("[SEO Debug] Server-side language detection failed:", error);
       return "es";
     }
   }
@@ -66,7 +62,6 @@ export function detectUserLanguage(): Locale {
   // En el cliente, usar navigator.language
   const browserLang = navigator.language.split("-")[0] as Locale;
   const detectedLang = ["es", "en"].includes(browserLang) ? browserLang : "es";
-  console.log(`[SEO Debug] Detected client language: ${detectedLang}`);
   
   return detectedLang;
 }
@@ -93,14 +88,10 @@ export async function loadSEOTranslations(locale: Locale): Promise<SEOTranslatio
 export async function generateDynamicMetadata(locale?: Locale): Promise<Metadata> {
   // Detectar idioma si no se proporciona
   const detectedLocale = locale || detectUserLanguage();
-  console.log(`[SEO Debug] Generating metadata for locale: ${detectedLocale}`);
   
   // Cargar traducciones SEO
   const translations = await loadSEOTranslations(detectedLocale);
   const seo = translations.seo;
-  
-  console.log(`[SEO Debug] Generated title: ${seo.site.title}`);
-  console.log(`[SEO Debug] Generated description: ${seo.site.description}`);
   
   return {
     metadataBase: new URL(baseUrl) || new URL(wwwBaseUrl),

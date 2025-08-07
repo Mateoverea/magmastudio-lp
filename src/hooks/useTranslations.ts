@@ -55,14 +55,17 @@ class TranslationService {
       if (typeof window !== 'undefined') {
         console.log('[Client Debug] Using browser language detection');
         
-        // Usar navigator.language para consistencia con Accept-Language header
+        // ✅ Sincronizar con server-side: usar la misma lógica de Accept-Language
+        // En el cliente, simulamos la misma lógica que usa el servidor
         const browserLang = navigator.language.split('-')[0] as Locale;
-        console.log(`[Client Debug] navigator.language: ${navigator.language}`);
-        console.log(`[Client Debug] Browser language detected: ${browserLang}`);
         
+        // ✅ Misma lógica que server-side: usar el primer idioma válido
         if (['es', 'en'].includes(browserLang)) {
           return browserLang;
         }
+        
+        // ✅ Fallback consistente con server-side
+        return 'es';
       }
 
       // 4. Fallback al español (idioma por defecto de Magma Studio)

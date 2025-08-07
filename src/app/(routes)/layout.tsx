@@ -4,8 +4,6 @@ import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { headers } from "next/headers";
-
 import Footer from "@/components/common/footer";
 import { Navigation } from "@/components/common/navigation";
 import { archivo, cabinetGrotesk } from "@/lib/customFonts";
@@ -16,7 +14,6 @@ import {
   generateHreflangLinks,
   detectUserLanguage
 } from "@/lib/seoMetadata";
-import type { Locale } from "@/hooks/useTranslations";
 
 /**
  * Genera metadatos dinámicos basados en el idioma del usuario
@@ -46,9 +43,9 @@ export default async function RootLayout({
         {/* Preload para assets críticos */}
         <link 
           rel="preload" 
-          href="/logo/logo_white.svg" 
+          href="/logo/Image01.webp" 
           as="image" 
-          type="image/svg+xml" 
+          type="image/webp" 
         />
         
         {/* Hreflang tags para SEO multiidioma */}
